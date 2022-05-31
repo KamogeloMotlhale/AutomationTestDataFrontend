@@ -1,0 +1,26 @@
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\appsettings.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.staticwebassets.runtime.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.exe
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.deps.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.runtimeconfig.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Automation Test Data App.pdb
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.AssemblyReference.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.AssemblyInfoInputs.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.AssemblyInfo.cs
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.CoreCompileInputs.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.RazorAssemblyInfo.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.RazorAssemblyInfo.cs
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\scopedcss\bundle\Automation Test Data App.styles.css
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\scopedcss\projectbundle\Automation Test Data App.bundle.scp.css
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\refint\Automation Test Data App.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.pdb
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.genruntimeconfig.cache
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\ref\Automation Test Data App.dll
