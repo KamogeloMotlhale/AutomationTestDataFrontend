@@ -24,3 +24,25 @@ C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Dat
 C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.pdb
 C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.genruntimeconfig.cache
 C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\ref\Automation Test Data App.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Data.OleDb.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Data.OleDb.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.CopyComplete
