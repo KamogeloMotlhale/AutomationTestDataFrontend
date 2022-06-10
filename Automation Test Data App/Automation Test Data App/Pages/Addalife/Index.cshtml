@@ -1,0 +1,51 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Addalife.IndexModel
+@{
+}
+
+<br>
+<h2>Additional Life Assured </h2>
+<a class='btn btn-primary btn-sm' href='/Life Assured/Create'>New Life Assured</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID<th/>
+			<th>Title<th/>
+			<th>First_Name<th/>
+			<th>Surname<th/>
+			<th>Initials<th/>
+			<th>dob<th/>
+			<th>Gender<th/>
+			<th>ID_number<th/>
+			<th>Relationship<th/>
+			<th>Comm_date<th/>
+			<th>Created At<th/>
+			<th>Action<th/>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListAddaLife)
+		{
+
+			<tr>
+				<td>@item.id</td>
+				<td>@item.Title</td>
+				<td>@item.First_Name</td>
+				<td>@item.Surname</td>
+				<td>@item.Initials</td>
+				<td>@item.dob</td>
+				<td>@item.Gender</td>
+				<td>@item.ID_number</td>
+				<td>@item.Relationship</td>
+				<td>@item.Comm_date</td>
+				<td>@item.created_at</td>
+
+				<td> 
+					<a class="btn btn-primary btn-sm" href="/Life Assured/Edit?id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Life Assured/Delete?id">Delete</a>
+				</td>
+			</tr>
+		}
+
+	</tbody>
+</table>
