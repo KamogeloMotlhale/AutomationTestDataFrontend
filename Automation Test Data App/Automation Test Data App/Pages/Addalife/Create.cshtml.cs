@@ -6,7 +6,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
 {
     public class CreateModel : PageModel
     {
-        public AddaLifeInfo AddaLifeInfo = new AddaLifeInfo();
+        public AddaLifeInfo AddaLifeInfo = new AddaLifeInfo(); 
         public String errorMessage = "";
         public String successMessage = "";
 
@@ -42,8 +42,8 @@ namespace Automation_Test_Data_App.Pages.Addalife
                 using (SqlConnection connection = new SqlConnection(connectionString)) 
                 {
                     connection.Open();
-                    String sql = "INSERT INTO AddaLife" +
-                                "T(itle, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date) VALUES" +
+                    String sql = "INSERT INTO AddaLife " +
+                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date) VALUES" +
                                 "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -52,6 +52,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
                         command.Parameters.AddWithValue("@First_Name", AddaLifeInfo.First_Name);
                         command.Parameters.AddWithValue("@Surname", AddaLifeInfo.Surname);
                         command.Parameters.AddWithValue("@Initials", AddaLifeInfo.Initials);
+                        command.Parameters.AddWithValue("@dob", AddaLifeInfo.dob);
                         command.Parameters.AddWithValue("@Gender", AddaLifeInfo.Gender);
                         command.Parameters.AddWithValue("@ID_number", AddaLifeInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddaLifeInfo.Relationship);
@@ -71,9 +72,9 @@ namespace Automation_Test_Data_App.Pages.Addalife
                 return;
             }
 
-            AddaLifeInfo.Title = ""; AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
+            AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
             successMessage = "New Life Assured Added Successfully";
-            Response.Redirect("/Life assured/Index");
+            Response.Redirect("/Additional Life Assured/Index");
         }
     }
 }

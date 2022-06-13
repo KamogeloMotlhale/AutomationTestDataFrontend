@@ -24,7 +24,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
                          {
 
                                 AddaLifeInfo addaLifeInfo = new AddaLifeInfo();
-                                addaLifeInfo.id =""+ reader.GetString(0);
+                                addaLifeInfo.id =""+ reader.GetInt32(0);
                                 addaLifeInfo.Title = reader.GetString(1);
                                 addaLifeInfo.First_Name = reader.GetString(2);
                                 addaLifeInfo.Surname = reader.GetString(3);
@@ -34,7 +34,6 @@ namespace Automation_Test_Data_App.Pages.Addalife
                                 addaLifeInfo.ID_number = reader.GetString(7);
                                 addaLifeInfo.Relationship = reader.GetString(8);
                                 addaLifeInfo.Comm_date = reader.GetString(9);
-                                addaLifeInfo.created_at = reader.GetDateTime(10).ToString();
 
                                 ListAddaLife.Add(addaLifeInfo);
                          }
@@ -69,6 +68,6 @@ namespace Automation_Test_Data_App.Pages.Addalife
         public String ID_number;
         public String Relationship;
         public String Comm_date;
-        public String created_at;
+
     }
 }
