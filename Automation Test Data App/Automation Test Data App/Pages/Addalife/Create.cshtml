@@ -1,0 +1,101 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Addalife.CreateModel
+@{
+}
+
+@if(Model.errorMessage.Length > 0){
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+	</div>
+}
+
+<br>
+<h2>New Life Assured</h2>
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Title</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Title" value="@Model.AddaLifeInfo.Title">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">First_name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="First_name" value="@Model.AddaLifeInfo.First_Name">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Surname</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Surname" value="@Model.AddaLifeInfo.Surname">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Initials</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Initials" value="@Model.AddaLifeInfo.Initials">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">dob</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="dob" value="@Model.AddaLifeInfo.dob">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Gender</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Gender" value="@Model.AddaLifeInfo.Gender">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">ID_number</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="ID_number" value="@Model.AddaLifeInfo.ID_number">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Relationship</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Relationship" value="@Model.AddaLifeInfo.Relationship">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Comm_date</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">	
+		</div>
+	</div>
+
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+
+</form>		
+		
