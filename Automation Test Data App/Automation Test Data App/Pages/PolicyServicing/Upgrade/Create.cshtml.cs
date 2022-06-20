@@ -62,7 +62,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
 
             UpgradeInfo.Date = ""; UpgradeInfo.Component = ""; UpgradeInfo.Cover_Amount = "";
             successMessage = "New Upgrade Component Added Successfully";
-            Response.Redirect("/Upgrade/Index");
+            Response.Redirect("/PolicyServicing/Upgrade");
         }
     }
 }

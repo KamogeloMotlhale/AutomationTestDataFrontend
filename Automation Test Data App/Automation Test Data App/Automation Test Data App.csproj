@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\PolicyServicing\NewFolder\**" />
+    <Content Remove="Pages\PolicyServicing\NewFolder\**" />
+    <EmbeddedResource Remove="Pages\PolicyServicing\NewFolder\**" />
+    <None Remove="Pages\PolicyServicing\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
@@ -16,7 +23,6 @@
   <ItemGroup>
     <Folder Include="Pages\PolicyServicing\AddRole_NextMonth\" />
     <Folder Include="Pages\PolicyServicing\ChangeBeneData\" />
-    <Folder Include="Pages\PolicyServicing\NewFolder\" />
   </ItemGroup>
 
 </Project>
