@@ -27,8 +27,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3QnVzaW5lc3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddBeneficiary/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZEJlbmVmaWNpYXJ5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/ChangelifeData/Addalife/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXENoYW5nZWxpZmVEYXRhXEFkZGFsaWZlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/ChangelifeData/Addalife/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXENoYW5nZWxpZmVEYXRhXEFkZGFsaWZlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992107/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Index.cshtml]
