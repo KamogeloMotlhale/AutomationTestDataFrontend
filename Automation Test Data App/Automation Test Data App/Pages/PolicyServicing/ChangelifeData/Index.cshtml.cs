@@ -16,7 +16,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM AddaLife";
+                    String sql = "SELECT * FROM ChangelifeData";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using(SqlDataReader reader = command.ExecuteReader()) 
