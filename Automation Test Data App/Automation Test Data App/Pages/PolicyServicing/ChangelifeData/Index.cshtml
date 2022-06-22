@@ -1,0 +1,39 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData.IndexModel
+@{
+}
+
+<br>
+<h2> Change life Assured Data</h2>
+<a class='btn btn-primary btn-sm' href='ChangelifeData/Create'>New Life Assured </a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID<th/>
+			<th>Title<th/>
+			<th>Surname<th/>
+			<th>MaritalStatus<th/>
+			<th>EducationLevel<th/>
+			<th>Department<th/>
+			<th>Profession<th/>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListChangelifeData)
+		{
+
+			<tr>
+				<td>@item.id</td>
+				<td>@item.Title</td>
+				<td>@item.Surname</td>
+				<td>@item.MaritalStatus</td>
+				<td>@item.EducationLevel</td>
+				<td>@item.Department</td>
+				<td>@item.Profession</td>
+			
+			</tr>
+		}
+
+	</tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData.IndexModel
+@{
+}
+
+<br>
+<h2>Collection Method Data</h2>
+<a class='btn btn-primary btn-sm' href='CollectionMethodData/Create'> ChangeCollectionMethodData</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID<th/>
+			<th>employee_number1<th/>
+			<th>employee_number2<th/>
+
+
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListChangeCollectionMethod)
+		{
+
+			<tr>
+				<td>@item.id</td>
+				<td>@item.employee_number1</td>
+				<td>@item.employee_number2</td>
+				
+				
+			</tr>
+		}
+
+	</tbody>
+</table>
