@@ -6,27 +6,3 @@
 <br>
 <h2>Upgrade</h2>
 <a class='btn btn-primary btn-sm' href='Upgrade/Create'>Upgrade Component</a>
-<table class="table">
-	<thead>
-		<tr>
-			<th>ID<th/>
-			<th>Date<th/>
-			<th>Component<th/>
-			<th>Cover_Amount<th/>
-
-	</thead>
-	<tbody>
-		@foreach (var item in Model.ListUpgrade)
-		{
-
-			<tr>
-				<td>@item.id</td>
-				<td>@item.Date</td>
-				<td>@item.Component</td>
-				<td>@item.Cover_Amount</td>
-				
-			</tr>
-		}
-
-	</tbody>
-</table>
