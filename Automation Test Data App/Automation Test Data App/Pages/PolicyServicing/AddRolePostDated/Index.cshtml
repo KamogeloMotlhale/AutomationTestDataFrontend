@@ -3,40 +3,5 @@
 @{
 }
 <br>
-<h2>Additional Life Assured </h2>
-<a class='btn btn-primary btn-sm' href='Addalife/Create'>New Life Assured</a>
-<table class="table">
-	<thead>
-		<tr>
-			<th>ID<th/>
-			<th>Title<th/>
-			<th>First_Name<th/>
-			<th>Surname<th/>
-			<th>Initials<th/>
-			<th>dob<th/>
-			<th>Gender<th/>
-			<th>ID_number<th/>
-			<th>Relationship<th/>
-			<th>Comm_date<th/>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model.ListAddRolePlayer)
-		{
-
-			<tr>
-				<td>@item.id</td>
-				<td>@item.Title</td>
-				<td>@item.First_Name</td>
-				<td>@item.Surname</td>
-				<td>@item.Initials</td>
-				<td>@item.dob</td>
-				<td>@item.Gender</td>
-				<td>@item.ID_number</td>
-				<td>@item.Relationship</td>
-				<td>@item.Comm_date</td>
-			</tr>
-		}
-
-	</tbody>
-</table>
+<h2>Add Post Dated Roleplayer </h2>
+<a class='btn btn-primary btn-sm' href='AddRolePostDated/Create'>New Life Assured</a>
