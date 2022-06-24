@@ -6,54 +6,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
 {
     public class IndexModel : PageModel
     {
-        public List<AddaLifeInfo> ListAddaLife = new List<AddaLifeInfo>();
-        public void OnGet()
-        {
-            try
-            { 
-              String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection (connectionString))
-                {
-
-                    connection.Open();
-                    String sql = "SELECT * FROM AddaLife";
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using(SqlDataReader reader = command.ExecuteReader()) 
-                        while(reader.Read())
-                         {
-
-                                AddaLifeInfo addaLifeInfo = new AddaLifeInfo();
-                                addaLifeInfo.id =""+ reader.GetInt32(0);
-                                addaLifeInfo.Title = reader.GetString(1);
-                                addaLifeInfo.First_Name = reader.GetString(2);
-                                addaLifeInfo.Surname = reader.GetString(3);
-                                addaLifeInfo.Initials = reader.GetString(4);
-                                addaLifeInfo.dob = reader.GetString(5);
-                                addaLifeInfo.Gender = reader.GetString(6);
-                                addaLifeInfo.ID_number = reader.GetString(7);
-                                addaLifeInfo.Relationship = reader.GetString(8);
-                                addaLifeInfo.Comm_date = reader.GetString(9);
-
-                                ListAddaLife.Add(addaLifeInfo);
-                         }
-
-
-                    }
-
-                }
-            
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Exception:" + ex.ToString());
-
-            }
-
-
-
-
-        }
+       
     }
 
     public class AddaLifeInfo 
