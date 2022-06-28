@@ -96,3 +96,14 @@ C:\Users\G992107\Documents\GitHub\AutomationTestDataFrontend\Automation Test Dat
 C:\Users\G992107\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\ref\Automation Test Data App.dll
 C:\Users\G992107\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\xunit.abstractions.dll
 C:\Users\G992107\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\xunit.core.dll
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.AssemblyReference.cache
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.AssemblyInfoInputs.cache
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.AssemblyInfo.cs
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.CoreCompileInputs.cache
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.RazorAssemblyInfo.cache
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.RazorAssemblyInfo.cs
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.dll
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\refint\Automation Test Data App.dll
+C:\Users\G992107\Documents\Automation\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.pdb
