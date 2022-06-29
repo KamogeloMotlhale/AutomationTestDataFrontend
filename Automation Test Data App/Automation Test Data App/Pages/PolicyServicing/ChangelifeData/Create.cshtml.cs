@@ -18,12 +18,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData
         {
             ChangelifeDataInfo.Title = Request.Form["Title"];
             ChangelifeDataInfo.Surname = Request.Form["Surname"];
+            ChangelifeDataInfo.Title = Request.Form["Initials"];
             ChangelifeDataInfo.MaritalStatus = Request.Form["MaritalStatus"];
             ChangelifeDataInfo.EducationLevel = Request.Form["EducationLevel"];
             ChangelifeDataInfo.Department = Request.Form["Department"];
             ChangelifeDataInfo.Profession = Request.Form["Profession"];
            
-            if(ChangelifeDataInfo.Title.Length == 0 || ChangelifeDataInfo.Surname.Length == 0 ||
+            if(ChangelifeDataInfo.Title.Length == 0 || ChangelifeDataInfo.Surname.Length == 0 || ChangelifeDataInfo.Initals.Length == 0 ||
                ChangelifeDataInfo.MaritalStatus.Length == 0 || ChangelifeDataInfo.EducationLevel.Length == 0 || ChangelifeDataInfo.Department.Length == 0 ||
                ChangelifeDataInfo.Profession.Length == 0 )
             {
@@ -40,8 +41,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData
                 {
                     connection.Open();
                     String sql = "INSERT INTO ChangelifeData " +
-                                "(Title,  Surname, MaritalStatus, EducationLevel, Department, Profession) VALUES" +
-                                "(@Title, @Surname, @MaritalStatus, @EducationLevel, @Department, @Profession);";
+                                "(Title,  Surname,Initials, MaritalStatus, EducationLevel, Department, Profession) VALUES" +
+                                "(@Title, @Surname,@Initials, @MaritalStatus, @EducationLevel, @Department, @Profession);";
 
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -49,6 +50,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData
 
                         command.Parameters.AddWithValue("@Title", ChangelifeDataInfo.Title);
                         command.Parameters.AddWithValue("@Surname", ChangelifeDataInfo.Surname);
+                        command.Parameters.AddWithValue("@Initials", ChangelifeDataInfo.Surname);
                         command.Parameters.AddWithValue("@MaritalStatus", ChangelifeDataInfo.MaritalStatus);
                         command.Parameters.AddWithValue("@EducationLevel", ChangelifeDataInfo.EducationLevel);
                         command.Parameters.AddWithValue("@Department", ChangelifeDataInfo.Department);

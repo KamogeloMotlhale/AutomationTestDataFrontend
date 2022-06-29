@@ -14,6 +14,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangelifeData
         public String id;
         public String Title;
         public String Surname;
+        public String Initials;
         public String MaritalStatus;
         public String EducationLevel;
         public String Department;

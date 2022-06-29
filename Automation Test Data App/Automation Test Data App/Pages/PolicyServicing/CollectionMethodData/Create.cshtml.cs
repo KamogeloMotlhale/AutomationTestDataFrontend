@@ -41,7 +41,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@employee_number1", ChangeCollectionMethodInfo.employee_number1);
-                        command.Parameters.AddWithValue("@employee_number", ChangeCollectionMethodInfo.employee_number2);
+                        command.Parameters.AddWithValue("@employee_number2", ChangeCollectionMethodInfo.employee_number2);
                  
                         ;
 
@@ -61,7 +61,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
 
             ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = "";
             successMessage = "New Change Collection Method Data  Added Successfully";
-            Response.Redirect("/PolicyServicing/CollectionMethod");
+            Response.Redirect("/PolicyServicing/CollectionMethodData");
         }
     }
 }
