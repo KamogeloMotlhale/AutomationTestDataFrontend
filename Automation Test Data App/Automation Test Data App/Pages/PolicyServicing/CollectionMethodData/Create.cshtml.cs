@@ -18,14 +18,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
         {
             ChangeCollectionMethodInfo.employee_number1 = Request.Form["employee_number1"];
             ChangeCollectionMethodInfo.employee_number2 = Request.Form["employee_number2"];
-           
 
-            if(ChangeCollectionMethodInfo.employee_number1.Length == 0|| ChangeCollectionMethodInfo.employee_number2.Length == 0)
+            if (ChangeCollectionMethodInfo.employee_number1.Length == 0 || ChangeCollectionMethodInfo.employee_number2.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
-                  
+
             }
+
             //save new Life assured to DB
             try 
             {
@@ -59,9 +59,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                 return;
             }
 
-            ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = "";
-            successMessage = "New Change Collection Method Data  Added Successfully";
-            Response.Redirect("/PolicyServicing/CollectionMethodData");
+        
+           
+              //ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = "";
+                successMessage = "New Change Collection Method Data  Added Successfully";
+                Response.Redirect("/PolicyServicing/CollectionMethodData");
+            
+           
         }
     }
 }

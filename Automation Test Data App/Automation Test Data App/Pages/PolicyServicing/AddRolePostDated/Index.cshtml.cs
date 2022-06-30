@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.AddRolePostDated
+namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
 {
     public class IndexModel : PageModel
     {

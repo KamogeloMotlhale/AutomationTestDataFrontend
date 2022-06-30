@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.AddRolePlayer
+namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
 {
     public class IndexModel : PageModel
     {
