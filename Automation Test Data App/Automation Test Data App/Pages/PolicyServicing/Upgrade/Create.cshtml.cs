@@ -52,6 +52,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
 
 
                 }
+                UpgradeInfo.Date = ""; UpgradeInfo.Component = ""; UpgradeInfo.Cover_Amount = "";
+                successMessage = "New Upgrade Component Added Successfully";
+                return;
 
             }
             catch(Exception ex)
@@ -60,9 +63,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
                 return;
             }
 
-            UpgradeInfo.Date = ""; UpgradeInfo.Component = ""; UpgradeInfo.Cover_Amount = "";
-            successMessage = "New Upgrade Component Added Successfully";
-            Response.Redirect("/PolicyServicing/Upgrade");
+        
+            //Response.Redirect("/PolicyServicing/Upgrade");
         }
     }
 }

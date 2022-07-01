@@ -52,6 +52,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
 
 
                 }
+                DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
+                successMessage = "New Downgrade Component Added Successfully";
+                return;
 
             }
             catch(Exception ex)
@@ -60,9 +63,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
                 return;
             }
 
-            DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
-            successMessage = "New Downgrade Component Added Successfully";
-            Response.Redirect("/PolicyServicing/Downgrade");
+           
+            
+            /// Response.Redirect("/PolicyServicing/Downgrade");
         }
     }
 }

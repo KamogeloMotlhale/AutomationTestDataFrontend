@@ -157,3 +157,5 @@ C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Dat
 C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.csproj.CopyComplete
 C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\Automation Test Data App.genruntimeconfig.cache
 C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\obj\Debug\net6.0\ref\Automation Test Data App.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\bin\Debug\net6.0\xunit.core.dll
