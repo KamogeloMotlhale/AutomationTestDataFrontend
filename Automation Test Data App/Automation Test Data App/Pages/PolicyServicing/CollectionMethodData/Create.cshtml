@@ -9,6 +9,17 @@
 		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
 	</div>
 }
+	
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
 
 <br>
 <h2>Change Collection Method Component</h2>
@@ -27,18 +38,6 @@
 			<input type="text" class="form-control" name="employee_number2" value="@Model.ChangeCollectionMethodInfo.employee_number2">	
 		</div>
 	</div>
-
-	
-	@if (Model.successMessage.Length > 0) {
-	<div class="row mb-3">
-		<div class="row mb-9">
-			<div class='alert alert-success alert-dismissible fade show' role='alert'>
-			<strong>@Model.successMessage</strong>
-			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
-			</div>
-		</div>
-	</div>
-	}
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">

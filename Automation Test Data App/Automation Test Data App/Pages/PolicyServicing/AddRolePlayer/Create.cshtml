@@ -2,12 +2,23 @@
 @model Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer.CreateModel
 @{
 }
-@if(Model.errorMessage.Length > 0){
+@@if(Model.errorMessage.Length > 0){
 	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
 		<strong>@Model.errorMessage</strong>
 		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
 	</div>
 }
+	
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
 
 <br>
 <h2>New Life Assured</h2>
@@ -75,17 +86,6 @@
 			<input type="text" class="form-control" name="Comm_date" value="@Model.addRolePlayerInfo.Comm_date">	
 		</div>
 	</div>
-
-	@if (Model.successMessage.Length > 0) {
-	<div class="row mb-3">
-		<div class="row mb-9">
-			<div class='alert alert-success alert-dismissible fade show' role='alert'>
-			<strong>@Model.successMessage</strong>
-			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
-			</div>
-		</div>
-	</div>
-	}
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">

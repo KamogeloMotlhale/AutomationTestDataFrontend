@@ -61,8 +61,9 @@ namespace Automation_Test_Data_App.Pages.Addalife
                         command.ExecuteNonQuery();
 
                     }
-
-
+                    AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
+                    successMessage = "New Life Assured Added Successfully";
+                    
                 }
 
             }
@@ -72,9 +73,6 @@ namespace Automation_Test_Data_App.Pages.Addalife
                 return;
             }
 
-            AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
-            successMessage = "New Life Assured Added Successfully";
-            Response.Redirect("/Additional Life Assured/Index");
         }
     }
 }

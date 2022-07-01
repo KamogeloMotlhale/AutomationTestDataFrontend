@@ -62,8 +62,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
 
                     }
 
-
                 }
+
+                addRolePlayerInfo.Title = ""; addRolePlayerInfo.First_Name = ""; addRolePlayerInfo.Surname = ""; addRolePlayerInfo.Initials = ""; addRolePlayerInfo.dob = ""; addRolePlayerInfo.Gender = ""; addRolePlayerInfo.ID_number = ""; addRolePlayerInfo.Relationship = ""; addRolePlayerInfo.Comm_date = "";
+                successMessage = "New Life Assured Added Successfully";
 
             }
             catch (Exception ex)
@@ -72,9 +74,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
                 return;
             }
 
-            addRolePlayerInfo.Title = ""; addRolePlayerInfo.First_Name = ""; addRolePlayerInfo.Surname = ""; addRolePlayerInfo.Initials = ""; addRolePlayerInfo.dob = ""; addRolePlayerInfo.Gender = ""; addRolePlayerInfo.ID_number = ""; addRolePlayerInfo.Relationship = ""; addRolePlayerInfo.Comm_date = "";
-            successMessage = "New Life Assured Added Successfully";
-            Response.Redirect("/Additional Life Assured/Index");
+            
+            //Response.Redirect("/Additional Life Assured/Index");
         }
     }
 }

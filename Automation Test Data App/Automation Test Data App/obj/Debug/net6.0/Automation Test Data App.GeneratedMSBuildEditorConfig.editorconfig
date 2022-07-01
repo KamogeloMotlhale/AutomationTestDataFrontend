@@ -8,97 +8,97 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Automation_Test_Data_App
 build_property.RootNamespace = Automation_Test_Data_App
-build_property.ProjectDir = C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\
+build_property.ProjectDir = C:\Users\G992107\Documents\Github\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App
+build_property.MSBuildProjectDirectory = C:\Users\G992107\Documents\Github\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Error.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/NewBusiness/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/NewBusiness/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3QnVzaW5lc3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddBeneficiary/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddBeneficiary/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZEJlbmVmaWNpYXJ5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePlayer/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePlayer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQbGF5ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePlayer/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePlayer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQbGF5ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/CollectionMethodData/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/CollectionMethodData/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXENvbGxlY3Rpb25NZXRob2REYXRhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/CollectionMethodData/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/CollectionMethodData/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXENvbGxlY3Rpb25NZXRob2REYXRhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Downgrade/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Downgrade/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXERvd25ncmFkZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Downgrade/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Downgrade/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXERvd25ncmFkZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Upgrade/Create.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Upgrade/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFVwZ3JhZGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Upgrade/Index.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Upgrade/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFVwZ3JhZGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Privacy.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/_ViewImports.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/_ViewStart.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_Layout.cshtml]
+[C:/Users/G992107/Documents/Github/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xlzg1pjye1

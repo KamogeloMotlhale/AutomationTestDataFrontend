@@ -49,8 +49,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
 
                     }
 
-
                 }
+                ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = "";
+                successMessage = "New Change Collection Method Data  Added Successfully";
 
             }
             catch(Exception ex)
@@ -59,12 +60,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                 return;
             }
 
-        
-           
-              //ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = "";
-                successMessage = "New Change Collection Method Data  Added Successfully";
-                Response.Redirect("/PolicyServicing/CollectionMethodData");
-            
+               // Response.Redirect("/PolicyServicing/CollectionMethodData");
            
         }
     }
