@@ -13,6 +13,8 @@
 			<th>Date<th/>
 			<th>Component<th/>
 			<th>Cover_Amount<th/>
+			<th>Action<th/>
+
 
 
 	</thead>
@@ -28,6 +30,11 @@
 				<td>@item.Component</td>
 				<td></td>
 				<td>@item.Cover_Amount</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Upgrade/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Upgrade/Delete?id=@item.id">Delete</a>
+
+				</td>
 				
 				
 			</tr>

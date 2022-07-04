@@ -75,6 +75,5 @@ public class UpgradeInfo
     public String Component;
     public String Cover_Amount;
 
-
 }
 
