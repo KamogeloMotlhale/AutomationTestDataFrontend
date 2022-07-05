@@ -51,7 +51,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
         public void OnPost()
         {
 
-            UpgradeInfo.id = Request.Form["id"];
+            
             UpgradeInfo.Date = Request.Form["date"];
             UpgradeInfo.Component = Request.Form["component"];
             UpgradeInfo.Cover_Amount = Request.Form["cover_amount"];
@@ -75,10 +75,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
                                  "WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+
+                        command.Parameters.AddWithValue("@id", Request.Query["id"]);
                         command.Parameters.AddWithValue("@Date", UpgradeInfo.Date);
                         command.Parameters.AddWithValue("@Component", UpgradeInfo.Component);
                         command.Parameters.AddWithValue("@Cover_Amount", UpgradeInfo.Cover_Amount);
-                        command.Parameters.AddWithValue("@id", UpgradeInfo.id);
+                        
 
 
 
