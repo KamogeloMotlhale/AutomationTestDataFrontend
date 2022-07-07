@@ -42,7 +42,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                     {
                         command.Parameters.AddWithValue("@employee_number1", ChangeCollectionMethodInfo.employee_number1);
                         command.Parameters.AddWithValue("@employee_number2", ChangeCollectionMethodInfo.employee_number2);
-                 
+
                         ;
 
                         command.ExecuteNonQuery();

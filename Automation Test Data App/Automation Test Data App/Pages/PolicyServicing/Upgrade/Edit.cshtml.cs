@@ -71,7 +71,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
                 {
                     connection.Open();
                     String sql = "UPDATE UpGrade " +
-                                "SET date=@Date, componenet=@Component, cover_amount=@Cover_Amount " +
+                                "SET Date=@Date, Component=@Component, Cover_amount=@Cover_Amount " +
                                  "WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
