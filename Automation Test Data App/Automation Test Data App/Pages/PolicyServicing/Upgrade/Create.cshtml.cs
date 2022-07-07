@@ -10,6 +10,20 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
         public String errorMessage = "";
         public String successMessage = "";
 
+        public void validateForm()
+        {
+
+            if (UpgradeInfo.Date.Length == 0 || UpgradeInfo.Component.Length == 0 || UpgradeInfo.Cover_Amount.Length == 0)
+            {
+                errorMessage = "All the fields are required";
+                return;
+
+
+
+
+            }
+        }
+
         public void OnGet()
         {
         }
@@ -19,14 +33,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
             UpgradeInfo.Date = Request.Form["Date"];
             UpgradeInfo.Component = Request.Form["Component"];
             UpgradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
+
+            validateForm();
            
 
-            if(UpgradeInfo.Date.Length == 0|| UpgradeInfo.Component.Length == 0 || UpgradeInfo.Cover_Amount.Length == 0)
-            {
-                errorMessage = "All the fields are required";
-                return;
-                  
-            }
             //save new Life assured to DB
             try 
             {
@@ -74,7 +84,6 @@ public class UpgradeInfo
     public String Date;
     public String Component;
     public String Cover_Amount;
-
 
 }
 

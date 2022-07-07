@@ -53,14 +53,17 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Upgrade
         }
     }
 
-        public class UpgradeInfo
-        {
-            public String id;
-            public String Date;
-            public String Component;
-            public String Cover_Amount;
+    public class UpgradeInfo
+    {
+       
+        public String id;
+        public String Date;
+        public String Component;
+        public String Cover_Amount;
 
 
-        }
-    }
+     }
+    
+}
+
 
