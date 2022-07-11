@@ -1,0 +1,91 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData.CreateModel
+@{
+}
+
+@if(Model.errorMessage.Length > 0){
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+	</div>
+}
+	
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
+
+<br>
+<h2>New Life Assured Details </h2>
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Title</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Title" value="@Model.ChangeLifeDataInfo.Title">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Surname</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Surname" value="@Model.ChangeLifeDataInfo.Surname">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Marital Status</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="MaritalStatus" value="@Model.ChangeLifeDataInfo.MaritalStatus">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Education nLevel</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="EducationLevel" value="@Model.ChangeLifeDataInfo.EducationLevel">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Department</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Department" value="@Model.ChangeLifeDataInfo.Department">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Profession</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Profession" value="@Model.ChangeLifeDataInfo.Profession">	
+		</div>
+	</div>
+
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+
+</form>		
+		

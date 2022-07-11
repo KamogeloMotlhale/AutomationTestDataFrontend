@@ -1,11 +1,11 @@
 ﻿@page
-@model Automation_Test_Data_App.Pages.PolicyServicing.Downgrade.IndexModel
+@model Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade.IndexModel
 @{
 }
 
 <br>
-<h2>Downgrade</h2>
-<a class='btn btn-primary btn-sm' href='Downgrade/Create'>Downgrade Component</a>
+<h2>Downgrade/Upgrade Component</h2>
+<a class='btn btn-primary btn-sm' href='ComponentDowngradeUpgrade/Create'>Downgrade/Upgrade Component</a>
 <table class="table">
 	<thead>
 		<tr>
@@ -32,8 +32,8 @@
 				<td>@item.Cover_Amount</td>
 
 				<td>
-					<a class="btn btn-primary btn-sm" href="/Downgrade/Edit?id=@item.id">Edit</a>
-					<a class="btn btn-danger btn-sm" href="/Downgrade/Delete?id=@item.id">Delete</a>
+					<a class="btn btn-primary btn-sm" href="/ComponentDowngradeUpgrade/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/ComponentDowngradeUpgrade/Delete?id=@item.id">Delete</a>
 
 				</td>
 				

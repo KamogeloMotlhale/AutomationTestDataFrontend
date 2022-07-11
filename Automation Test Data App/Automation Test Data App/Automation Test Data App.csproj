@@ -10,22 +10,22 @@
   <ItemGroup>
     <Compile Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <Compile Remove="Pages\PolicyServicing\ChangeBeneData\**" />
-    <Compile Remove="Pages\PolicyServicing\NewFolder\**" />
     <Content Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <Content Remove="Pages\PolicyServicing\ChangeBeneData\**" />
-    <Content Remove="Pages\PolicyServicing\NewFolder\**" />
     <EmbeddedResource Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <EmbeddedResource Remove="Pages\PolicyServicing\ChangeBeneData\**" />
-    <EmbeddedResource Remove="Pages\PolicyServicing\NewFolder\**" />
     <None Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <None Remove="Pages\PolicyServicing\ChangeBeneData\**" />
-    <None Remove="Pages\PolicyServicing\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\PolicyServicing\ChangeLifeData\" />
   </ItemGroup>
 
 </Project>
