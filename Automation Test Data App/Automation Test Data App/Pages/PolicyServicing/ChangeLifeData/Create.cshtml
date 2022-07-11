@@ -28,7 +28,11 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Title" value="@Model.ChangeLifeDataInfo.Title">	
+		<select id='tenure' class="form-control" name="Title" value="@Model.ChangeLifeDataInfo.Title">
+		<option value="Mister">Mr</option>
+		<option value="Mrs">Mrs</option>
+		<option value="Miss">Miss</option>
+		</select>
 		</div>
 	</div>
 

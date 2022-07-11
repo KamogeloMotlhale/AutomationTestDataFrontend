@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
+namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade
 {
     public class CreateModel : PageModel
     {
@@ -65,7 +65,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
 
            
             
-            /// Response.Redirect("/PolicyServicing/Downgrade");
+            Response.Redirect("/PolicyServicing/ComponentDowngradeUpgrade");
         }
     }
 }
