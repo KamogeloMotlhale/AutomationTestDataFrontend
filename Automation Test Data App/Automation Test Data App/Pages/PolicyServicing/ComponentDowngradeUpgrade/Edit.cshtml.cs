@@ -1,9 +1,9 @@
-using Automation_Test_Data_App.Pages.PolicyServicing.Downgrade;
+using Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
+namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade
 {
     public class EditModel : PageModel
     { 
@@ -23,7 +23,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Downgrade
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM Downgrade WHERE id=@id";
+                    String sql = "SELECT * FROM ComponentDowngradeUpgrade WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
