@@ -35,7 +35,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 using (SqlConnection connection = new SqlConnection(connectionString)) 
                 {
                     connection.Open();
-                    String sql = "INSERT INTO ComponentDowngradeUpgrade " +
+                    String sql = "INSERT INTO Downgrade " +
                                 "(Date, Component, Cover_Amount) VALUES" +
                                 "(@Date, @Component, @Cover_Amount);";
 
