@@ -28,7 +28,13 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Title" value="@Model.AddaLifeInfo.Title">	
+		<select id='Title' class="form-control" name="Title" value="@Model.AddaLifeInfo.Title">
+		<option value=""></option>
+		<option value="Mister">Mr</option>
+		<option value="Mrs">Mrs</option>
+		<option value="Miss">Miss</option>
+		<option value="Doctor">Dr</option>
+		</select>
 		</div>
 	</div>
 
@@ -54,16 +60,19 @@
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">dob</label>
+		<label class="col-sm-3 col-form-label">Date of Birth</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="dob" value="@Model.AddaLifeInfo.dob">	
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="dob" value="@Model.AddaLifeInfo.dob">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Gender</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Gender" value="@Model.AddaLifeInfo.Gender">	
+		<select id='Gender' class="form-control" name="Gender" value="@Model.AddaLifeInfo.Gender">
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+		</select>
 		</div>
 	</div>
 
@@ -84,7 +93,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Comm_date</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">	
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">	
 		</div>
 	</div>
 
