@@ -31,7 +31,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-		<select id='Title' class="form-control" name="Title"  value="@Model.AddaLifeInfo.Title">
+		<select id='id' class="form-control" name="Title"  value="@Model.AddaLifeInfo.Title">
 		  <option value=""></option>
 		  <option value="" selected="">&lt;None&gt;</option>
 		  <option value="Adm">Adm</option>
@@ -45,7 +45,7 @@
 		  <option value="HON">Hon</option>
 		  <option value="Lt">Lt</option>
 		  <option value="Maj">Maj</option>
-		  <option value="er_AcPerTitleMES">Messr</option>
+		  <option value="Messr">Messr</option>
 		  <option value="Miss">Miss</option>
 		  <option value="Mr">Mr</option>
 		  <option value="Mrs">Mrs</option>
@@ -99,7 +99,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">ID_number</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="ID_number" value="@Model.AddaLifeInfo.ID_number">	
+			<input type="text" class="form-control" name="ID_number" value="@Model.AddaLifeInfo.ID_number"  minlength="13" maxlength="13">	
 		</div>
 	</div>
 
