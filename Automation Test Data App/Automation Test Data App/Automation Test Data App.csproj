@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\NewBusiness\NewFolder\" />
     <Folder Include="Pages\PolicyServicing\ChangeLifeData\" />
   </ItemGroup>
 
