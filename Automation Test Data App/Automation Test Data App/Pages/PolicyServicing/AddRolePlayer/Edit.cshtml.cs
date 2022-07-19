@@ -23,7 +23,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM AddAddRolePlayerInfoaLife WHERE id=@id";
+                    String sql = "SELECT * FROM AddRolePlayer WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -91,7 +91,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE AddRolePlayerInfo " +
+                    String sql = "UPDATE AddRolePlayer " +
                                  "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date " +
                                  "WHERE id=@id";
 
@@ -107,6 +107,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
                         command.Parameters.AddWithValue("@id", AddRolePlayerInfo.id);
+
 
 
 
