@@ -1,0 +1,106 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.PolicyHolder_Details.IndexModel
+@{
+}
+
+<br>
+<h2>PolicyHolder_Details </h2>
+<a class='btn btn-primary btn-sm' href='PolicyHolder_Details/Create'>New PolicyHolder_Details</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID<th/>
+			<th>Scenario_ID<th/>
+			<th>Town<th/>
+			<th>Employment<th/>
+			<th>First_name<th/>
+			<th>Maiden_Surname<th/>
+			<th>Surname<th/>
+			<th>ID_number<th/>
+			<th>Ethnicity<th/>
+			<th>Marital_Status<th/>
+			<th>CellPhone_number<th/>
+			<th>Email<th/>
+			<th>Nationality<th/>
+			<th>Country_Of_Birth<th/>
+			<th>Country_Of_Residence<th/>
+			<th>Gross<th/>
+			<th>Permanent<th/>
+			<th>Salary_frequency<th/>
+			<th>Gender<th/>
+			<th>ID_number<th/>
+			<th>DOB<th/>
+			<th>Card_Number<th/>
+			<th>Covered<th/>
+			<th>Cover_Amount<th/>
+			<th>Action<th/>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListPolicyHolder_Details)
+		{
+
+			<tr>
+				<td>@item.id</td>
+						<td></td>
+				<td>@item.Scenario_ID</td>
+					<td></td>
+				<td>@item.Town</td>
+					<td></td>
+				<td>@item.Employment</td>
+					<td></td>
+				<td>@item.First_name</td>
+					<td></td>
+				<td>@item.Maiden_Surname</td>
+					<td></td>
+				<td>@item.Surname</td>
+					<td></td>
+				<td>@item.ID_number</td>
+					<td></td>
+				<td>@item.Ethnicity</td>
+					<td></td>
+				<td>@item.Marital_Status</td>
+				<td></td>
+				<td>@item.CellPhone_number</td>
+					<td></td>
+				<td>@item.Email</td>
+					<td></td>
+				<td>@item.ID_number</td>
+					<td></td>
+				<td>@item.Nationality</td>
+					<td></td>
+				<td>@item.Country_Of_Birth</td>
+				<td></td>
+				<td>@item.Country_Of_Residence</td>
+					<td></td>
+				<td>@item.Gross</td>
+					<td></td>
+				<td>@item.Permanent</td>
+					<td></td>
+				<td>@item.Salary_frequency</td>
+					<td></td>
+				<td>@item.Gender</td>
+				<td></td>
+				<td>@item.DOB</td>
+					<td></td>
+				<td>@item.Card_Number</td>
+					<td></td>
+				<td>@item.Covered</td>
+					<td></td>
+				<td>@item.Cover_Amount</td>
+					<td></td>
+
+				<td>
+
+					<a class="btn btn-primary btn-sm" href="/NewBusiness/PolicyHolder_Details/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/NewBusiness/PolicyHolder_Details/Delete?id=@item.id" title="Delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+
+
+				</td>
+				
+
+			</tr>
+		}
+
+	</tbody>
+</table>
