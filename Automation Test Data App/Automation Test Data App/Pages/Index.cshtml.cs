@@ -83,7 +83,7 @@ namespace Automation_Test_Data_App.Pages
                     }
                     else
                     {
-                        errorMessage = "No user with the email " + email;
+                        errorMessage = "No user with the email " + email + "exists";
 
                     }
                     connection.Close();
