@@ -21,7 +21,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
                     {
                         using(SqlDataReader reader = command.ExecuteReader()) 
                         while(reader.Read())
-                         {
+                        {
 
                                 AddaLifeInfo addaLifeInfo = new AddaLifeInfo();
                                 addaLifeInfo.id =""+ reader.GetInt32(0);
