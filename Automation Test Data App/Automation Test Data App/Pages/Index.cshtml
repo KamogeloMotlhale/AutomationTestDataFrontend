@@ -3,27 +3,34 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@if(Model.errorMessage.Length > 0){
-	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-		<strong>@Model.errorMessage</strong>
-		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
-	</div>
-}
-<h4>Login</h4>
-<form method="POST">
+<div class="text-center">
+<h1 class="dispplay-4">File Upload</h1>
+<div/>
+<div class="container">
+
+<div class="mb-3 mt-3">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+<label class="form-label">Upload File</label>
+<input type="file" name="file" class="form-control"/>
+        </div>
+<div class="mb-3">
+
+    <button type="submit" class="btn btn-primary">Upload</button>
 
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Login</button>
+
+</div>
 
 
-</form>		
+
+    </form>
+
+</div>
+
+</div>
+
+
+
+</div>
 		

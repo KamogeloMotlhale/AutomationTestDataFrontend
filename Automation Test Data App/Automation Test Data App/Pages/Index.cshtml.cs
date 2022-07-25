@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 
 namespace Automation_Test_Data_App.Pages
@@ -16,84 +17,109 @@ namespace Automation_Test_Data_App.Pages
             _logger = logger;
         }
 
-        public void SetUserID(string value)
+        //public void SetUserID(string value)
+        //{
+        //    CookieOptions option = new CookieOptions();
+        //    option.Expires = DateTime.Now.AddMinutes(60);
+        //    Response.Cookies.Append("UserID", value, option);
+        //}
+
+
+
+        //public string GetUserID()
+        //{
+        //    string userId = Request.Cookies["UserID"];
+        //    return userId;
+        //}
+        public void OnGet()
         {
-            CookieOptions option = new CookieOptions();
-            option.Expires = DateTime.Now.AddMinutes(60);
-            Response.Cookies.Append("UserID", value, option);
+
+
         }
-
-    
-
-        public string GetUserID()
-        {
-            string userId = Request.Cookies["UserID"];
-            return userId;
-        }
-
         public void OnPost()
         {
-            string email = Request.Form["email"];
-            string password = Request.Form["password"];
+            string fileup = Request.Form["file"];
 
-            if (email.Length == 0 || password.Length == 0)
-            {
-                errorMessage = "All the fields are required";
+            if (fileup.Length == 0) {
+
+                errorMessage = "Please select a file";
                 return;
-
             }
             try
             {
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                var sqlConnStr = "Data Source=PF30FYP5;Integrated Security=True";
+                string con = @"Provider= Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\TestData.xlsx;" + @"Extended Properties='Excel 8.0;HDR=No;'";
+                string tableName = "AddaLife";
+                int colNum = 51;
+                //Row iteration
+                using (OleDbConnection connection = new OleDbConnection(con))
                 {
                     connection.Open();
-                    String sql = "SELECT 1 FROM AspNetUsers WHERE Email = '" + email + "'";
-                    int recCount = 0;
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    OleDbCommand command = new OleDbCommand("select * from [" + tableName + "$]", connection);
+                    using (OleDbDataReader dr = command.ExecuteReader())
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        while (reader.Read())
+                        int rwCount = 0;
+                        String headers = " ";
+                        String headers1 = " ";
+                        while (dr.Read())
                         {
-                                recCount++;
-                        }
-                    }
-
-                    if(recCount > 0)
-                    {
-                        sql = "SELECT Id, PasswordHash FROM AspNetUsers WHERE Email = '" + email+"'";
-
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            while (reader.Read())
+                            String values = "";
+                            //Column iterator
+                            for (int i = 0; i < colNum; i++)
                             {
-                                    if (reader["id"].ToString().Equals(password))
+                                if (rwCount == 0)
+                                {
+                                    headers = headers + dr[i].ToString() + " varchar(255)";
+                                    headers1 = headers1 + dr[i].ToString();
+                                    if (i != (colNum - 1))
                                     {
-                                        SetUserID(reader["Id"].ToString());
-
+                                        headers = headers + ",";
+                                        headers1 = headers1 + ",";
                                     }
-                                    else
+                                }
+                                else
+                                {
+                                    values = values + "'" + dr[i].ToString() + "'";
+                                    if (i != (colNum - 1))
                                     {
-                                        errorMessage = "Incorrect Password";
+                                        values = values + ",";
                                     }
+                                }
                             }
+                            if (rwCount == 0)
+                            {
+                                using (SqlConnection connection1 = new SqlConnection(sqlConnStr))
+                                {
+                                    connection1.Open();
+                                    String sql = "CREATE TABLE " + tableName + " (" + headers + ");";
+                                    using (SqlCommand cmmd = new SqlCommand(sql, connection1))
+                                    {
+                                        cmmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                //Using SQL
+                                using (SqlConnection connection1 = new SqlConnection(sqlConnStr))
+                                {
+                                    connection1.Open();
+                                    String sql = "INSERT INTO SafricanJustFuneral(" + headers1 + ")";
+                                    sql = sql + "VALUES(" + values + ");";
+                                    using (SqlCommand cmmd = new SqlCommand(sql, connection1))
+                                    {
+                                        cmmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+                            rwCount++;
                         }
                     }
-                    else
-                    {
-                        errorMessage = "No user with the email " + email + "exists";
-
-                    }
-                    connection.Close();
-                    return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                errorMessage = ex.Message;
-                return;
+                throw;
             }
 
         }
