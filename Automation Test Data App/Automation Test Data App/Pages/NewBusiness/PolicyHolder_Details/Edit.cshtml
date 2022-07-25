@@ -1,0 +1,276 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details.EditModel
+@{
+}
+
+@if(Model.errorMessage.Length > 0){
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+	</div>
+}
+
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
+<html>
+<br>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float 3 columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 12px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row{
+  grid-row-gap: 30px;
+  grid-auto-rows: 40px;
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+input { 
+   text-align: center; 
+}
+
+</style>
+</head>
+
+<section class="card">
+<form method="POST">
+
+<h2>Personal Details</h2>
+
+<div class="card-section grid-3-section"><div class="input-block">
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+   <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+
+  <div class="row">
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+
+    <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+  
+   <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+
+  
+  <div class="row">
+  <div class="column">
+    <div class="card">
+    <h6>ID Number</h6>
+    <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+    <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+
+
+   <div class="row">
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+<div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+
+  <div class="row">
+<div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+<div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+
+   <div class="row">
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+<div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+  <div class="row">
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+  <div class="row">
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+ <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+     <h6>ID Number</h6>
+      <p><input type="text"  name="ID_number" value="@Model.PolicyHolder_DetailsInfo.ID_number"  minlength="13" maxlength="13">	</p>
+    </div>
+  </div>
+
+
+
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Update</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+</form>		
+<html/>

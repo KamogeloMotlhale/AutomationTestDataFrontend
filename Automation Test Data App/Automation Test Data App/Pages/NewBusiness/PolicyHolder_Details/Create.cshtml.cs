@@ -95,7 +95,7 @@ namespace Automation_Test_Data_App.Pages.PolicyHolder_Details
                         command.ExecuteNonQuery();
 
                     }
-                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.First_Name = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.Initials = ""; PolicyHolder_DetailsInfo.dob = ""; PolicyHolder_DetailsInfo.Gender = ""; PolicyHolder_DetailsInfo.ID_number = ""; PolicyHolder_DetailsInfo.Relationship = ""; PolicyHolder_DetailsInfo.Comm_date = ""; PolicyHolder_DetailsInfo.First_Name = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.Initials = ""; PolicyHolder_DetailsInfo.dob = "";
+                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.Town = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.Worksite = ""; PolicyHolder_DetailsInfo.Employment = ""; PolicyHolder_DetailsInfo.First_name = ""; PolicyHolder_DetailsInfo.Maiden_Surname = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.ID_number = ""; PolicyHolder_DetailsInfo.Ethnicity = ""; PolicyHolder_DetailsInfo.Marital_Status = ""; PolicyHolder_DetailsInfo.CellPhone_number = ""; PolicyHolder_DetailsInfo.Email = "";
                     successMessage = "New Life Assured Added Successfully";
                     
                 }
