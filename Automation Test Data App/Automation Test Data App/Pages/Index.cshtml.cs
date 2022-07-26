@@ -36,18 +36,17 @@ namespace Automation_Test_Data_App.Pages
 
 
         }
-        public void OnPost()
+        public void OnPost(IFormFile file)
         {
-            string fileup = Request.Form["file"];
+            string filel = Request.Form["file"];
 
-            if (fileup.Length == 0) {
-
-                errorMessage = "Please select a file";
-                return;
+            if (filel.Length == 0) {
+              errorMessage = "Please select a file";
+             return;
             }
             try
             {
-                var sqlConnStr = "Data Source=PF30FYP5;Integrated Security=True";
+                var sqlConnStr = "Data Source=PF3LF23T;Integrated Security=True";
                 string con = @"Provider= Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\e697642\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\TestData.xlsx;" + @"Extended Properties='Excel 8.0;HDR=No;'";
                 string tableName = "AddaLife";
                 int colNum = 51;
