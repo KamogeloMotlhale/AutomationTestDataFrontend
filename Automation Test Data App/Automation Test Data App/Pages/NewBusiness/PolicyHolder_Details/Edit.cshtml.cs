@@ -103,14 +103,14 @@ namespace Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details
             PolicyHolder_DetailsInfo.Cover_Amount = Request.Form["Cover_Amount"];
 
 
-            if (PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0 ||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0||
-                PolicyHolder_DetailsInfo.Date.Length == 0 || PolicyHolder_DetailsInfo.Component.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0)
+            if (PolicyHolder_DetailsInfo.Scenario_ID.Length == 0 || PolicyHolder_DetailsInfo.Town.Length == 0 || PolicyHolder_DetailsInfo.Worksite.Length == 0 ||
+                PolicyHolder_DetailsInfo.Employment.Length == 0 || PolicyHolder_DetailsInfo.First_name.Length == 0 || PolicyHolder_DetailsInfo.Maiden_Surname.Length == 0 ||
+                PolicyHolder_DetailsInfo.Surname.Length == 0 || PolicyHolder_DetailsInfo.ID_number.Length == 0 || PolicyHolder_DetailsInfo.Ethnicity.Length == 0 ||
+                PolicyHolder_DetailsInfo.Maiden_Surname.Length == 0 || PolicyHolder_DetailsInfo.CellPhone_number.Length == 0 || PolicyHolder_DetailsInfo.Email.Length == 0||
+                PolicyHolder_DetailsInfo.Nationality.Length == 0 || PolicyHolder_DetailsInfo.Country_Of_Birth.Length == 0 || PolicyHolder_DetailsInfo.Country_Of_Residence.Length == 0||
+                PolicyHolder_DetailsInfo.Gross.Length == 0 || PolicyHolder_DetailsInfo.Permanent.Length == 0 || PolicyHolder_DetailsInfo.Salary_frequency.Length == 0 ||
+                PolicyHolder_DetailsInfo.Gender.Length == 0 || PolicyHolder_DetailsInfo.DOB.Length == 0 || PolicyHolder_DetailsInfo.Card_Number.Length == 0||
+                PolicyHolder_DetailsInfo.Covered.Length == 0 || PolicyHolder_DetailsInfo.Cover_Amount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -125,30 +125,33 @@ namespace Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details
                 {
                     connection.Open();
                     String sql = "UPDATE PolicyHolder_Details " +
-                                 "SET Date=@Date, Component=@Component, Cover_Amount=@Cover_Amount " +
+                                 "SET Scenario_ID=@Scenario_ID, Town=@Town, Worksite=@Worksite, Employment=@Employment, Maiden_Surname=@Maiden_Surname, ID_number=@ID_number, Ethnicity=@Ethnicity, Marital_Status=@Marital_Status, CellPhone_number=@CellPhone_number, Email=@Email, Nationality=@Nationality, Country_Of_Birth=@Country_Of_Birth, Country_Of_Residence=@Country_Of_Residence, Gross@Gross, Permanent=@Permanent, Salary_frequency=@Salary_frequency, Gender=@Gender, DOB=@DOB, Card_Number=@Card_Number, Covered=@Covered, Cover_Amount=@Cover_Amount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", PolicyHolder_DetailsInfo.id);
-                        command.Parameters.AddWithValue("@Date", PolicyHolder_DetailsInfo.Scenario_ID);
-                        command.Parameters.AddWithValue("@Component", PolicyHolder_DetailsInfo.Town);
-                        command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Worksite);
-                        command.Parameters.AddWithValue("@First_name", PolicyHolder_DetailsInfo.id);
-                        command.Parameters.AddWithValue("@Date", PolicyHolder_DetailsInfo.Date);
-                        command.Parameters.AddWithValue("@Component", PolicyHolder_DetailsInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Cover_Amount);
-                        command.Parameters.AddWithValue("@id", PolicyHolder_DetailsInfo.id);
-                        command.Parameters.AddWithValue("@Date", PolicyHolder_DetailsInfo.Date);
-                        command.Parameters.AddWithValue("@Component", PolicyHolder_DetailsInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Cover_Amount);
-                        command.Parameters.AddWithValue("@id", PolicyHolder_DetailsInfo.id);
-                        command.Parameters.AddWithValue("@Date", PolicyHolder_DetailsInfo.Date);
-                        command.Parameters.AddWithValue("@Component", PolicyHolder_DetailsInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Cover_Amount);
-                        command.Parameters.AddWithValue("@id", PolicyHolder_DetailsInfo.id);
-                        command.Parameters.AddWithValue("@Date", PolicyHolder_DetailsInfo.Date);
-                        command.Parameters.AddWithValue("@Component", PolicyHolder_DetailsInfo.Component);
+                        command.Parameters.AddWithValue("@Scenario_ID", PolicyHolder_DetailsInfo.Scenario_ID);
+                        command.Parameters.AddWithValue("@Town", PolicyHolder_DetailsInfo.Town);
+                        command.Parameters.AddWithValue("@Worksite", PolicyHolder_DetailsInfo.Worksite);
+                        command.Parameters.AddWithValue("@Employment", PolicyHolder_DetailsInfo.Employment);
+                        command.Parameters.AddWithValue("@First_name", PolicyHolder_DetailsInfo.First_name);
+                        command.Parameters.AddWithValue("@Maiden_Surname", PolicyHolder_DetailsInfo.Maiden_Surname);
+                        command.Parameters.AddWithValue("@Surname", PolicyHolder_DetailsInfo.Surname);
+                        command.Parameters.AddWithValue("@ID_number", PolicyHolder_DetailsInfo.ID_number);
+                        command.Parameters.AddWithValue("@Ethnicity", PolicyHolder_DetailsInfo.Ethnicity);
+                        command.Parameters.AddWithValue("@Marital_Status", PolicyHolder_DetailsInfo.Marital_Status);
+                        command.Parameters.AddWithValue("@CellPhone_number", PolicyHolder_DetailsInfo.CellPhone_number);
+                        command.Parameters.AddWithValue("@Email", PolicyHolder_DetailsInfo.Email);
+                        command.Parameters.AddWithValue("@Nationality", PolicyHolder_DetailsInfo.Nationality);
+                        command.Parameters.AddWithValue("@Country_Of_Birth", PolicyHolder_DetailsInfo.Country_Of_Birth);
+                        command.Parameters.AddWithValue("@Country_Of_Residence", PolicyHolder_DetailsInfo.Country_Of_Residence);
+                        command.Parameters.AddWithValue("@Gross", PolicyHolder_DetailsInfo.Gross);
+                        command.Parameters.AddWithValue("@Permanent", PolicyHolder_DetailsInfo.Permanent);
+                        command.Parameters.AddWithValue("@Salary_frequency", PolicyHolder_DetailsInfo.Salary_frequency);
+                        command.Parameters.AddWithValue("@Gender", PolicyHolder_DetailsInfo.Gender);
+                        command.Parameters.AddWithValue("@DOB", PolicyHolder_DetailsInfo.DOB);
+                        command.Parameters.AddWithValue("@Card_Number", PolicyHolder_DetailsInfo.Card_Number);
+                        command.Parameters.AddWithValue("@Covered", PolicyHolder_DetailsInfo.Covered);
                         command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Cover_Amount);
 
 
@@ -156,14 +159,14 @@ namespace Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details
                         command.ExecuteNonQuery();
 
                     }
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
-                    PolicyHolder_DetailsInfo.Date = ""; PolicyHolder_DetailsInfo.Component = ""; PolicyHolder_DetailsInfo.PolicyHolder_DetailsInfo = "";
+                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.= ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
 
                 }
 

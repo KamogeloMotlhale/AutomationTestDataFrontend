@@ -61,8 +61,8 @@ namespace Automation_Test_Data_App.Pages.PolicyHolder_Details
                 {
                     connection.Open();
                     String sql = "INSERT INTO PolicyHolder_Details " +
-                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date);";
+                                "(Scenario_ID, Town, Worksite, Employment, Maiden_Surname, ID_number, Ethnicity, Marital_Status, CellPhone_number, Email, Nationality, Country_Of_Birth, Country_Of_Residence, Gross, Permanent, Salary_frequency, Gender, DOB, Card_Number, Covered, Cover_Amount) VALUES" +
+                                "(@Scenario_ID, @Town, @Worksite, @Employment, @Maiden_Surname, @ID_number, @Ethnicity, @Marital_Status, @CellPhone_number, @Country_Of_Birth, @Nationality, @Country_Of_Birth, @Country_Of_Residence, @Gross, @Permanent, @Salary_frequency, @Gender, @DOB, @Card_Number, @Covered, @Cover_Amount);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -75,19 +75,19 @@ namespace Automation_Test_Data_App.Pages.PolicyHolder_Details
                         command.Parameters.AddWithValue("@Surname", PolicyHolder_DetailsInfo.Surname);
                         command.Parameters.AddWithValue("@ID_number", PolicyHolder_DetailsInfo.ID_number);
                         command.Parameters.AddWithValue("@Ethnicity", PolicyHolder_DetailsInfo.Ethnicity);
-                        command.Parameters.AddWithValue("@Comm_date", PolicyHolder_DetailsInfo.Marital_Status);
-                        command.Parameters.AddWithValue("@First_Name", PolicyHolder_DetailsInfo.CellPhone_number);
-                        command.Parameters.AddWithValue("@Surname", PolicyHolder_DetailsInfo.Email);
-                        command.Parameters.AddWithValue("@Initials", PolicyHolder_DetailsInfo.Nationality);
-                        command.Parameters.AddWithValue("@dob", PolicyHolder_DetailsInfo.Country_Of_Birth);
-                        command.Parameters.AddWithValue("@Gender", PolicyHolder_DetailsInfo.Country_Of_Residence);
-                        command.Parameters.AddWithValue("@ID_number", PolicyHolder_DetailsInfo.Gross);
-                        command.Parameters.AddWithValue("@Relationship", PolicyHolder_DetailsInfo.Permanent);
-                        command.Parameters.AddWithValue("@Comm_date", PolicyHolder_DetailsInfo.Salary_frequency); 
-                        command.Parameters.AddWithValue("@Comm_date", PolicyHolder_DetailsInfo.Gender);
-                        command.Parameters.AddWithValue("@First_Name", PolicyHolder_DetailsInfo.DOB);
-                        command.Parameters.AddWithValue("@Initials", PolicyHolder_DetailsInfo.Card_Number);
-                        command.Parameters.AddWithValue("@dob", PolicyHolder_DetailsInfo.Covered);
+                        command.Parameters.AddWithValue("@Marital_Status", PolicyHolder_DetailsInfo.Marital_Status);
+                        command.Parameters.AddWithValue("@CellPhone_number", PolicyHolder_DetailsInfo.CellPhone_number);
+                        command.Parameters.AddWithValue("@Email", PolicyHolder_DetailsInfo.Email);
+                        command.Parameters.AddWithValue("@Nationality", PolicyHolder_DetailsInfo.Nationality);
+                        command.Parameters.AddWithValue("@Country_Of_Birth", PolicyHolder_DetailsInfo.Country_Of_Birth);
+                        command.Parameters.AddWithValue("@Country_Of_Residence", PolicyHolder_DetailsInfo.Country_Of_Residence);
+                        command.Parameters.AddWithValue("@Gross", PolicyHolder_DetailsInfo.Gross);
+                        command.Parameters.AddWithValue("@Permanent", PolicyHolder_DetailsInfo.Permanent);
+                        command.Parameters.AddWithValue("@Salary_frequency", PolicyHolder_DetailsInfo.Salary_frequency); 
+                        command.Parameters.AddWithValue("@Gender", PolicyHolder_DetailsInfo.Gender);
+                        command.Parameters.AddWithValue("@DOB", PolicyHolder_DetailsInfo.DOB);
+                        command.Parameters.AddWithValue("@Card_Number", PolicyHolder_DetailsInfo.Card_Number);
+                        command.Parameters.AddWithValue("@Covered", PolicyHolder_DetailsInfo.Covered);
                         command.Parameters.AddWithValue("@Cover_Amount", PolicyHolder_DetailsInfo.Cover_Amount);
                         
 
