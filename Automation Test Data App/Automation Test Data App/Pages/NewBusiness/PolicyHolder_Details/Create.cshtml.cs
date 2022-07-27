@@ -67,7 +67,7 @@ namespace Automation_Test_Data_App.Pages.PolicyHolder_Details
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Scenario_ID", PolicyHolder_DetailsInfo.Scenario_ID);
-                        command.Parameters.AddWithValue("@Town", PolicyHolder_DetailsInfo.Town);
+                        command.Parameters.AddWithValue("@Town ", PolicyHolder_DetailsInfo.Town);
                         command.Parameters.AddWithValue("@Worksite", PolicyHolder_DetailsInfo.Worksite);
                         command.Parameters.AddWithValue("@Employment", PolicyHolder_DetailsInfo.Employment);
                         command.Parameters.AddWithValue("@First_name", PolicyHolder_DetailsInfo.First_name);
@@ -95,7 +95,15 @@ namespace Automation_Test_Data_App.Pages.PolicyHolder_Details
                         command.ExecuteNonQuery();
 
                     }
-                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.Town = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.Worksite = ""; PolicyHolder_DetailsInfo.Employment = ""; PolicyHolder_DetailsInfo.First_name = ""; PolicyHolder_DetailsInfo.Maiden_Surname = ""; PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.ID_number = ""; PolicyHolder_DetailsInfo.Ethnicity = ""; PolicyHolder_DetailsInfo.Marital_Status = ""; PolicyHolder_DetailsInfo.CellPhone_number = ""; PolicyHolder_DetailsInfo.Email = "";
+                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.Town = ""; PolicyHolder_DetailsInfo.Worksite = "";
+                    PolicyHolder_DetailsInfo.Employment = ""; PolicyHolder_DetailsInfo.First_name = ""; PolicyHolder_DetailsInfo.Maiden_Surname = "";
+                    PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.ID_number = ""; PolicyHolder_DetailsInfo.Ethnicity = "";
+                    PolicyHolder_DetailsInfo.Marital_Status = ""; PolicyHolder_DetailsInfo.CellPhone_number = ""; PolicyHolder_DetailsInfo.Email = "";
+                    PolicyHolder_DetailsInfo.Nationality = ""; PolicyHolder_DetailsInfo.Country_Of_Birth = ""; PolicyHolder_DetailsInfo.Country_Of_Residence = "";
+                    PolicyHolder_DetailsInfo.Gross = ""; PolicyHolder_DetailsInfo.Permanent = ""; PolicyHolder_DetailsInfo.Salary_frequency = "";
+                    PolicyHolder_DetailsInfo.Gender = ""; PolicyHolder_DetailsInfo.DOB = ""; PolicyHolder_DetailsInfo.Card_Number = "";
+                    PolicyHolder_DetailsInfo.Covered = ""; PolicyHolder_DetailsInfo.Cover_Amount = "";
+                    
                     successMessage = "New Life Assured Added Successfully";
                     
                 }

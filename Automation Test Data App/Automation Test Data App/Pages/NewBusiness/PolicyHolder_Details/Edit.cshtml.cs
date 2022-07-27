@@ -63,7 +63,6 @@ namespace Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details
                             }
                         }
 
-
                     }
 
                 }
@@ -159,14 +158,14 @@ namespace Automation_Test_Data_App.Pages.NewBusiness.PolicyHolder_Details
                         command.ExecuteNonQuery();
 
                     }
-                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.= ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
-                    PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = ""; PolicyHolder_DetailsInfo. = "";
+                    PolicyHolder_DetailsInfo.Scenario_ID = ""; PolicyHolder_DetailsInfo.Town = ""; PolicyHolder_DetailsInfo.Worksite = "";
+                    PolicyHolder_DetailsInfo.Employment = ""; PolicyHolder_DetailsInfo.First_name = ""; PolicyHolder_DetailsInfo.Maiden_Surname = "";
+                    PolicyHolder_DetailsInfo.Surname = ""; PolicyHolder_DetailsInfo.ID_number = ""; PolicyHolder_DetailsInfo.Ethnicity = "";
+                    PolicyHolder_DetailsInfo.Marital_Status = ""; PolicyHolder_DetailsInfo.CellPhone_number = ""; PolicyHolder_DetailsInfo.Email = "";
+                    PolicyHolder_DetailsInfo.Nationality = ""; PolicyHolder_DetailsInfo.Country_Of_Birth = ""; PolicyHolder_DetailsInfo.Country_Of_Residence = "";
+                    PolicyHolder_DetailsInfo.Gross = ""; PolicyHolder_DetailsInfo.Permanent = ""; PolicyHolder_DetailsInfo.Salary_frequency = "";
+                    PolicyHolder_DetailsInfo.Gender = ""; PolicyHolder_DetailsInfo.DOB = ""; PolicyHolder_DetailsInfo.Card_Number = "";
+                    PolicyHolder_DetailsInfo.Covered = ""; PolicyHolder_DetailsInfo.Cover_Amount = "";
 
                 }
 
