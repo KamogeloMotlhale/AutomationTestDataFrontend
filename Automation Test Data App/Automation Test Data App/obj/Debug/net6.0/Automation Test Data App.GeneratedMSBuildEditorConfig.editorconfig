@@ -15,8 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\G992127\Documents\GitHub\AutomationTestDataFrontend\Automation Test Data App\Automation Test Data App
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Admin/Users/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQWRkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Admin/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Admin/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Admin/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Index.cshtml]

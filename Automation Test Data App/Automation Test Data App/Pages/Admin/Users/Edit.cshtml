@@ -1,0 +1,42 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Admin.Users.EditModel
+@{
+}
+<h2>Edit Life Assured</h2>
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">User ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="id"  disabled value="@Model.UserInfo.id">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="email" value="@Model.UserInfo.email">	
+		</div>
+	</div>
+
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Gender</label>
+		<div class="col-sm-6">
+		<select id='Gender' class="form-control" name="role">
+		<option value="1">Admin</option>
+		<option value="2">Tester</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/Admin/Users" role="button">Cancel</a>
+		</div>
+	</div>
+
+</form>	
