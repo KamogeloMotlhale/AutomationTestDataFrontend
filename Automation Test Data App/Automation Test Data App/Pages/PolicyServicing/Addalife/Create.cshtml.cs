@@ -12,6 +12,16 @@ namespace Automation_Test_Data_App.Pages.Addalife
 
         public void OnGet()
         {
+            string userId = Request.Cookies["UserID"];
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                return;
+
+            }
         }
 
         public void OnPost()

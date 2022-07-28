@@ -23,6 +23,19 @@ namespace Automation_Test_Data_App.Pages
             Response.Cookies.Append("UserID", value, option);
         }
 
+        public void isLoggedIn()
+        {
+            string id = Request.Cookies["UserID"];
+            if (id == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                return;
+            }
+        }
+
     
 
         public string GetUserID()
@@ -45,10 +58,11 @@ namespace Automation_Test_Data_App.Pages
             try
             {
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                var dbUsId = "";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT 1 FROM AspNetUsers WHERE Email = '" + email + "'";
+                    String sql = "SELECT 1 FROM Users WHERE Email = '" + email + "'";
                     int recCount = 0;
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -62,16 +76,20 @@ namespace Automation_Test_Data_App.Pages
 
                     if(recCount > 0)
                     {
-                        sql = "SELECT Id, PasswordHash FROM AspNetUsers WHERE Email = '" + email+"'";
+                        sql = "SELECT Id, PasswordHash FROM Users WHERE Email = '" + email+"'";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             while (reader.Read())
                             {
-                                    if (reader["id"].ToString().Equals(password))
+                                    if (reader["PasswordHash"].ToString().Equals(password))
                                     {
-                                        SetUserID(reader["Id"].ToString());
+                                        dbUsId = reader["Id"].ToString();
+                                        SetUserID(dbUsId);
+
+
+
 
                                     }
                                     else
@@ -80,14 +98,24 @@ namespace Automation_Test_Data_App.Pages
                                     }
                             }
                         }
+                        connection.Close();
+                        if (dbUsId == "")
+                        {
+                            return;
+
+                        }
+                        else
+                        {
+                            Response.Redirect("home");
+                        }
                     }
                     else
                     {
-                        errorMessage = "No user with the email " + email + "exists";
+                        errorMessage = "No user with the email " + email + " exists";
+                        connection.Close();
 
                     }
-                    connection.Close();
-                    return;
+                  
                 }
             }
             catch (Exception ex)

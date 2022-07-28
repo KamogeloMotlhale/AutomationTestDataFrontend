@@ -7,6 +7,16 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
     {
         public void OnGet()
         {
+            string userId = Request.Cookies["UserID"];
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                return;
+
+            }
         }
     }
 }

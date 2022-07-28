@@ -9,6 +9,16 @@ namespace Automation_Test_Data_App.Pages.Addalife
         public List<AddaLifeInfo> ListAddaLife = new List<AddaLifeInfo>();
         public void OnGet()
         {
+            string userId = Request.Cookies["UserID"];
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                return;
+
+            }
             try
             { 
               String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";

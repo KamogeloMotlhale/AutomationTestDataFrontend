@@ -1,0 +1,66 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    try
+    {
+            string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+            string userId = Request.Cookies["UserID"];
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                String roleId = "0";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "SELECT FK_Role_Id  FROM Users WHERE  id = '" + userId+"'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                roleId = reader["FK_Role_Id"].ToString();
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+                if (Int32.Parse(roleId) == 2)
+                {
+                    
+ 
+                    Response.Redirect("/");
+                }
+            }
+
+
+
+        String id = Request.Query["id"];
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            String sql = "DELETE FROM  Users WHERE id=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
+
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+
+    }
+    Response.Redirect("/PolicyServicing/AddRolePlayer");
+
+
+}
