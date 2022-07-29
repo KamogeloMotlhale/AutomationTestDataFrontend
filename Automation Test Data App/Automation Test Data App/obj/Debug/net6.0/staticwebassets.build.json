@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nKJmrmzHJjatH71irdxAma50qzjRCAI4EM6wVw4Mr/s=",
+  "Hash": "g7pGKdbCpe1AS2BOTLLlo4A8MrDYkLi/GzZSw9PwgLQ=",
   "Source": "Automation Test Data App",
   "BasePath": "_content/Automation Test Data App",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\wwwroot\\ojpytk0rasufeqeu1knx.png",
+      "SourceId": "Automation Test Data App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\wwwroot\\",
+      "BasePath": "_content/Automation Test Data App",
+      "RelativePath": "ojpytk0rasufeqeu1knx.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ojpytk0rasufeqeu1knx.png"
     }
   ]
 }

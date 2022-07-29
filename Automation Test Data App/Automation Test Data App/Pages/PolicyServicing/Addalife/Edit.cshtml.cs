@@ -34,7 +34,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM AddaLife WHERE id=@id";
+                    String sql = "SELECT * FROM AddaLife WHERE id=@id"; 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 

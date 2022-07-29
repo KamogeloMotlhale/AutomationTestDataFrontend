@@ -24,7 +24,7 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM User WHERE id= '"+id+"'";
+                    String sql = "SELECT * FROM Users WHERE id= '"+id+"'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -36,7 +36,7 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
 
                                 UserInfo.id =  reader["Id"].ToString();
                                 UserInfo.email = reader["email"].ToString();
-                                UserInfo.role = reader["role"].ToString();
+                                UserInfo.role = reader["FK_Role_Id"].ToString();
 
                             }
 
@@ -75,8 +75,8 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE  User" +
-                                 "SET email=@email, role=@role" +
+                    String sql = "UPDATE  Users" +
+                                 "SET email=@email, FK_Role_Id=@role" +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))

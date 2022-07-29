@@ -6,7 +6,7 @@
 
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="mt-2 col-sm-6">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Policy Servicing</h5>
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
+  <div class="mt-2  col-sm-6">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">New Business</h5>
@@ -24,4 +24,19 @@
       </div>
     </div>
   </div>
+
+
+
+@if(Model._isAdminUser){
+	
+   <div class="mt-2 col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Manage Users</h5>
+        <p class="card-text"> Admin users can create , update and delete users of the system </p>
+        <a href="/admin/users/" class="btn btn-primary">Start adding test data </a>
+      </div>
+    </div>
+  </div>
+ }
 </div>
