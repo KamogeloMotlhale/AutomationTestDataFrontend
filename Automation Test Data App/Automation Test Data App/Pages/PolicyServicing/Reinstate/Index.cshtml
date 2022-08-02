@@ -1,0 +1,45 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade.IndexModel
+@{
+}
+
+<br>
+<h2>Downgrade/Upgrade Component</h2>
+<a class='btn btn-primary btn-sm' href='ComponentDowngradeUpgrade/Create'>Downgrade/Upgrade Component</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID<th/>
+			<th>Date<th/>
+			<th>Component<th/>
+			<th>Cover_Amount<th/>
+			<th>Action<th/>
+
+
+
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListDowngradeComponent)
+		{
+
+			<tr>
+				<td>@item.id</td>
+				<td></td>
+				<td>@item.Date</td>
+				<td></td>
+				<td>@item.Component</td>
+				<td></td>
+				<td>@item.Cover_Amount</td>
+
+				<td>
+					<a class="btn btn-primary btn-sm" href="/ComponentDowngradeUpgrade/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/PolicyServicing/ComponentDowngradeUpgrade/Delete?id=@item.id" title="Delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+
+				</td>
+				
+				
+			</tr>
+		}
+
+	</tbody>
+</table>
