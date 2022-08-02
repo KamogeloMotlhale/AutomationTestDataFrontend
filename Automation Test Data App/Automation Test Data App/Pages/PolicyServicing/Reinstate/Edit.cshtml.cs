@@ -1,13 +1,13 @@
-using Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade;
+using Automation_Test_Data_App.Pages.PolicyServicing.Reinstate;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade
+namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 {
     public class EditModel : PageModel
     { 
-    public DowngradeInfo DowngradeInfo = new DowngradeInfo();
+    public ReinstateInfo ReinstateInfo = new ReinstateInfo();
     public String errorMessage = "";
     public String successMessage = "";
 
@@ -23,7 +23,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM ComponentDowngradeUpgrade WHERE id=@id";
+                    String sql = "SELECT * FROM Reinstate WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -34,10 +34,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                             if (reader.Read())
                             {
 
-                                DowngradeInfo.id = "" + reader.GetInt32(0);
-                                DowngradeInfo.Date = reader.GetString(1);
-                                DowngradeInfo.Component = reader.GetString(2);
-                                DowngradeInfo.Cover_Amount = reader.GetString(3);
+                                ReinstateInfo.id = "" + reader.GetInt32(0);
+                                ReinstateInfo.Date = reader.GetString(1);
+                                ReinstateInfo.Component = reader.GetString(2);
+                                ReinstateInfo.Cover_Amount = reader.GetString(3);
                            
                               
 
@@ -59,13 +59,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
 
         public void OnPost()
         {
-            DowngradeInfo.id = Request.Form["id"];
-            DowngradeInfo.Date = Request.Form["Date"];
-            DowngradeInfo.Component = Request.Form["Component"];
-            DowngradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
+            ReinstateInfo.id = Request.Form["id"];
+            ReinstateInfo.Date = Request.Form["Date"];
+            ReinstateInfo.Component = Request.Form["Component"];
+            ReinstateInfo.Cover_Amount = Request.Form["Cover_Amount"];
           
 
-            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Component.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
+            if (ReinstateInfo.Date.Length == 0 || ReinstateInfo.Component.Length == 0 || ReinstateInfo.Cover_Amount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -79,23 +79,23 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE Downgrade " +
+                    String sql = "UPDATE Reinstate " +
                                  "SET Date=@Date, Component=@Component, Cover_Amount=@Cover_Amount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", DowngradeInfo.id);
-                        command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
-                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
+                        command.Parameters.AddWithValue("@id", ReinstateInfo.id);
+                        command.Parameters.AddWithValue("@Date", ReinstateInfo.Date);
+                        command.Parameters.AddWithValue("@Component", ReinstateInfo.Component);
+                        command.Parameters.AddWithValue("@Cover_Amount", ReinstateInfo.Cover_Amount);
                        
                   
 
                         command.ExecuteNonQuery();
 
                     }
-                    DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
+                    ReinstateInfo.Date = ""; ReinstateInfo.Component = ""; ReinstateInfo.Reason = "";
 
                 }
 

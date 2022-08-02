@@ -6,7 +6,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 {
     public class IndexModel : PageModel
     {
-        Cancelpolicy
+        
     public List<CancelpolicyInfo> ListCancelpolicy = new List<CancelpolicyInfo>();
     public void OnGet()
     {
@@ -27,11 +27,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                                 CancelpolicyInfo CancelpolicyInfo = new CancelpolicyInfo();
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
                                 CancelpolicyInfo.Date = reader.GetString(1);
-                                CancelpolicyInfo.Component = reader.GetString(2);
+                                CancelpolicyInfo.Reason = reader.GetString(2);
 
 
 
-                                .Add(CancelpolicyInfo);
+                                ListCancelpolicy.Add(CancelpolicyInfo);
                         }
 
 
@@ -56,7 +56,7 @@ public class CancelpolicyInfo
         public String id;
         public String Date;
         public String Component;
-        public String Cover_Amount;
+        public String Reason;
   
 
     }
