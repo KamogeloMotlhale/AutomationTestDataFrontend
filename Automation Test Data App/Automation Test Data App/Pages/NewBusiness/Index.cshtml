@@ -2,4 +2,38 @@
 @model Automation_Test_Data_App.Pages.NewBusiness.IndexModel
 @{
 }
+@{
+    ViewData["Title"] = "Home page";
+}
 <h1>New Business</h1>
+
+<div class="text-center">
+<h1 class="dispplay-4">File Upload</h1>
+<div/>
+<div class="container">
+
+<div class="mb-3 mt-3">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+<label class="form-label">Upload File</label>
+<input type="file" name="file" class="form-control"/>
+        </div>
+<div class="mb-3">
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+
+
+
+</div>
+
+
+
+    </form>
+
+</div>
+
+</div>
+
+
+
+</div>
