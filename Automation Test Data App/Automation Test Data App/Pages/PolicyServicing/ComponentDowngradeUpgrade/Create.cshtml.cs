@@ -17,11 +17,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
         public void OnPost()
         {
             DowngradeInfo.Date = Request.Form["Date"];
-            DowngradeInfo.Component = Request.Form["Component"];
+            DowngradeInfo.Method = Request.Form["Method"];
             DowngradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
            
 
-            if(DowngradeInfo.Date.Length == 0|| DowngradeInfo.Component.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
+            if(DowngradeInfo.Date.Length == 0|| DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,13 +36,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 {
                     connection.Open();
                     String sql = "INSERT INTO ComponentDowngradeUpgrade " +
-                                "(Date, Component, Cover_Amount) VALUES" +
-                                "(@Date, @Component, @Cover_Amount);";
+                                "(Date, Method, Cover_Amount) VALUES" +
+                                "(@Date, @Method, @Cover_Amount);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
-                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Component);
+                        command.Parameters.AddWithValue("@Method", DowngradeInfo.Method);
                         command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
                         ;
 
@@ -52,7 +52,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
 
 
                 }
-                DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
+                DowngradeInfo.Date = ""; DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = "";
                 successMessage = "New Downgrade Component Added Successfully";
                 return;
 

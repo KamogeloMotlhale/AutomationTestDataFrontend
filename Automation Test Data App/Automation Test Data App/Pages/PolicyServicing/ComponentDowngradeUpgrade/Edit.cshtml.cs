@@ -36,7 +36,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
 
                                 DowngradeInfo.id = "" + reader.GetInt32(0);
                                 DowngradeInfo.Date = reader.GetString(1);
-                                DowngradeInfo.Component = reader.GetString(2);
+                                DowngradeInfo.Method = reader.GetString(2);
                                 DowngradeInfo.Cover_Amount = reader.GetString(3);
 
 
@@ -61,11 +61,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
         {
             DowngradeInfo.id = Request.Form["id"];
             DowngradeInfo.Date = Request.Form["Date"];
-            DowngradeInfo.Component = Request.Form["Component"];
+            DowngradeInfo.Method = Request.Form["Method"];
             DowngradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
 
 
-            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Component.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
+            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -80,14 +80,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 {
                     connection.Open();
                     String sql = "UPDATE Downgrade " +
-                                 "SET Date=@Date, Component=@Component, Cover_Amount=@Cover_Amount " +
+                                 "SET Date=@Date, Method=@Method, Cover_Amount=@Cover_Amount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", DowngradeInfo.id);
                         command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
-                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Component);
+                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Method);
                         command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
 
 
@@ -95,7 +95,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                         command.ExecuteNonQuery();
 
                     }
-                    DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
+                    DowngradeInfo.Date = ""; DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = "";
 
                 }
 

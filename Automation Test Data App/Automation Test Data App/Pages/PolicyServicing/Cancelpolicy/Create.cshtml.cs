@@ -17,11 +17,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnPost()
         {
             CancelpolicyInfo.Date = Request.Form["Date"];
-            CancelpolicyInfo.Component = Request.Form["Component"];
             CancelpolicyInfo.Reason = Request.Form["Reason"];
            
 
-            if(CancelpolicyInfo.Date.Length == 0|| CancelpolicyInfo.Component.Length == 0 || CancelpolicyInfo.Reason.Length == 0)
+            if(CancelpolicyInfo.Date.Length == 0|| CancelpolicyInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,13 +35,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 {
                     connection.Open();
                     String sql = "INSERT INTO Cancelpolicy " +
-                                "(Date, Component, Reason) VALUES" +
-                                "(@Date, @Component, @Reason);";
+                                "(Date,  Reason) VALUES" +
+                                "(@Date, @Reason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Date", CancelpolicyInfo.Date);
-                        command.Parameters.AddWithValue("@Component", CancelpolicyInfo.Component);
                         command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
                         ;
 
@@ -52,7 +50,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
 
                 }
-                CancelpolicyInfo.Date = ""; CancelpolicyInfo.Component = ""; CancelpolicyInfo.Reason = "";
+                CancelpolicyInfo.Date = "";  CancelpolicyInfo.Reason = "";
                 successMessage = "New Downgrade Component Added Successfully";
                 return;
 
@@ -65,7 +63,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
            
             
-            Response.Redirect("/PolicyServicing/CancelpolicyInfo");
+            Response.Redirect("/PolicyServicing/Cancelpolicy");
         }
     }
 }
