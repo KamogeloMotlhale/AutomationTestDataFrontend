@@ -26,8 +26,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
                                 ReinstateInfo ReinstateInfo = new ReinstateInfo();
                                 ReinstateInfo.id = "" + reader.GetInt32(0);
-                                ReinstateInfo.Date = reader.GetString(1);
-                                ReinstateInfo.Reason = reader.GetString(2);
+                                ReinstateInfo.PolicyNo = reader.GetString(1);
+                                ReinstateInfo.Date = reader.GetString(12);
+                                ReinstateInfo.Reason = reader.GetString(3);
 
 
 
@@ -52,6 +53,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 public class ReinstateInfo
     {
         public String id;
+        public String PolicyNo;
         public String Date;
         public String Reason;
   

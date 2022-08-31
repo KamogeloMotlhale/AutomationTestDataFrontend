@@ -34,6 +34,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                                 addRoleplayerInfo.ID_number = reader.GetString(7);
                                 addRoleplayerInfo.Relationship = reader.GetString(8);
                                 addRoleplayerInfo.Comm_date = reader.GetString(9);
+                                addRoleplayerInfo.CoverAmount = reader.GetString(10);
+
 
                                 ListAddRolePlayer.Add(addRoleplayerInfo);
                             }
@@ -68,6 +70,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
         public String ID_number;
         public String Relationship;
         public String Comm_date;
+        public String CoverAmount;
+
 
     }
 

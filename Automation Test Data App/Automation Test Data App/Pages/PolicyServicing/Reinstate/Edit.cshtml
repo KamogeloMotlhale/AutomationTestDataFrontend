@@ -29,6 +29,13 @@
 	<input type="hidden" name="id" value="@Model.ReinstateInfo.id">
 
 	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Policy No</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="PolicyNo"   value="@Model.ReinstateInfo.PolicyNo"  minlength="10" maxlength="10">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Termination Date</label>
 		<div class="col-sm-6">
 		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date" value="@Model.ReinstateInfo.Date">	

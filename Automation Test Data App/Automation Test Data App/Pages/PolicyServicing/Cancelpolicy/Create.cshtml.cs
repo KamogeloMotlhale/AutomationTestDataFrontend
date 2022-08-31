@@ -16,11 +16,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
         public void OnPost()
         {
+            CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
             CancelpolicyInfo.Date = Request.Form["Date"];
             CancelpolicyInfo.Reason = Request.Form["Reason"];
            
 
-            if(CancelpolicyInfo.Date.Length == 0|| CancelpolicyInfo.Reason.Length == 0)
+            if(CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.Date.Length == 0|| CancelpolicyInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -35,11 +36,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 {
                     connection.Open();
                     String sql = "INSERT INTO Cancelpolicy " +
-                                "(Date,  Reason) VALUES" +
-                                "(@Date, @Reason);";
+                                "(PolicyNo, Date,  Reason) VALUES" +
+                                "(@PolicyNo, @Date, @Reason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.Date);
                         command.Parameters.AddWithValue("@Date", CancelpolicyInfo.Date);
                         command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
                         ;
@@ -50,7 +52,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
 
                 }
-                CancelpolicyInfo.Date = "";  CancelpolicyInfo.Reason = "";
+                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.Date = "";  CancelpolicyInfo.Reason = "";
                 successMessage = "New Downgrade Component Added Successfully";
                 return;
 

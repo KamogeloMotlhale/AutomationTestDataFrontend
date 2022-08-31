@@ -34,11 +34,13 @@ namespace Automation_Test_Data_App.Pages.Addalife
             AddaLifeInfo.Gender = Request.Form["Gender"];
             AddaLifeInfo.ID_number = Request.Form["ID_number"];
             AddaLifeInfo.Relationship = Request.Form["Relationship"];
-            AddaLifeInfo.Comm_date = Request.Form["Comm_date"]; 
+            AddaLifeInfo.Comm_date = Request.Form["Comm_date"];
+            AddaLifeInfo.Comm_date = Request.Form["CoverAmount"];
 
-            if(AddaLifeInfo.Title.Length == 0|| AddaLifeInfo.First_Name.Length == 0 || AddaLifeInfo.Surname.Length == 0 ||           
+
+            if (AddaLifeInfo.Title.Length == 0|| AddaLifeInfo.First_Name.Length == 0 || AddaLifeInfo.Surname.Length == 0 ||           
                AddaLifeInfo.Initials.Length == 0 || AddaLifeInfo.dob.Length == 0 || AddaLifeInfo.Gender.Length == 0 ||
-               AddaLifeInfo.ID_number.Length == 0 || AddaLifeInfo.Relationship.Length == 0 || AddaLifeInfo.Comm_date.Length == 0)
+               AddaLifeInfo.ID_number.Length == 0 || AddaLifeInfo.Relationship.Length == 0 || AddaLifeInfo.Comm_date.Length == 0 || AddaLifeInfo.CoverAmount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -53,8 +55,8 @@ namespace Automation_Test_Data_App.Pages.Addalife
                 {
                     connection.Open();
                     String sql = "INSERT INTO AddaLife " +
-                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date);";
+                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date, CoverAmount) VALUES" +
+                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date , @CoverAmount);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -67,11 +69,14 @@ namespace Automation_Test_Data_App.Pages.Addalife
                         command.Parameters.AddWithValue("@ID_number", AddaLifeInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddaLifeInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", AddaLifeInfo.Comm_date);
+                        command.Parameters.AddWithValue("@CoverAmount", AddaLifeInfo.CoverAmount);
+
 
                         command.ExecuteNonQuery();
 
                     }
-                    AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
+                    AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; 
+                    AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = ""; AddaLifeInfo.CoverAmount = "";
                     successMessage = "New Life Assured Added Successfully";
                     
                 }

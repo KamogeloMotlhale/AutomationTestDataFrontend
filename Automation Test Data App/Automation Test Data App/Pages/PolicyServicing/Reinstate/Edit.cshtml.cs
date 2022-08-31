@@ -35,7 +35,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                             {
 
                                 ReinstateInfo.id = "" + reader.GetInt32(0);
-                                ReinstateInfo.Date = reader.GetString(1);
+                                ReinstateInfo.PolicyNo = reader.GetString(1);
+                                ReinstateInfo.Date = reader.GetString(2);
                                 ReinstateInfo.Reason = reader.GetString(3);
 
 
@@ -59,11 +60,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
         public void OnPost()
         {
             ReinstateInfo.id = Request.Form["id"];
+            ReinstateInfo.PolicyNo = Request.Form["PolicyNo"];
             ReinstateInfo.Date = Request.Form["Date"];
             ReinstateInfo.Reason = Request.Form["Reason"];
           
 
-            if (ReinstateInfo.Date.Length == 0 || ReinstateInfo.Reason.Length == 0)
+            if (ReinstateInfo.PolicyNo.Length == 0 || ReinstateInfo.Date.Length == 0 || ReinstateInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -78,12 +80,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 {
                     connection.Open();
                     String sql = "UPDATE ReinstateInfo " +
-                                 "SET Date=@Date, Reason=@Reason " +
+                                 "SET PolicyNo=@PolicyNo,Date=@Date, Reason=@Reason " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", ReinstateInfo.id);
+                        command.Parameters.AddWithValue("@PolicyNo", ReinstateInfo.PolicyNo);
                         command.Parameters.AddWithValue("@Date", ReinstateInfo.Date);
                         command.Parameters.AddWithValue("@Reason", ReinstateInfo.Reason);
                        
@@ -92,7 +95,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                         command.ExecuteNonQuery();
 
                     }
-                    ReinstateInfo.Date = ""; ReinstateInfo.Reason = "";
+                    ReinstateInfo.PolicyNo = ""; ReinstateInfo.Date = ""; ReinstateInfo.Reason = "";
 
                 }
 

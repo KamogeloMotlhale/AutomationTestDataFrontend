@@ -25,10 +25,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
             addRolePlayerInfo.ID_number = Request.Form["ID_number"];
             addRolePlayerInfo.Relationship = Request.Form["Relationship"];
             addRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
+            addRolePlayerInfo.Comm_date = Request.Form["CoverAmount"];
+
 
             if (addRolePlayerInfo.Title.Length == 0 || addRolePlayerInfo.First_Name.Length == 0 || addRolePlayerInfo.Surname.Length == 0 ||
                addRolePlayerInfo.Initials.Length == 0 || addRolePlayerInfo.dob.Length == 0 || addRolePlayerInfo.Gender.Length == 0 ||
-               addRolePlayerInfo.ID_number.Length == 0 || addRolePlayerInfo.Relationship.Length == 0 || addRolePlayerInfo.Comm_date.Length == 0)
+               addRolePlayerInfo.ID_number.Length == 0 || addRolePlayerInfo.Relationship.Length == 0 || addRolePlayerInfo.Comm_date.Length == 0 || addRolePlayerInfo.CoverAmount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -43,8 +45,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                 {
                     connection.Open();
                     String sql = "INSERT INTO AddRolePlayer " +
-                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date);";
+                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date, CoverAmount) VALUES" +
+                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date,@CoverAmount);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -57,6 +59,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.Parameters.AddWithValue("@ID_number", addRolePlayerInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", addRolePlayerInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", addRolePlayerInfo.Comm_date);
+                        command.Parameters.AddWithValue("@CoverAmount", addRolePlayerInfo.CoverAmount);
+
 
                         command.ExecuteNonQuery();
 
@@ -65,7 +69,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
 
                 }
 
-                addRolePlayerInfo.Title = ""; addRolePlayerInfo.First_Name = ""; addRolePlayerInfo.Surname = ""; addRolePlayerInfo.Initials = ""; addRolePlayerInfo.dob = ""; addRolePlayerInfo.Gender = ""; addRolePlayerInfo.ID_number = ""; addRolePlayerInfo.Relationship = ""; addRolePlayerInfo.Comm_date = "";
+                addRolePlayerInfo.Title = ""; addRolePlayerInfo.First_Name = ""; addRolePlayerInfo.Surname = ""; addRolePlayerInfo.Initials = ""; addRolePlayerInfo.dob = ""; 
+                addRolePlayerInfo.Gender = ""; addRolePlayerInfo.ID_number = ""; addRolePlayerInfo.Relationship = ""; addRolePlayerInfo.Comm_date = ""; addRolePlayerInfo.CoverAmount = "";
                 successMessage = "New Life Assured Added Successfully";
 
             }
