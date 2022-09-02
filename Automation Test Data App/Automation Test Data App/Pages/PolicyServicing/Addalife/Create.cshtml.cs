@@ -35,7 +35,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
             AddaLifeInfo.ID_number = Request.Form["ID_number"];
             AddaLifeInfo.Relationship = Request.Form["Relationship"];
             AddaLifeInfo.Comm_date = Request.Form["Comm_date"];
-            AddaLifeInfo.Comm_date = Request.Form["CoverAmount"];
+            AddaLifeInfo.CoverAmount = Request.Form["CoverAmount"];
 
 
             if (AddaLifeInfo.Title.Length == 0|| AddaLifeInfo.First_Name.Length == 0 || AddaLifeInfo.Surname.Length == 0 ||           

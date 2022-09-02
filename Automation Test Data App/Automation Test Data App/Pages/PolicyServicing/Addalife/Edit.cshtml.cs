@@ -13,21 +13,17 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
 
         public void OnGet()
         {
-            string userId = Request.Cookies["UserID"];
-            if (userId == null)
-            {
-                Response.Redirect("/");
-            }
-            else
-            {
-                return;
-
-            }
+          
 
             String id = Request.Query["id"];
 
             try
             {
+                string userId = Request.Cookies["UserID"];
+                if (userId == null)
+                {
+                    Response.Redirect("/");
+                }
 
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -107,8 +103,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                 {
                     connection.Open();
                     String sql = "UPDATE AddaLife " +
-                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, " +
-                                 "ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date, CoverAmount=@CoverAmount " +
+                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date, CoverAmount=@CoverAmount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))

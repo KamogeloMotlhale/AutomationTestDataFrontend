@@ -9,16 +9,6 @@ namespace Automation_Test_Data_App.Pages.Addalife
         public List<AddaLifeInfo> ListAddaLife = new List<AddaLifeInfo>();
         public void OnGet()
         {
-            string userId = Request.Cookies["UserID"];
-            if (userId == null)
-            {
-                Response.Redirect("/");
-            }
-            else
-            {
-                return;
-
-            }
             try
             { 
               String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
@@ -31,7 +21,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
                     {
                         using(SqlDataReader reader = command.ExecuteReader()) 
                         while(reader.Read())
-                        {
+                         {
 
                                 AddaLifeInfo addaLifeInfo = new AddaLifeInfo();
                                 addaLifeInfo.id =""+ reader.GetInt32(0);
@@ -44,7 +34,9 @@ namespace Automation_Test_Data_App.Pages.Addalife
                                 addaLifeInfo.ID_number = reader.GetString(7);
                                 addaLifeInfo.Relationship = reader.GetString(8);
                                 addaLifeInfo.Comm_date = reader.GetString(9);
-                                addaLifeInfo.CoverAmount = reader.GetString(10);
+                                addaLifeInfo.CoverAmount = reader.GetString(9);
+
+
 
 
                                 ListAddaLife.Add(addaLifeInfo);
@@ -81,6 +73,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
         public String Relationship;
         public String Comm_date;
         public String CoverAmount;
+
 
     }
 }

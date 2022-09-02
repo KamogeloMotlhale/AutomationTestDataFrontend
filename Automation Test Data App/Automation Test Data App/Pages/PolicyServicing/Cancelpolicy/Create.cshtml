@@ -20,7 +20,7 @@
 	</div>
 	}
 <br>
-<h2>Downgrade/Upgrade Component</h2>
+<h2>Cancel policy Component</h2>
 
 
 <form method="POST">
@@ -46,7 +46,8 @@
 		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.CancelpolicyInfo.Reason">
 		<option value=""></option>
 <		<option value="Cancelled by external service">Cancelled by external service</option>
-		<option value="Cannot Afford">Cannot Afford</option><option value="Cannot Afford (Follow up)">Cannot Afford (Follow up)</option>
+		<option value="Cannot Afford">Cannot Afford</option>
+		<option value="Cannot Afford (Follow up)">Cannot Afford (Follow up)</option>
 		<option value="Claim Received Policy Lapsed">Claim Received Policy Lapsed</option>
 		<option value="Cover Not Required">Cover Not Required</option>
 		<option value="Decline Policy">Decline Policy</option>
@@ -56,15 +57,18 @@
 		<option value="Lapsed Policy">Lapsed Policy</option>
 		<option value="Life Insured Deceased">Life Insured Deceased</option>
 		<option value="Misrepresentation">Misrepresentation</option>
-		<option value="NAEDO Dispute">NAEDO Dispute</option><option value="No Insurable Interest">No Insurable Interest</option>
+		<option value="NAEDO Dispute">NAEDO Dispute</option>
+		<option value="No Insurable Interest">No Insurable Interest</option>
 		<option value="No Longer Need the Cover">No Longer Need the Cover</option>
-		<option value="Non-Disclosure">Non-Disclosure</option><option value="Not Satisfied With Product">Not Satisfied With Product</option>
+		<option value="Non-Disclosure">Non-Disclosure</option>
+		<option value="Not Satisfied With Product">Not Satisfied With Product</option>
 		<option value="Not Satisfied With Service">Not Satisfied With Service</option>
 		<option value="Policy Dispute">Policy Dispute</option>
 		<option value="Policy Document Not Received">Policy Document Not Received</option>
 		<option value="Policy Downgrade">Policy Downgrade</option>
 		<option value="Policy Expired">Policy Expired</option>
-		<option value="Policy Upgrade">Policy Upgrade</option><option value="Policyholder Deceased">Policyholder Deceased</option>
+		<option value="Policy Upgrade">Policy Upgrade</option>
+		<option value="Policyholder Deceased">Policyholder Deceased</option>
 		<option value="Problems with Debit Order">Problems with Debit Order</option>
 		<option value="Replaced Policy with Another Policy">Replaced Policy with Another Policy</option>
 		<option value="Retrenched">Retrenched</option>
@@ -83,7 +87,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="PolicyServicing/Cancelpolicy" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/PolicyServicing" role="button">Cancel</a>
 		</div>
 	</div>
 
