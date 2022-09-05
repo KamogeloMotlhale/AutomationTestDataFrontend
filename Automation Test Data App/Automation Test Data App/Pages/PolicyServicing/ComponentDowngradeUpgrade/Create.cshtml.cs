@@ -56,6 +56,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 successMessage = "New Downgrade Component Added Successfully";
                 return;
 
+                
+
             }
             catch(Exception ex)
             {
@@ -63,9 +65,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 return;
             }
 
-           
-            
             Response.Redirect("/PolicyServicing/ComponentDowngradeUpgrade");
+
+
         }
     }
 }

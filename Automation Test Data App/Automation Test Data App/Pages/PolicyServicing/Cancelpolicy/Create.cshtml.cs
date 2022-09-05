@@ -53,7 +53,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
                 }
                 CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.Date = "";  CancelpolicyInfo.Reason = "";
-                successMessage = "New Downgrade Component Added Successfully";
+                successMessage = "New Cancelation Policy Added Successfully";
                 return;
 
             }
