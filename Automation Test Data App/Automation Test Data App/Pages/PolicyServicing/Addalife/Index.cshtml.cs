@@ -34,8 +34,7 @@ namespace Automation_Test_Data_App.Pages.Addalife
                                 addaLifeInfo.ID_number = reader.GetString(7);
                                 addaLifeInfo.Relationship = reader.GetString(8);
                                 addaLifeInfo.Comm_date = reader.GetString(9);
-                                addaLifeInfo.CoverAmount = reader.GetString(9);
-
+                                addaLifeInfo.CoverAmount = reader.GetString(10);
 
 
 
