@@ -36,7 +36,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
                                 CancelpolicyInfo.PolicyNo = reader.GetString(1);
-                                CancelpolicyInfo.Date = reader.GetString(2);
+                                CancelpolicyInfo.TerminationDate = reader.GetString(2);
                                 CancelpolicyInfo.Reason = reader.GetString(3);
 
 
@@ -60,12 +60,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnPost()
         {
             CancelpolicyInfo.id = Request.Form["id"];
-            CancelpolicyInfo.Date = Request.Form["PolicyNo"];
-            CancelpolicyInfo.Date = Request.Form["Date"];
+            CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
+            CancelpolicyInfo.TerminationDate = Request.Form["TerminationDate"];
             CancelpolicyInfo.Reason = Request.Form["Reason"];
           
 
-            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.Date.Length == 0 ||  CancelpolicyInfo.Reason.Length == 0)
+            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationDate.Length == 0 ||  CancelpolicyInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -80,14 +80,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 {
                     connection.Open();
                     String sql = "UPDATE Cancelpolicy " +
-                                 "SET PolicyNo=@PolicyNo, Date=@Date,  Reason=@Reason " +
+                                 "SET PolicyNo=@PolicyNo, TerminationDate=@TerminationDate,  Reason=@Reason " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", CancelpolicyInfo.id);
                         command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
-                        command.Parameters.AddWithValue("@Date", CancelpolicyInfo.Date);
+                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationDate);
                         command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
                        
                   
@@ -95,7 +95,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                         command.ExecuteNonQuery();
 
                     }
-                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.Date = ""; CancelpolicyInfo.Reason = "";
+                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationDate = ""; CancelpolicyInfo.Reason = "";
 
                 }
 

@@ -17,11 +17,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnPost()
         {
             CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
-            CancelpolicyInfo.Date = Request.Form["Date"];
+            CancelpolicyInfo.TerminationDate = Request.Form["TerminationDate"];
             CancelpolicyInfo.Reason = Request.Form["Reason"];
            
 
-            if(CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.Date.Length == 0|| CancelpolicyInfo.Reason.Length == 0)
+            if(CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationDate.Length == 0|| CancelpolicyInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,13 +36,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 {
                     connection.Open();
                     String sql = "INSERT INTO Cancelpolicy " +
-                                "(PolicyNo, Date,  Reason) VALUES" +
-                                "(@PolicyNo, @Date, @Reason);";
+                                "(PolicyNo, TerminationDate,  Reason) VALUES" +
+                                "(@PolicyNo, @TerminationDate, @Reason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.Date);
-                        command.Parameters.AddWithValue("@Date", CancelpolicyInfo.Date);
+                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
+                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationDate);
                         command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
                         ;
 
@@ -52,7 +52,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
 
                 }
-                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.Date = "";  CancelpolicyInfo.Reason = "";
+                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationDate = "";  CancelpolicyInfo.Reason = "";
                 successMessage = "New Cancelation Policy Added Successfully";
                 return;
 
@@ -63,7 +63,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 return;
             }
 
-           
             
             Response.Redirect("/PolicyServicing/Cancelpolicy");
         }
