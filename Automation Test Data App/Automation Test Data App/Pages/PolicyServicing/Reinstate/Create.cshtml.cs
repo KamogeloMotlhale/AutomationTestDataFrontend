@@ -16,12 +16,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
         public void OnPost()
         {
+            ReinstateInfo.PolicyNo = Request.Form["PolicyNo"];
             ReinstateInfo.Date = Request.Form["Date"];
-            ReinstateInfo.Component = Request.Form["Component"];
-            ReinstateInfo.Cover_Amount = Request.Form["Reason"];
+            ReinstateInfo.Reason = Request.Form["Reason"];
            
 
-            if(ReinstateInfo.Date.Length == 0|| ReinstateInfo.Component.Length == 0 || ReinstateInfo.Reason.Length == 0)
+            if(ReinstateInfo.PolicyNo.Length == 0 || ReinstateInfo.Date.Length == 0|| ReinstateInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,14 +36,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 {
                     connection.Open();
                     String sql = "INSERT INTO Reinstate " +
-                                "(Date, Component, Reason) VALUES" +
-                                "(@Date, @Component, @Reason);";
+                                "(PolicyNo, Date,  Reason) VALUES" +
+                                "(@PolicyNo, @Date, @Reason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@PolicyNo", ReinstateInfo.PolicyNo);
                         command.Parameters.AddWithValue("@Date", ReinstateInfo.Date);
-                        command.Parameters.AddWithValue("@Component", ReinstateInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", ReinstateInfo.Reason);
+                        command.Parameters.AddWithValue("@Reason", ReinstateInfo.Reason);
                         ;
 
                         command.ExecuteNonQuery();
@@ -52,8 +52,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
 
                 }
-                ReinstateInfo.Date = ""; ReinstateInfo.Component = ""; ReinstateInfo.Reason = "";
-                successMessage = "New Downgrade Component Added Successfully";
+                ReinstateInfo.PolicyNo = ""; ReinstateInfo.Date = ""; ReinstateInfo.Reason = "";
+                successMessage = "New Reinstatement Info  Added Successfully";
                 return;
 
             }

@@ -20,22 +20,32 @@
 	</div>
 	}
 <br>
-<h2>Downgrade/Upgrade Component</h2>
+<h2>Cancel policy Component</h2>
 
 
 <form method="POST">
+
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Date</label>
+		<label class="col-sm-3 col-form-label">Policy No</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date" value="@Model.CancelpolicyInfo.Date">	
+			<input type="text" class="form-control" name="PolicyNo"   value="@Model.CancelpolicyInfo.PolicyNo"  minlength="10" maxlength="10">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Termination Date</label>
+		<div class="col-sm-6">
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="TerminationDate" value="@Model.CancelpolicyInfo.TerminationDate">	
 		</div>
 	</div>
 
 
+	
+	
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Component</label>
+		<label class="col-sm-3 col-form-label">Reason</label>
 		<div class="col-sm-6">
-		<select id='Component' class="form-control" name="Component" value="@Model.CancelpolicyInfo.Component">
+		<select id='Reason' class="form-control" name="Reason" value="@Model.CancelpolicyInfo.Reason">
 		<option value=""></option>
 		<option value="Downgrade">Downgrade</option>
 		<option value="Upgrade">Upgrade</option>
@@ -44,32 +54,11 @@
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Cover_Amount</label>
-		<div class="col-sm-6">
-		<select id='Cover_Amount' class="form-control" name="Cover_Amount" value="@Model.CancelpolicyInfo.Cover_Amount">
-		<option value=""></option>
-		<option value="5000">5000</option>
-		<option value="7500">7500</option>
-		<option value="10000">10000</option>
-		<option value="15000">15000</option>
-		<option value="20000">20000</option>
-		<option value="30000">30000</option>
-		<option value="40000">40000</option>
-		<option value="50000">50000</option>
-		<option value="60000">60000</option>
-		</select>
-		</div>
-	</div>
-
-	
-
-
-	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/policyServicing/Cancelpolicy" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/PolicyServicing/Cancelpolicy" role="button">Cancel</a>
 		</div>
 	</div>
 

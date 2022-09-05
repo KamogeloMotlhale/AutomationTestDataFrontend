@@ -5,14 +5,14 @@
 
 <br>
 <h2>Cancel Policy Component</h2>
-<a class='btn btn-primary btn-sm' href='Cancelpolicy/Create'>Cancel Policy/a>
+<a class='btn btn-primary btn-sm' href='Create'>Cancel Policy</a>
 <table class="table">
 	<thead>
 		<tr>
 			<th>ID<th/>
-			<th>Date<th/>
-			<th>Component<th/>
-			<th>Cover_Amount<th/>
+			<th>Policy No<th/>
+			<th>Termination Date<th/>
+			<th>Reason<th/>
 			<th>Action<th/>
 
 
@@ -25,11 +25,11 @@
 			<tr>
 				<td>@item.id</td>
 				<td></td>
-				<td>@item.Date</td>
+				<td>@item.PolicyNo</td>
 				<td></td>
-				<td>@item.Component</td>
+				<td>@item.TerminationDate</td>
 				<td></td>
-				<td>@item.Cover_Amount</td>
+				<td>@item.Reason</td>
 
 				<td>
 					<a class="btn btn-primary btn-sm" href="/Cancelpolicy/Edit?id=@item.id">Edit</a>

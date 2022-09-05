@@ -169,7 +169,25 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Comm_date</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.dob">			
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">			
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Cover_Amount</label>
+		<div class="col-sm-6">
+		<select id='CoverAmount' class="form-control" name="Cover_Amount" value="@Model.AddaLifeInfo.CoverAmount">
+		<option value=""></option>
+		<option value="5000">5000</option>
+		<option value="7500">7500</option>
+		<option value="10000">10000</option>
+		<option value="15000">15000</option>
+		<option value="20000">20000</option>
+		<option value="30000">30000</option>
+		<option value="40000">40000</option>
+		<option value="50000">50000</option>
+		<option value="60000">60000</option>
+		</select>
 		</div>
 	</div>
 
@@ -178,7 +196,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/PolicyServicing/Addalife" role="button">Cancel</a>
 		</div>
 	</div>
 

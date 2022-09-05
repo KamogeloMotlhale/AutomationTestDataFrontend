@@ -44,6 +44,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                                 AddRolePlayerInfo.ID_number = reader.GetString(7);
                                 AddRolePlayerInfo.Relationship = reader.GetString(8);
                                 AddRolePlayerInfo.Comm_date = reader.GetString(9);
+                                AddRolePlayerInfo.CoverAmount = reader.GetString(10);
+
 
                             }
                         }
@@ -74,10 +76,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
             AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
             AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
             AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
+            AddRolePlayerInfo.CoverAmount = Request.Form["CoverAmount"];
+
 
             if (AddRolePlayerInfo.Title.Length == 0 || AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.dob.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
-               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0)
+               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.CoverAmount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -92,7 +96,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                 {
                     connection.Open();
                     String sql = "UPDATE AddRolePlayer " +
-                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date " +
+                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date, CoverAmount=@CoverAmount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -105,7 +109,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.Parameters.AddWithValue("@Gender", AddRolePlayerInfo.Gender);
                         command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
-                        command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
+                        command.Parameters.AddWithValue("@CoverAmount", AddRolePlayerInfo.Comm_date);
+                        command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.CoverAmount);
                         command.Parameters.AddWithValue("@id", AddRolePlayerInfo.id);
 
 
@@ -114,7 +119,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.ExecuteNonQuery();
 
                     }
-                    AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = ""; AddRolePlayerInfo.dob = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = "";
+                    AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = ""; AddRolePlayerInfo.dob = ""; 
+                    AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.CoverAmount = "";
                     successMessage = "New Life Assured Updated Successfully";
 
                 }

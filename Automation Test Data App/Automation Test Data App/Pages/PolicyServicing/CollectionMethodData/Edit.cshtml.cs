@@ -13,10 +13,18 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
 
         public void OnGet()
         {
+
             String id = Request.Query["id"];
 
             try
             {
+
+                string userId = Request.Cookies["UserID"];
+                if (userId == null)
+                {
+                    Response.Redirect("/");
+                }
+                
 
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))

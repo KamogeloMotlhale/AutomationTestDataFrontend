@@ -2,11 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgrade
+namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 {
     public class IndexModel : PageModel
-    { 
-    public List<DowngradeInfo> ListDowngradeComponent = new List<DowngradeInfo>();
+    {
+        
+    public List<ReinstateInfo> ListReinstate= new List<ReinstateInfo>();
     public void OnGet()
     {
         try
@@ -16,22 +17,22 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             {
 
                 connection.Open();
-                String sql = "SELECT * FROM Downgrade ";
+                String sql = "SELECT * FROM Reinstate ";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                         while (reader.Read())
                         {
 
-                            DowngradeInfo DowngradeInfo = new DowngradeInfo();
-                            DowngradeInfo.id = "" + reader.GetInt32(0);
-                            DowngradeInfo.Date = reader.GetString(1);
-                            DowngradeInfo.Component = reader.GetString(2);
-                            DowngradeInfo.Cover_Amount = reader.GetString(3);
+                                ReinstateInfo ReinstateInfo = new ReinstateInfo();
+                                ReinstateInfo.id = "" + reader.GetInt32(0);
+                                ReinstateInfo.PolicyNo = reader.GetString(1);
+                                ReinstateInfo.Date = reader.GetString(12);
+                                ReinstateInfo.Reason = reader.GetString(3);
 
 
 
-                            ListDowngradeComponent.Add(DowngradeInfo);
+                                ListReinstate.Add(ReinstateInfo);
                         }
 
 
@@ -47,16 +48,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
         }
 
 
-
-
     }
 }
-public class DowngradeInfo
+public class ReinstateInfo
     {
         public String id;
+        public String PolicyNo;
         public String Date;
-        public String Component;
-        public String Cover_Amount;
+        public String Reason;
   
 
     }

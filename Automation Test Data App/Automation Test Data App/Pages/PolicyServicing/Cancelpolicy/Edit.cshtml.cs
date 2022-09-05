@@ -35,10 +35,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                             {
 
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
-                                CancelpolicyInfo.Date = reader.GetString(1);
-                                CancelpolicyInfo.Component = reader.GetString(2);
-                           
-                              
+                                CancelpolicyInfo.PolicyNo = reader.GetString(1);
+                                CancelpolicyInfo.TerminationDate = reader.GetString(2);
+                                CancelpolicyInfo.Reason = reader.GetString(3);
+
+
 
                             }
                         }
@@ -59,11 +60,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnPost()
         {
             CancelpolicyInfo.id = Request.Form["id"];
-            CancelpolicyInfo.Date = Request.Form["Date"];
-            CancelpolicyInfo.Component = Request.Form["Component"];
+            CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
+            CancelpolicyInfo.TerminationDate = Request.Form["TerminationDate"];
+            CancelpolicyInfo.Reason = Request.Form["Reason"];
           
 
-            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Component.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
+            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationDate.Length == 0 ||  CancelpolicyInfo.Reason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -77,23 +79,23 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE Downgrade " +
-                                 "SET Date=@Date, Component=@Component, Cover_Amount=@Cover_Amount " +
+                    String sql = "UPDATE Cancelpolicy " +
+                                 "SET PolicyNo=@PolicyNo, TerminationDate=@TerminationDate,  Reason=@Reason " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", DowngradeInfo.id);
-                        command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
-                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Component);
-                        command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
+                        command.Parameters.AddWithValue("@id", CancelpolicyInfo.id);
+                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
+                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationDate);
+                        command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
                        
                   
 
                         command.ExecuteNonQuery();
 
                     }
-                    DowngradeInfo.Date = ""; DowngradeInfo.Component = ""; DowngradeInfo.Cover_Amount = "";
+                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationDate = ""; CancelpolicyInfo.Reason = "";
 
                 }
 

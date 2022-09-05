@@ -20,12 +20,22 @@
 	</div>
 	}
 <br>
-<h2>ReinstateInfoComponent</h2>
+<h2>Reinstate Policy</h2>
 
 
 <form method="POST">
+
+	
+		<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Policy No</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="PolicyNo"   value="@Model.ReinstateInfo.PolicyNo"  minlength="10" maxlength="10">	
+		</div>
+	</div>
+
+
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Reinstatement  Date</label>
+		<label class="col-sm-3 col-form-label">Termination Date</label>
 		<div class="col-sm-6">
 		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date" value="@Model.ReinstateInfo.Date">	
 		</div>
@@ -33,30 +43,18 @@
 
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Component</label>
-		<div class="col-sm-6">
-		<select id='Component' class="form-control" name="Component" value="@Model.ReinstateInfo.Component">
-		<option value=""></option>
-		<option value="Downgrade">Downgrade</option>
-		<option value="Upgrade">Upgrade</option>
-		</select>
-		</div>
-	</div>
-
-	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Reason</label>
 		<div class="col-sm-6">
-		<select id='Cover_Amount' class="form-control" name="Cover_Amount" value="@Model.ReinstateInfo.Reason">
-		<option value=""></option>
-		<option value="5000">5000</option>
-		<option value="7500">7500</option>
-		<option value="10000">10000</option>
-		<option value="15000">15000</option>
-		<option value="20000">20000</option>
-		<option value="30000">30000</option>
-		<option value="40000">40000</option>
-		<option value="50000">50000</option>
-		<option value="60000">60000</option>
+		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.ReinstateInfo.Reason">
+	  <option value="" selected=""></option>
+	  <option value="ReinstateReason1">Back dated claim</option>
+	  <option value="ReinstateReason2">Bank details updated, not activated</option>
+	  <option value="ReinstateReason3">Client request</option>
+	  <option value="ReinstateReason4">Conservation</option>
+	  <option value="ReinstateReason5">Due to ill health</option>
+	  <option value="ReinstateReason6">Error on collections</option>
+	  <option value="ReinstateReason8">Cooling off period</option>
+
 		</select>
 		</div>
 	</div>
@@ -69,7 +67,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/policyServicing/downgrade" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/policyServicing/Reinstate" role="button">Cancel</a>
 		</div>
 	</div>
 

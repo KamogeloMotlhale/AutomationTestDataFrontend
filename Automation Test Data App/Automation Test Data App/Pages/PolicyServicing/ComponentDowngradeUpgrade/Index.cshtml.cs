@@ -16,7 +16,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             {
 
                 connection.Open();
-                String sql = "SELECT * FROM Downgrade ";
+                String sql = "SELECT * FROM ComponentDowngradeUpgrade ";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -26,7 +26,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                             DowngradeInfo DowngradeInfo = new DowngradeInfo();
                             DowngradeInfo.id = "" + reader.GetInt32(0);
                             DowngradeInfo.Date = reader.GetString(1);
-                            DowngradeInfo.Component = reader.GetString(2);
+                            DowngradeInfo.Method = reader.GetString(2);
                             DowngradeInfo.Cover_Amount = reader.GetString(3);
 
 
@@ -55,7 +55,7 @@ public class DowngradeInfo
     {
         public String id;
         public String Date;
-        public String Component;
+        public String Method;
         public String Cover_Amount;
   
 

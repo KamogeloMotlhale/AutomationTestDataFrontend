@@ -13,21 +13,17 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
 
         public void OnGet()
         {
-            string userId = Request.Cookies["UserID"];
-            if (userId == null)
-            {
-                Response.Redirect("/");
-            }
-            else
-            {
-                return;
-
-            }
+          
 
             String id = Request.Query["id"];
 
             try
             {
+                string userId = Request.Cookies["UserID"];
+                if (userId == null)
+                {
+                    Response.Redirect("/");
+                }
 
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -55,6 +51,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                                 AddaLifeInfo.ID_number = reader.GetString(7);
                                 AddaLifeInfo.Relationship = reader.GetString(8);
                                 AddaLifeInfo.Comm_date = reader.GetString(9);
+                                AddaLifeInfo.CoverAmount = reader.GetString(10);
+
 
                             }
                         }
@@ -85,10 +83,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
             AddaLifeInfo.ID_number = Request.Form["ID_number"];
             AddaLifeInfo.Relationship = Request.Form["Relationship"];
             AddaLifeInfo.Comm_date = Request.Form["Comm_date"];
+            AddaLifeInfo.CoverAmount = Request.Form["CoverAmount"];
+
 
             if (AddaLifeInfo.Title.Length == 0 || AddaLifeInfo.First_Name.Length == 0 || AddaLifeInfo.Surname.Length == 0 ||
                AddaLifeInfo.Initials.Length == 0 || AddaLifeInfo.dob.Length == 0 || AddaLifeInfo.Gender.Length == 0 ||
-               AddaLifeInfo.ID_number.Length == 0 || AddaLifeInfo.Relationship.Length == 0 || AddaLifeInfo.Comm_date.Length == 0)
+               AddaLifeInfo.ID_number.Length == 0 || AddaLifeInfo.Relationship.Length == 0 || AddaLifeInfo.Comm_date.Length == 0 || AddaLifeInfo.CoverAmount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -103,7 +103,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                 {
                     connection.Open();
                     String sql = "UPDATE AddaLife " +
-                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date " +
+                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date, CoverAmount=@CoverAmount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -117,6 +117,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                         command.Parameters.AddWithValue("@ID_number", AddaLifeInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddaLifeInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", AddaLifeInfo.Comm_date);
+                        command.Parameters.AddWithValue("@CoverAmount", AddaLifeInfo.CoverAmount);
                         command.Parameters.AddWithValue("@id", AddaLifeInfo.id);
 
 
@@ -124,7 +125,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Addalife
                         command.ExecuteNonQuery();
 
                     }
-                    AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = "";
+                    AddaLifeInfo.Title = ""; AddaLifeInfo.First_Name = ""; AddaLifeInfo.Surname = ""; 
+                    AddaLifeInfo.Initials = ""; AddaLifeInfo.dob = ""; AddaLifeInfo.Gender = ""; AddaLifeInfo.ID_number = ""; 
+                    AddaLifeInfo.Relationship = ""; AddaLifeInfo.Comm_date = ""; AddaLifeInfo.CoverAmount = "";
                     successMessage = "New Life Assured Updated Successfully";
 
                 }
