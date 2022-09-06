@@ -5,35 +5,19 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h1>New Business</h1>
+ @{
+        if (ViewData["SuccessMessage"] != null)
+        {
+          <span class="badge badge-success"> @ViewData["SuccessMessage"]</span> }
+ }
 
-<div class="text-center">
-<h1 class="dispplay-4">File Upload</h1>
-<div/>
-<div class="container">
-
-<div class="mb-3 mt-3">
-    <form method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-<label class="form-label">Upload File</label>
-<input type="file" name="file" class="form-control"/>
-        </div>
-<div class="mb-3">
-
-    <button type="submit" class="btn btn-primary">Upload</button>
-
-
-
-</div>
-
-
-
-    </form>
-
-</div>
-
-</div>
-
-
-
-</div>
+<form enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label class="file">
+            <input type="file" asp-for="fileUpload.FormFile" aria-label="File browser example">
+            <span class="file-custom"></span>
+        </label>
+        <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+    </div>
+   
+</form>
