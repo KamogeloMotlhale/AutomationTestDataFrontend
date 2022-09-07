@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Pages\NewBusiness\NewFolder\" />
     <Folder Include="Pages\PolicyServicing\ChangeLifeData\" />
-    <Folder Include="Pages\PolicyServicing\Cancelpolicy\" />
   </ItemGroup>
 
 </Project>

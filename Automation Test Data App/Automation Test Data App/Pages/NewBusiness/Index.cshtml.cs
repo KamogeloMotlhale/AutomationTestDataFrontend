@@ -32,7 +32,7 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
         //    string userId = Request.Cookies["UserID"];
         //    return userId;
         //}
-        public void OnGet()
+        public void OnGet() 
         {
 
 
