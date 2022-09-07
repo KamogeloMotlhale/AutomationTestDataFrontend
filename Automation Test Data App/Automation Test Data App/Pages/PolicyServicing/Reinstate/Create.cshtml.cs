@@ -53,7 +53,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
                 }
                 ReinstateInfo.PolicyNo = ""; ReinstateInfo.ReinstatementReason = ""; ReinstateInfo.ReinstatementDate = "";
-                successMessage = "New Downgrade Component Added Successfully";
+                successMessage = "New reinstatement policy Added Successfully";
                 return;
 
                 
@@ -65,7 +65,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 return;
             }
 
-            Response.Redirect("/PolicyServicing/ComponentDowngradeUpgrade");
+            Response.Redirect("/PolicyServicing/Reinstate");
 
 
         }
