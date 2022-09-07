@@ -79,7 +79,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE Downgrade " +
+                    String sql = "UPDATE ComponentDowngradeUpgrade " +
                                  "SET Date=@Date, Method=@Method, Cover_Amount=@Cover_Amount " +
                                  "WHERE id=@id";
 
