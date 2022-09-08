@@ -25,7 +25,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
             addRolePlayerInfo.ID_number = Request.Form["ID_number"];
             addRolePlayerInfo.Relationship = Request.Form["Relationship"];
             addRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
-            addRolePlayerInfo.Comm_date = Request.Form["CoverAmount"];
+            addRolePlayerInfo.CoverAmount = Request.Form["CoverAmount"];
 
 
             if (addRolePlayerInfo.Title.Length == 0 || addRolePlayerInfo.First_Name.Length == 0 || addRolePlayerInfo.Surname.Length == 0 ||
