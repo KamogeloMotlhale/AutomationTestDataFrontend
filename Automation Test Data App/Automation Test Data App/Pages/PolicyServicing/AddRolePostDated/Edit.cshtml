@@ -22,68 +22,90 @@
 }
 
 <br>
-<h2>Edit Life Assured</h2>
+<h2>Edit RolePlayer Information</h2>
 
 <form method="POST">
 
-	<input type="hidden" name="id" value="@Model.AddRolePlayerInfo.id">
+	<input type="hidden" name="id" value="@Model.AddRolePostDatedInfo.id">
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Title" value="@Model.AddRolePlayerInfo.Title">	
+		<select id='id' class="form-control" name="Title"  value="@Model.AddRolePostDatedInfo.Title">
+		  <option value=""></option>
+		  <option value="Adm">Adm</option>
+		  <option value="Adv">Adv</option>
+		  <option value="Brig">Brig</option>
+		  <option value="Capt">Capt</option>
+		  <option value="Col">Col</option>
+		  <option value="Dr">Dr</option>
+		  <option value="Exec">Exec</option>
+		  <option value="Gen">Gen</option>
+		  <option value="HON">Hon</option>
+		  <option value="Lt">Lt</option>
+		  <option value="Maj">Maj</option>
+		  <option value="Messr">Messr</option>
+		  <option value="Miss">Miss</option>
+		  <option value="Mr">Mr</option>
+		  <option value="Mrs">Mrs</option>
+		  <option value="Ms">Ms</option>
+		  <option value="Prf">Prf</option>
+		  <option value="Pstr">Pstr</option>
+		  <option value="Rev">Rev</option>
+		  <option value="Sir">Sir</option>
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">First_name</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="First_name" value="@Model.AddRolePlayerInfo.First_Name">	
+			<input type="text" class="form-control" name="First_name" value="@Model.AddRolePostDatedInfo.First_Name">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Surname</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Surname" value="@Model.AddRolePlayerInfo.Surname">	
+			<input type="text" class="form-control" name="Surname" value="@Model.AddRolePostDatedInfo.Surname">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Initials</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Initials" value="@Model.AddRolePlayerInfo.Initials">	
+			<input type="text" class="form-control" name="Initials" value="@Model.AddRolePostDatedInfo.Initials">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Date of Birth</label>
+		<label class="col-sm-3 col-form-label">DOB</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="dob" value="@Model.AddRolePlayerInfo.dob">			
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="dob" value="@Model.AddRolePostDatedInfo.DOB">			
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Gender</label>
 		<div class="col-sm-6">
-		<select id='Gender' class="form-control" name="Gender" value="@Model.AddRolePlayerInfo.Gender">
+		<select id='Gender' class="form-control" name="Gender" value="@Model.AddRolePostDatedInfo.Gender">
 		<option value="Male">Male</option>
 		<option value="Female">Female</option>
-		</select>		
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">ID_number</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="ID_number" value="@Model.AddRolePlayerInfo.ID_number">	
+			<input type="text" class="form-control" name="ID_number" value="@Model.AddRolePostDatedInfo.ID_number"  minlength="13" maxlength="13">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Relationship</label>
 		<div class="col-sm-6">
-		<select id='Relationship' class="form-control" name="Relationship" value="@Model.AddRolePlayerInfo.Relationship">
+		<select id='Relationship' class="form-control" name="Relationship" value="@Model.AddRolePostDatedInfo.Relationship">
 		  <option value="Additional child">Additional child</option>
 		  <option value="Additional parent">Additional parent</option>
 		  <option value="Additional Partner">Additional Partner</option>
@@ -139,14 +161,32 @@
 		  <option value="Stillborn Child">Stillborn Child</option>
 		  <option value="Student Child">Student Child</option>
 		  <option value="Wider Family Member">Wider Family Member</option>
-		</select>		
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Commencement date</label>
+		<label class="col-sm-3 col-form-label">Comm_date</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddRolePlayerInfo.Comm_date">			
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddRolePostDatedInfo.Comm_date">			
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Cover Amount</label>
+		<div class="col-sm-6">
+		<select id='CoverAmount' class="form-control" name="CoverAmount" value="@Model.AddRolePostDatedInfo.CoverAmount">
+		<option value=""></option>
+		<option value="5000">5000</option>
+		<option value="7500">7500</option>
+		<option value="10000">10000</option>
+		<option value="15000">15000</option>
+		<option value="20000">20000</option>
+		<option value="30000">30000</option>
+		<option value="40000">40000</option>
+		<option value="50000">50000</option>
+		<option value="60000">60000</option>
+		</select>
 		</div>
 	</div>
 
@@ -155,7 +195,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/PolicyServicing/AddRolePostDated" role="button">Cancel</a>
 		</div>
 	</div>
 

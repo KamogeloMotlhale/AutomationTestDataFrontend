@@ -2,49 +2,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
+namespace Automation_Test_Data_App.Pages.AddRolePostDated
 {
     public class IndexModel : PageModel
     {
-        public List<AddRolePlayerInfo> ListAddRolePlayer = new List<AddRolePlayerInfo>();
+        public List<AddRolePostDatedInfo> ListAddRolePostDated = new List<AddRolePostDatedInfo>();
         public void OnGet()
         {
             try
-            {
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+            { 
+              String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection (connectionString))
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM AddRolePlayer";
+                    String sql = "SELECT * FROM AddRolePostDated";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                            while (reader.Read())
-                            {
+                        using(SqlDataReader reader = command.ExecuteReader()) 
+                        while(reader.Read())
+                         {
 
-                                AddRolePlayerInfo addRoleplayerInfo = new AddRolePlayerInfo();
-                                addRoleplayerInfo.id = "" + reader.GetInt32(0);
-                                addRoleplayerInfo.Title = reader.GetString(1);
-                                addRoleplayerInfo.First_Name = reader.GetString(2);
-                                addRoleplayerInfo.Surname = reader.GetString(3);
-                                addRoleplayerInfo.Initials = reader.GetString(4);
-                                addRoleplayerInfo.dob = reader.GetString(5);
-                                addRoleplayerInfo.Gender = reader.GetString(6);
-                                addRoleplayerInfo.ID_number = reader.GetString(7);
-                                addRoleplayerInfo.Relationship = reader.GetString(8);
-                                addRoleplayerInfo.Comm_date = reader.GetString(9);
+                                AddRolePostDatedInfo AddRolePostDatedInfo = new AddRolePostDatedInfo();
+                                AddRolePostDatedInfo.id =""+ reader.GetInt32(0);
+                                AddRolePostDatedInfo.Title = reader.GetString(1);
+                                AddRolePostDatedInfo.First_Name = reader.GetString(2);
+                                AddRolePostDatedInfo.Surname = reader.GetString(3);
+                                AddRolePostDatedInfo.Initials = reader.GetString(4);
+                                AddRolePostDatedInfo.DOB = reader.GetString(5);
+                                AddRolePostDatedInfo.Gender = reader.GetString(6);
+                                AddRolePostDatedInfo.ID_number = reader.GetString(7);
+                                AddRolePostDatedInfo.Relationship = reader.GetString(8);
+                                AddRolePostDatedInfo.Comm_date = reader.GetString(9);
+                                AddRolePostDatedInfo.CoverAmount = reader.GetString(10);
 
-                                ListAddRolePlayer.Add(addRoleplayerInfo);
-                            }
+
+
+                                ListAddRolePostDated.Add(AddRolePostDatedInfo);
+                         }
 
 
                     }
 
                 }
-
+            
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Console.WriteLine("Exception:" + ex.ToString());
 
@@ -56,19 +59,20 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
         }
     }
 
-    public class AddRolePlayerInfo
+    public class AddRolePostDatedInfo
     {
         public String id;
         public String Title;
         public String First_Name;
         public String Surname;
         public String Initials;
-        public String dob;
+        public String DOB;
         public String Gender;
         public String ID_number;
         public String Relationship;
         public String Comm_date;
+        public String CoverAmount;
+
 
     }
-
 }

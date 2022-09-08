@@ -1,4 +1,4 @@
-using Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated;
+using Automation_Test_Data_App.Pages.AddRolePostDated;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
@@ -7,23 +7,30 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
 {
     public class EditModel : PageModel
     { 
-    public AddRolePlayerInfo AddRolePlayerInfo = new AddRolePlayerInfo();
+    public AddRolePostDatedInfo AddRolePostDatedInfo = new AddRolePostDatedInfo();
     public String errorMessage = "";
     public String successMessage = "";
 
         public void OnGet()
         {
+          
+
             String id = Request.Query["id"];
 
             try
             {
+                string userId = Request.Cookies["UserID"];
+                if (userId == null)
+                {
+                    Response.Redirect("/");
+                }
 
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM AddRolePostDated WHERE id=@id";
+                    String sql = "SELECT * FROM AddRolePostDated WHERE id=@id"; 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -34,16 +41,18 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
                             if (reader.Read())
                             {
 
-                                AddRolePlayerInfo.id = "" + reader.GetInt32(0);
-                                AddRolePlayerInfo.Title = reader.GetString(1);
-                                AddRolePlayerInfo.First_Name = reader.GetString(2);
-                                AddRolePlayerInfo.Surname = reader.GetString(3);
-                                AddRolePlayerInfo.Initials = reader.GetString(4);
-                                AddRolePlayerInfo.dob = reader.GetString(5);
-                                AddRolePlayerInfo.Gender = reader.GetString(6);
-                                AddRolePlayerInfo.ID_number = reader.GetString(7);
-                                AddRolePlayerInfo.Relationship = reader.GetString(8);
-                                AddRolePlayerInfo.Comm_date = reader.GetString(9);
+                                AddRolePostDatedInfo.id = "" + reader.GetInt32(0);
+                                AddRolePostDatedInfo.Title = reader.GetString(1);
+                                AddRolePostDatedInfo.First_Name = reader.GetString(2);
+                                AddRolePostDatedInfo.Surname = reader.GetString(3);
+                                AddRolePostDatedInfo.Initials = reader.GetString(4);
+                                AddRolePostDatedInfo.DOB = reader.GetString(5);
+                                AddRolePostDatedInfo.Gender = reader.GetString(6);
+                                AddRolePostDatedInfo.ID_number = reader.GetString(7);
+                                AddRolePostDatedInfo.Relationship = reader.GetString(8);
+                                AddRolePostDatedInfo.Comm_date = reader.GetString(9);
+                                AddRolePostDatedInfo.CoverAmount = reader.GetString(10);
+
 
                             }
                         }
@@ -64,20 +73,22 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
 
         public void OnPost()
         {
-            AddRolePlayerInfo.id = Request.Form["id"];
-            AddRolePlayerInfo.Title = Request.Form["Title"];
-            AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
-            AddRolePlayerInfo.Surname = Request.Form["Surname"];
-            AddRolePlayerInfo.Initials = Request.Form["Initials"];
-            AddRolePlayerInfo.dob = Request.Form["dob"];
-            AddRolePlayerInfo.Gender = Request.Form["Gender"];
-            AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
-            AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
-            AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
+            AddRolePostDatedInfo.id = Request.Form["id"];
+            AddRolePostDatedInfo.Title = Request.Form["Title"];
+            AddRolePostDatedInfo.First_Name = Request.Form["First_Name"];
+            AddRolePostDatedInfo.Surname = Request.Form["Surname"];
+            AddRolePostDatedInfo.Initials = Request.Form["Initials"];
+            AddRolePostDatedInfo.DOB = Request.Form["DOB"];
+            AddRolePostDatedInfo.Gender = Request.Form["Gender"];
+            AddRolePostDatedInfo.ID_number = Request.Form["ID_number"];
+            AddRolePostDatedInfo.Relationship = Request.Form["Relationship"];
+            AddRolePostDatedInfo.Comm_date = Request.Form["Comm_date"];
+            AddRolePostDatedInfo.CoverAmount = Request.Form["CoverAmount"];
 
-            if (AddRolePlayerInfo.Title.Length == 0 || AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
-               AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.dob.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
-               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0)
+
+            if (AddRolePostDatedInfo.Title.Length == 0 || AddRolePostDatedInfo.First_Name.Length == 0 || AddRolePostDatedInfo.Surname.Length == 0 ||
+               AddRolePostDatedInfo.Initials.Length == 0 || AddRolePostDatedInfo.DOB.Length == 0 || AddRolePostDatedInfo.Gender.Length == 0 ||
+               AddRolePostDatedInfo.ID_number.Length == 0 || AddRolePostDatedInfo.Relationship.Length == 0 || AddRolePostDatedInfo.Comm_date.Length == 0 || AddRolePostDatedInfo.CoverAmount.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -92,29 +103,33 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePostDated
                 {
                     connection.Open();
                     String sql = "UPDATE AddRolePostDated " +
-                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, dob=@dob, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date " +
+                                 "SET Title=@Title, First_Name=@First_Name, Surname=@Surname, Initials=@Initials, DOB=@DOB, Gender=@Gender, ID_number=@ID_number, Relationship=@Relationship, Comm_date=@Comm_date, CoverAmount=@CoverAmount " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@Title", AddRolePlayerInfo.Title);
-                        command.Parameters.AddWithValue("@First_Name", AddRolePlayerInfo.First_Name);
-                        command.Parameters.AddWithValue("@Surname", AddRolePlayerInfo.Surname);
-                        command.Parameters.AddWithValue("@Initials", AddRolePlayerInfo.Initials);
-                        command.Parameters.AddWithValue("@dob", AddRolePlayerInfo.dob);
-                        command.Parameters.AddWithValue("@Gender", AddRolePlayerInfo.Gender);
-                        command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
-                        command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
-                        command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
-                        command.Parameters.AddWithValue("@id", AddRolePlayerInfo.id);
+                        command.Parameters.AddWithValue("@Title", AddRolePostDatedInfo.Title);
+                        command.Parameters.AddWithValue("@First_Name", AddRolePostDatedInfo.First_Name);
+                        command.Parameters.AddWithValue("@Surname", AddRolePostDatedInfo.Surname);
+                        command.Parameters.AddWithValue("@Initials", AddRolePostDatedInfo.Initials);
+                        command.Parameters.AddWithValue("@DOB", AddRolePostDatedInfo.DOB);
+                        command.Parameters.AddWithValue("@Gender", AddRolePostDatedInfo.Gender);
+                        command.Parameters.AddWithValue("@ID_number", AddRolePostDatedInfo.ID_number);
+                        command.Parameters.AddWithValue("@Relationship", AddRolePostDatedInfo.Relationship);
+                        command.Parameters.AddWithValue("@Comm_date", AddRolePostDatedInfo.Comm_date);
+                        command.Parameters.AddWithValue("@CoverAmount", AddRolePostDatedInfo.CoverAmount);
+                        command.Parameters.AddWithValue("@id", AddRolePostDatedInfo.id);
 
 
 
                         command.ExecuteNonQuery();
 
                     }
-                    AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = ""; AddRolePlayerInfo.dob = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = "";
-                    successMessage = "New Life Assured Updated Successfully";
+                    AddRolePostDatedInfo.Title = ""; AddRolePostDatedInfo.First_Name = ""; AddRolePostDatedInfo.Surname = "";
+                    AddRolePostDatedInfo.Initials = ""; AddRolePostDatedInfo.DOB = ""; AddRolePostDatedInfo.Gender = ""; AddRolePostDatedInfo.ID_number = "";
+                    AddRolePostDatedInfo.Relationship = ""; AddRolePostDatedInfo.Comm_date = ""; AddRolePostDatedInfo.CoverAmount = "";
+
+                    successMessage = "Add Postdated role player details edited sucessfully";
 
                 }
 
