@@ -35,12 +35,12 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
             AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
             AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
             AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
-            AddRolePlayerInfo.CoverAmount = Request.Form["CoverAmount"];
+            AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
 
 
             if (AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
-               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.CoverAmount.Length == 0)
+               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.Sum_Assured.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -50,13 +50,14 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
             try 
             {
                
-                String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
+                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+
                 using (SqlConnection connection = new SqlConnection(connectionString)) 
                 {
                     connection.Open();
                     String sql = "INSERT INTO AddRolePlayer " +
-                                "(Title, First_Name, Surname, Initials, DOB, Gender, ID_number, Relationship, Comm_date, CoverAmount) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @DOB, @Gender, @ID_number, @Relationship, @Comm_date , @CoverAmount);";
+                                "(Title, First_Name, Surname, Initials, DOB, Gender, ID_number, Relationship, Comm_date, Sum_Assured) VALUES" +
+                                "(@Title, @First_Name, @Surname, @Initials, @DOB, @Gender, @ID_number, @Relationship, @Comm_date , @Sum_Assured);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -69,14 +70,14 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                         command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
-                        command.Parameters.AddWithValue("@CoverAmount", AddRolePlayerInfo.CoverAmount);
+                        command.Parameters.AddWithValue("@Sum_Assured", AddRolePlayerInfo.Sum_Assured);
 
 
                         command.ExecuteNonQuery();
 
                     }
                     AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = "";
-                    AddRolePlayerInfo.DOB = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.CoverAmount = "";
+                    AddRolePlayerInfo.DOB = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.Sum_Assured = "";
                     successMessage = "New role player Added Successfully";
                     
                 }

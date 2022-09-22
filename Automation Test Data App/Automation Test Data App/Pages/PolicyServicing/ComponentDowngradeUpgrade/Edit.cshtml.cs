@@ -18,7 +18,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             try
             {
 
-                String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
+                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
@@ -38,6 +39,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                                 DowngradeInfo.Date = reader.GetString(1);
                                 DowngradeInfo.Method = reader.GetString(2);
                                 DowngradeInfo.Cover_Amount = reader.GetString(3);
+                                DowngradeInfo.Component = reader.GetString(4);
+
 
 
 
@@ -63,9 +66,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             DowngradeInfo.Date = Request.Form["Date"];
             DowngradeInfo.Method = Request.Form["Method"];
             DowngradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
+            DowngradeInfo.Cover_Amount = Request.Form["Component"];
 
 
-            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0)
+            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0 || DowngradeInfo.Component.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -80,14 +84,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                 {
                     connection.Open();
                     String sql = "UPDATE ComponentDowngradeUpgrade " +
-                                 "SET Date=@Date, Method=@Method, Cover_Amount=@Cover_Amount " +
+                                 "SET Date=@Date, Method=@Method, Cover_Amount=@Cover_Amount, Component=@Component  " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", DowngradeInfo.id);
                         command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
-                        command.Parameters.AddWithValue("@Component", DowngradeInfo.Method);
+                        command.Parameters.AddWithValue("@Method", DowngradeInfo.Method);
                         command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
 
 

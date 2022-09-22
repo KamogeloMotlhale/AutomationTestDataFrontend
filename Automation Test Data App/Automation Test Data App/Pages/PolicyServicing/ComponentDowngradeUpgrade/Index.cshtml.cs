@@ -11,8 +11,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
     {
         try
         {
-            String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
                 connection.Open();
@@ -28,10 +29,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                             DowngradeInfo.Date = reader.GetString(1);
                             DowngradeInfo.Method = reader.GetString(2);
                             DowngradeInfo.Cover_Amount = reader.GetString(3);
+                            DowngradeInfo.Component = reader.GetString(4);
 
 
 
-                            ListDowngradeComponent.Add(DowngradeInfo);
+                                ListDowngradeComponent.Add(DowngradeInfo);
                         }
 
 
@@ -57,7 +59,8 @@ public class DowngradeInfo
         public String Date;
         public String Method;
         public String Cover_Amount;
-  
+        public String Component;
+
 
     }
 }

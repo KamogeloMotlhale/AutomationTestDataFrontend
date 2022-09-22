@@ -11,7 +11,8 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
         {
             try
             { 
-              String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
+              String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                ;
                 using (SqlConnection connection = new SqlConnection (connectionString))
                 {
 
@@ -34,7 +35,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                                 AddRolePlayerInfo.ID_number = reader.GetString(7);
                                 AddRolePlayerInfo.Relationship = reader.GetString(8);
                                 AddRolePlayerInfo.Comm_date = reader.GetString(9);
-                                AddRolePlayerInfo.CoverAmount = reader.GetString(10);
+                                AddRolePlayerInfo.Sum_Assured = reader.GetString(10);
 
 
 
@@ -71,7 +72,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
         public String ID_number;
         public String Relationship;
         public String Comm_date;
-        public String CoverAmount;
+        public String Sum_Assured;
 
 
     }
