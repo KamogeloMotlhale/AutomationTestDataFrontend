@@ -11,7 +11,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
     {
         try
         {
-            String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+            String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30"; 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
@@ -27,7 +27,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
                                 CancelpolicyInfo.PolicyNo = reader.GetString(1);
                                 CancelpolicyInfo.TerminationReason = reader.GetString(2);
-                                CancelpolicyInfo.TerminationDate = reader.GetString(3);
 
 
 
@@ -56,7 +55,6 @@ public class CancelpolicyInfo
         public String id;
         public String PolicyNo;
         public String TerminationReason;
-        public String TerminationDate;
   
 
     }

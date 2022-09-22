@@ -18,10 +18,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         {
             CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
             CancelpolicyInfo.TerminationReason = Request.Form["TerminationReason"];
-            CancelpolicyInfo.TerminationDate = Request.Form["TerminationDate"];
            
 
-            if(CancelpolicyInfo.PolicyNo.Length == 0|| CancelpolicyInfo.TerminationReason.Length == 0 || CancelpolicyInfo.TerminationDate.Length == 0)
+            if(CancelpolicyInfo.PolicyNo.Length == 0|| CancelpolicyInfo.TerminationReason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -31,19 +30,18 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
             try 
             {
                
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                String connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
                 using (SqlConnection connection = new SqlConnection(connectionString)) 
                 {
                     connection.Open();
                     String sql = "INSERT INTO Cancelpolicy " +
-                                "(PolicyNo, TerminationReason, TerminationDate) VALUES" +
-                                "(@PolicyNo, @TerminationReason, @TerminationDate);";
+                                "(PolicyNo, TerminationReason) VALUES" +
+                                "(@PolicyNo, @TerminationReason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
                         command.Parameters.AddWithValue("@TerminationReason", CancelpolicyInfo.TerminationReason);
-                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationDate);
                         ;
 
                         command.ExecuteNonQuery();
@@ -52,7 +50,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
 
                 }
-                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationReason = ""; CancelpolicyInfo.TerminationDate = "";
+                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationReason = ""; 
                 successMessage = "New Termination policy Added Successfully";
                 return;
 

@@ -8,7 +8,7 @@
 
         String id = Request.Query["id"];
 
-        string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+        string connectionString = "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Users/G992107/Documents/Github/ilrsafricanautopolicyservicing/data/Automation.mdf;Integrated Security=True;Connect Timeout=30";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
