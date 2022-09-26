@@ -33,7 +33,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                                 ChangeLifeDataInfo.Department = reader.GetString(5);
                                 ChangeLifeDataInfo.Profession = reader.GetString(6);
 
-
                                 ListChangeLifeData.Add(ChangeLifeDataInfo);
                          }
 
