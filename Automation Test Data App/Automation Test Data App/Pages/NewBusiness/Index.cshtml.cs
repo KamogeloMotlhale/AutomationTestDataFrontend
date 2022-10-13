@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
-
 namespace Automation_Test_Data_App.Pages.NewBusiness
 {
     public class IndexModel : PageModel
@@ -30,12 +29,10 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
             }
             var formFile = fileUpload.FormFile;
             var filePath = Path.Combine(fullPath, formFile.FileName);
-
             using (var stream = System.IO.File.Create(filePath))
             {
                 formFile.CopyToAsync(stream);
             }
-
             // Process uploaded files  
             // Don't rely on or trust the FileName property without validation.
             var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + filePath + "';Extended Properties=\"Excel 12.0;HDR=YES;\"";
@@ -43,33 +40,21 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
             {
                 try
                 {
-
                     // Open connection
                     conn.Open();
                     string cmdQuery = $"SELECT * FROM [Scenarios$]";
-
                     OleDbCommand cmd = new OleDbCommand(cmdQuery, conn);
-
                     // Create new OleDbDataAdapter
                     OleDbDataAdapter oleda = new OleDbDataAdapter();
-
                     oleda.SelectCommand = cmd;
-
                     // Create a DataSet which will hold the data extracted from the worksheet.
                     DataSet ds = new DataSet();
-
                     // Fill the DataSet from the data extracted from the worksheet.
                     oleda.Fill(ds, "Policies");
-
-
-
                     foreach (var row in ds.Tables[0].DefaultView)
                     {
-
                         var excellAge = ((System.Data.DataRowView)row).Row.ItemArray[0].ToString();
-
-                      }
-
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -80,14 +65,10 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
                     conn.Close();
                     conn.Dispose();
                 }
-
-
             }
             return Page();
         }
-
     }
-
     public class FileUpload
     {
         [Required]
@@ -96,4 +77,3 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
         public string SuccessMessage { get; set; }
     }
 }
-
