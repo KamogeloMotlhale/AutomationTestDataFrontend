@@ -17,11 +17,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
         public void OnPost()
         {
             ReinstateInfo.PolicyNo = Request.Form["PolicyNo"];
-            ReinstateInfo.Date = Request.Form["Date"];
-            ReinstateInfo.Reason = Request.Form["Reason"];
+            ReinstateInfo.ReinstatementReason = Request.Form["ReinstatementReason"];
+            ReinstateInfo.ReinstatementDate = Request.Form["ReinstatementDate"];
            
 
-            if(ReinstateInfo.PolicyNo.Length == 0 || ReinstateInfo.Date.Length == 0|| ReinstateInfo.Reason.Length == 0)
+            if(ReinstateInfo.PolicyNo.Length == 0|| ReinstateInfo.ReinstatementReason.Length == 0 || ReinstateInfo.ReinstatementDate.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,14 +36,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 {
                     connection.Open();
                     String sql = "INSERT INTO Reinstate " +
-                                "(PolicyNo, Date,  Reason) VALUES" +
-                                "(@PolicyNo, @Date, @Reason);";
+                                "(PolicyNo, ReinstatementReason, ReinstatementDate) VALUES" +
+                                "(@PolicyNo, @ReinstatementReason, @ReinstatementDate);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@PolicyNo", ReinstateInfo.PolicyNo);
-                        command.Parameters.AddWithValue("@Date", ReinstateInfo.Date);
-                        command.Parameters.AddWithValue("@Reason", ReinstateInfo.Reason);
+                        command.Parameters.AddWithValue("@ReinstatementReason", ReinstateInfo.ReinstatementReason);
+                        command.Parameters.AddWithValue("@ReinstatementDate", ReinstateInfo.ReinstatementDate);
                         ;
 
                         command.ExecuteNonQuery();
@@ -52,9 +52,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
 
                 }
-                ReinstateInfo.PolicyNo = ""; ReinstateInfo.Date = ""; ReinstateInfo.Reason = "";
-                successMessage = "New Reinstatement Info  Added Successfully";
+                ReinstateInfo.PolicyNo = ""; ReinstateInfo.ReinstatementReason = ""; ReinstateInfo.ReinstatementDate = "";
+                successMessage = "New reinstatement policy Added Successfully";
                 return;
+
+                
 
             }
             catch(Exception ex)
@@ -63,9 +65,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 return;
             }
 
-           
-            
             Response.Redirect("/PolicyServicing/Reinstate");
+
+
         }
     }
 }

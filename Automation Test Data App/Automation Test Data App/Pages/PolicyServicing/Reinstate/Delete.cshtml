@@ -13,7 +13,7 @@
         {
             connection.Open();
 
-            String sql = "DELETE FROM  Cancelpolicy WHERE id=@id";
+            String sql = "DELETE FROM  Reinstate WHERE id=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);

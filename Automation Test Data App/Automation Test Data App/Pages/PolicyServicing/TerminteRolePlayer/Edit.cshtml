@@ -1,5 +1,5 @@
 ﻿@page
-@model Automation_Test_Data_App.Pages.AddRolePlayer.CreateModel
+@model Automation_Test_Data_App.Pages.PolicyServicing.Addalife.EditModel
 @{
 }
 
@@ -9,8 +9,8 @@
 		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
 	</div>
 }
-
-	@if (Model.successMessage.Length > 0) {
+	
+@if (Model.successMessage.Length > 0) {
 	<div class="row mb-3">
 		<div class="row mb-9">
 			<div class='alert alert-success alert-dismissible fade show' role='alert'>
@@ -19,17 +19,21 @@
 			</div>
 		</div>
 	</div>
-	}
-	
+}
+
 <br>
-<h4> Add New RolePlayer</h4>
+<h2>Edit Life Assured</h2>
 
 <form method="POST">
+
+	<input type="hidden" name="id" value="@Model.AddaLifeInfo.id">
+
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-		<select id='Title' class="form-control" name="Title"  value="@Model.AddRolePlayerInfo.Title">
-		<option value=""></option>
+		<select id='id' class="form-control" name="Title"  value="@Model.AddaLifeInfo.Title">
+		  <option value=""></option>
+		  <option value="" selected="">&lt;None&gt;</option>
 		  <option value="Adm">Adm</option>
 		  <option value="Adv">Adv</option>
 		  <option value="Brig">Brig</option>
@@ -57,36 +61,35 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">First_name</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="First_name" value="@Model.AddRolePlayerInfo.First_Name">	
+			<input type="text" class="form-control" name="First_name" value="@Model.AddaLifeInfo.First_Name">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Surname</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Surname" value="@Model.AddRolePlayerInfo.Surname">	
+			<input type="text" class="form-control" name="Surname" value="@Model.AddaLifeInfo.Surname">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Initials</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Initials" value="@Model.AddRolePlayerInfo.Initials">	
+			<input type="text" class="form-control" name="Initials" value="@Model.AddaLifeInfo.Initials">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Date of Birth</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="DOB" value="@Model.AddRolePlayerInfo.DOB">			
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="dob" value="@Model.AddaLifeInfo.dob">			
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Gender</label>
 		<div class="col-sm-6">
-		<select id='Gender' class="form-control" name="Gender" value="@Model.AddRolePlayerInfo.Gender">
-		<option value=""></option>
+		<select id='Gender' class="form-control" name="Gender" value="@Model.AddaLifeInfo.Gender">
 		<option value="Male">Male</option>
 		<option value="Female">Female</option>
 		</select>
@@ -96,15 +99,14 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">ID_number</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="ID_number" value="@Model.AddRolePlayerInfo.ID_number"  minlength="13" maxlength="13">	
+			<input type="text" class="form-control" name="ID_number" value="@Model.AddaLifeInfo.ID_number"  minlength="13" maxlength="13">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Relationship</label>
 		<div class="col-sm-6">
-		<select id='Relationship' class="form-control" name="Relationship" value="@Model.AddRolePlayerInfo.Relationship">
-		  <option value=""></option>
+		<select id='Relationship' class="form-control" name="Relationship" value="@Model.AddaLifeInfo.Relationship">
 		  <option value="Additional child">Additional child</option>
 		  <option value="Additional parent">Additional parent</option>
 		  <option value="Additional Partner">Additional Partner</option>
@@ -154,22 +156,27 @@
 		  <option value="Son">Son</option>
 		  <option value="Son-in-law">Son-in-law</option>
 		  <option value="Spouse">Spouse</option>
+		  <option value="tep father">Step father</option>
+		  <option value="tep mother">Step mother</option>
+		  <option value="Step-parents">Step-parents</option>
+		  <option value="Stillborn Child">Stillborn Child</option>
+		  <option value="Student Child">Student Child</option>
 		  <option value="Wider Family Member">Wider Family Member</option>
-		  </select>
-		</div>
-	</div>
-
-	<div class="row mb-3"> 
-		<label class="col-sm-3 col-form-label">Commencement_date</label>
-		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddRolePlayerInfo.Comm_date">			
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Sum Assured</label>
+		<label class="col-sm-3 col-form-label">Comm_date</label>
 		<div class="col-sm-6">
-		<select id='Sum_Assured' class="form-control" name="Sum_Assured" value="@Model.AddRolePlayerInfo.Sum_Assured">
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">			
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Cover Amount</label>
+		<div class="col-sm-6">
+		<select id='CoverAmount' class="form-control" name="CoverAmount" value="@Model.AddaLifeInfo.CoverAmount">
 		<option value=""></option>
 		<option value="5000">5000</option>
 		<option value="7500">7500</option>
@@ -189,7 +196,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/PolicyServicing/AddRolePlayer" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/PolicyServicing/Addalife" role="button">Cancel</a>
 		</div>
 	</div>
 

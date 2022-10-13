@@ -60,7 +60,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                 return;
             }
 
-               // Response.Redirect("/PolicyServicing/CollectionMethodData");
+               Response.Redirect("/PolicyServicing/CollectionMethodData");
            
         }
     }

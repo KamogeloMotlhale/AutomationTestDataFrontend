@@ -5,9 +5,8 @@ using System.Data.SqlClient;
 namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 {
     public class IndexModel : PageModel
-    {
-        
-    public List<ReinstateInfo> ListReinstate= new List<ReinstateInfo>();
+    { 
+    public List<ReinstateInfo> ListReinstate = new List<ReinstateInfo>();
     public void OnGet()
     {
         try
@@ -27,8 +26,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                                 ReinstateInfo ReinstateInfo = new ReinstateInfo();
                                 ReinstateInfo.id = "" + reader.GetInt32(0);
                                 ReinstateInfo.PolicyNo = reader.GetString(1);
-                                ReinstateInfo.Date = reader.GetString(12);
-                                ReinstateInfo.Reason = reader.GetString(3);
+                                ReinstateInfo.ReinstatementReason = reader.GetString(2);
+                                ReinstateInfo.ReinstatementDate = reader.GetString(3);
 
 
 
@@ -48,14 +47,16 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
         }
 
 
+
+
     }
 }
 public class ReinstateInfo
     {
         public String id;
         public String PolicyNo;
-        public String Date;
-        public String Reason;
+        public String ReinstatementReason;
+        public String ReinstatementDate;
   
 
     }

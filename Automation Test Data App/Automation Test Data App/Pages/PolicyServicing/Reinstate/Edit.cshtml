@@ -28,55 +28,39 @@
 
 	<input type="hidden" name="id" value="@Model.ReinstateInfo.id">
 
+	
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Policy No</label>
+		<label class="col-sm-3 col-form-label">Policy Number</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="PolicyNo"   value="@Model.ReinstateInfo.PolicyNo"  minlength="10" maxlength="10">	
+			<input type="text" class="form-control" name="PolicyNo" value="@Model.ReinstateInfo.PolicyNo" minlength="10" maxlength="10">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Termination Date</label>
+		<label class="col-sm-3 col-form-label">ReinstatementReason</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date" value="@Model.ReinstateInfo.Date">	
-		</div>
-	</div>
-
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Reason</label>
-		<div class="col-sm-6">
-		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.ReinstateInfo.Reason">
+		<select id='ReinstatementReason' class="form-control" name="ReinstatementReason" value="@Model.ReinstateInfo.ReinstatementReason">
 		<option value=""></option>
-<		<option value="Cancelled by external service">Cancelled by external service</option>
-		<option value="Cannot Afford">Cannot Afford</option><option value="Cannot Afford (Follow up)">Cannot Afford (Follow up)</option>
-		<option value="Claim Received Policy Lapsed">Claim Received Policy Lapsed</option>
-		<option value="Cover Not Required">Cover Not Required</option>
-		<option value="Decline Policy">Decline Policy</option>
-		<option value="Duplicate Product">Duplicate Product</option>
-		<option value="Got Better Offer">Got Better Offer</option>
-		<option value="Input Error">Input Error</option>
-		<option value="Lapsed Policy">Lapsed Policy</option>
-		<option value="Life Insured Deceased">Life Insured Deceased</option>
-		<option value="Misrepresentation">Misrepresentation</option>
-		<option value="NAEDO Dispute">NAEDO Dispute</option><option value="No Insurable Interest">No Insurable Interest</option>
-		<option value="No Longer Need the Cover">No Longer Need the Cover</option>
-		<option value="Non-Disclosure">Non-Disclosure</option><option value="Not Satisfied With Product">Not Satisfied With Product</option>
-		<option value="Not Satisfied With Service">Not Satisfied With Service</option>
-		<option value="Policy Dispute">Policy Dispute</option>
-		<option value="Policy Document Not Received">Policy Document Not Received</option>
-		<option value="Policy Downgrade">Policy Downgrade</option>
-		<option value="Policy Expired">Policy Expired</option>
-		<option value="Policy Upgrade">Policy Upgrade</option><option value="Policyholder Deceased">Policyholder Deceased</option>
-		<option value="Problems with Debit Order">Problems with Debit Order</option>
-		<option value="Replaced Policy with Another Policy">Replaced Policy with Another Policy</option>
-		<option value="Retrenched">Retrenched</option>
-		<option value="Retrenchment (Follow up)">Retrenchment (Follow up)</option>
-		<option value="Test Policy">Test Policy</option><
-		<option value="Unauthorized Debit Day Move">Unauthorized Debit Day Move</option>
+		<option value="Back dated claim<">Back dated claim</option>
+	   <option value="Bank details updated, not activated">Bank details updated, not activated</option>
+	   <option value="Client request">Client request</option>
+	   <option value="Conservation">Conservation</option>
+	   <option value="Due to ill health">Due to ill health</option>
+	   <option value="Error on collections">Error on collections</option>
+	   <option value="Cooling off period">Cooling off period</option>
 		</select>
 		</div>
 	</div>
 
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Reinstatement Date</label>
+		<div class="col-sm-6">
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="ReinstatementDate" value="@Model.ReinstateInfo.ReinstatementDate">	
+		</div>
+	</div>
+
+
+	
 
 
 	<div class="row mb-3">
@@ -84,7 +68,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/PolicyServicing/Reinstate" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/policyServicing/Reinstate" role="button">Cancel</a>
 		</div>
 	</div>
 

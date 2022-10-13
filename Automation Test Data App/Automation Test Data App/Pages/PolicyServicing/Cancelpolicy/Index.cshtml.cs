@@ -5,15 +5,15 @@ using System.Data.SqlClient;
 namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 {
     public class IndexModel : PageModel
-    {
-        
+    { 
     public List<CancelpolicyInfo> ListCancelpolicy = new List<CancelpolicyInfo>();
     public void OnGet()
     {
         try
         {
             String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
                 connection.Open();
@@ -27,8 +27,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                                 CancelpolicyInfo CancelpolicyInfo = new CancelpolicyInfo();
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
                                 CancelpolicyInfo.PolicyNo = reader.GetString(1);
-                                CancelpolicyInfo.TerminationDate = reader.GetString(2);
-                                CancelpolicyInfo.Reason = reader.GetString(3);
+                                CancelpolicyInfo.TerminationReason = reader.GetString(2);
 
 
 
@@ -56,8 +55,7 @@ public class CancelpolicyInfo
     {
         public String id;
         public String PolicyNo;
-        public String TerminationDate;
-        public String Reason;
+        public String TerminationReason;
   
 
     }

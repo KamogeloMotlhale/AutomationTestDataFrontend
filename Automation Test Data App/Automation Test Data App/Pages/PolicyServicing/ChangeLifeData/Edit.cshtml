@@ -31,42 +31,86 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Title</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Title" value="@Model.ChangeLifeDataInfo.Title">	
+		<select id='tenure' class="form-control" name="Title" value="@Model.ChangeLifeDataInfo.Title">
+		<option value=""></option>
+		<option value="Mister">Mr</option>
+		<option value="Mrs">Mrs</option>
+		<option value="Miss">Miss</option>
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">First_name</label>
+		<label class="col-sm-3 col-form-label">Surname</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="First_name" value="@Model.ChangeLifeDataInfo.Surname">	
+			<input type="text" class="form-control" name="Surname" value="@Model.ChangeLifeDataInfo.Surname">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Marital Status</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="MaritalStatus" value="@Model.ChangeLifeDataInfo.MaritalStatus">	
+		<select id="maritalstatus" class="form-control" name="MaritalStatus" value="@Model.ChangeLifeDataInfo.MaritalStatus">
+	<option value=""></option>
+	<option value="er_AcStaMarSin">Single</option>
+	<option value="er_AcStaMarMar">Married</option>
+	<option value="er_AcStaMarDiv">Divorced</option>
+	<option value="er_AcStaMarWid">Widowed</option>
+	<option value="er_AcStaMarSep">Separated</option>
+	<option value="er_AcStaMarUnk">Unknown</option>
+	<option value="er_AcStaMarMac">Married (in Community of Property)</option>
+	<option value="er_AcStaMarMnc">Married (not in Community of Property)</option>
+	<option value="er_AcStaMarDpp">Domestic Partnership/Co-habiting</option>
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Education Level</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="EducationLevel" value="@Model.ChangeLifeDataInfo.EducationLevel">	
+		<select id="EducationLevel" class="form-control" name="EducationLevel" value="@Model.ChangeLifeDataInfo.EducationLevel">	
+		<option value="Mister">Mr</option>
+		<option value="NMT">No Matric</option>
+		<option value="MTR">Matric</option>
+		<option value="DPL">Diploma (less than 3 years)</option>
+		<option value="DPM">Diploma (3 years or more)</option>
+		<option value="UND">University/Undergraduate Degree</option>
+		<option value="PGD">Postgraduate Study</option>
+		</select>
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Department</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Department" value="@Model.ChangeLifeDataInfo.Department">	
+		<input type="text" class="form-control" name="Department" value="@Model.ChangeLifeDataInfo.Department">
+	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Profession</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Profession" value="@Model.ChangeLifeDataInfo.Profession">	
+		<select id="Profession" class="form-control" name="Profession" value="@Model.ChangeLifeDataInfo.Profession">	
+		<option value=""></option>
+		<option value="ACU">Accountant</option>
+		<option value="ACT">Actor/Actress</option>
+		<option value="ATY">Actuary</option>
+		<option value="ADS">Advertising</option>
+		<option value="AGC">Agriculture</option>
+		<option value="ARC">Architect</option>
+		<option value="AUD">Auditor</option>
+		<option value="BNR">Banker</option>
+		<option value="BKP">Book keeper</option>
+		<option value="BRK">Broker</option>
+		<option value="DTR">Doctor</option>
+		<option value="EGR">Engineer</option>
+		<option value="HRC">Human Resources</option>
+		<option value="IEX">Import/Export</option>
+		<option value="ITC">Information Technology</option>
+		<option value="ISE">Insurance</option><option value="LAW">Lawyer</option>
+		<option value="MLY">Military</option><option value="PLT">Pilot</option>
+		</select>
 		</div>
 	</div>
 

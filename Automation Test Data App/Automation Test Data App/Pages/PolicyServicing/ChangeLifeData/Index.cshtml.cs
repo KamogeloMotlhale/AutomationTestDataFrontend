@@ -12,6 +12,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
             try
             { 
               String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+
                 using (SqlConnection connection = new SqlConnection (connectionString))
                 {
 
@@ -31,7 +32,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                                 ChangeLifeDataInfo.EducationLevel = reader.GetString(4);
                                 ChangeLifeDataInfo.Department = reader.GetString(5);
                                 ChangeLifeDataInfo.Profession = reader.GetString(6);
-
 
                                 ListChangeLifeData.Add(ChangeLifeDataInfo);
                          }

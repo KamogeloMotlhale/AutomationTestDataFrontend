@@ -8,13 +8,12 @@
 
         String id = Request.Query["id"];
 
-        string connectionString =  "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-
+        string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
 
-            String sql = "DELETE FROM  AddRolePlayer WHERE id=@id";
+            String sql = "DELETE FROM  Addalife WHERE id=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);

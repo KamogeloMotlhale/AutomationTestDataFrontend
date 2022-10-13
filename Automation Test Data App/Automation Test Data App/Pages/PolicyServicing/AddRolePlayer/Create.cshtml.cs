@@ -2,86 +2,93 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
+namespace Automation_Test_Data_App.Pages.AddRolePlayer
 {
     public class CreateModel : PageModel
     {
-        public AddRolePlayerInfo addRolePlayerInfo = new AddRolePlayerInfo();
+        public AddRolePlayerInfo AddRolePlayerInfo = new AddRolePlayerInfo(); 
         public String errorMessage = "";
         public String successMessage = "";
 
         public void OnGet()
         {
+            string userId = Request.Cookies["UserID"];
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                return;
+
+            }
         }
 
         public void OnPost()
         {
-            addRolePlayerInfo.Title = Request.Form["Title"];
-            addRolePlayerInfo.First_Name = Request.Form["First_Name"];
-            addRolePlayerInfo.Surname = Request.Form["Surname"];
-            addRolePlayerInfo.Initials = Request.Form["Initials"];
-            addRolePlayerInfo.dob = Request.Form["dob"];
-            addRolePlayerInfo.Gender = Request.Form["Gender"];
-            addRolePlayerInfo.ID_number = Request.Form["ID_number"];
-            addRolePlayerInfo.Relationship = Request.Form["Relationship"];
-            addRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
-            addRolePlayerInfo.Comm_date = Request.Form["CoverAmount"];
+            AddRolePlayerInfo.Title = Request.Form["Title"];
+            AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
+            AddRolePlayerInfo.Surname = Request.Form["Surname"];
+            AddRolePlayerInfo.Initials = Request.Form["Initials"];
+            AddRolePlayerInfo.DOB = Request.Form["DOB"];
+            AddRolePlayerInfo.Gender = Request.Form["Gender"];
+            AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
+            AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
+            AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
+            AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
 
 
-            if (addRolePlayerInfo.Title.Length == 0 || addRolePlayerInfo.First_Name.Length == 0 || addRolePlayerInfo.Surname.Length == 0 ||
-               addRolePlayerInfo.Initials.Length == 0 || addRolePlayerInfo.dob.Length == 0 || addRolePlayerInfo.Gender.Length == 0 ||
-               addRolePlayerInfo.ID_number.Length == 0 || addRolePlayerInfo.Relationship.Length == 0 || addRolePlayerInfo.Comm_date.Length == 0 || addRolePlayerInfo.CoverAmount.Length == 0)
+            if (AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
+               AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
+               AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.Sum_Assured.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
-
+                  
             }
             //save new Life assured to DB
-            try
+            try 
             {
-
+               
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+
+                using (SqlConnection connection = new SqlConnection(connectionString)) 
                 {
                     connection.Open();
                     String sql = "INSERT INTO AddRolePlayer " +
-                                "(Title, First_Name, Surname, Initials, dob, Gender, ID_number, Relationship, Comm_date, CoverAmount) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @dob, @Gender, @ID_number, @Relationship, @Comm_date,@CoverAmount);";
+                                "(Title, First_Name, Surname, Initials, DOB, Gender, ID_number, Relationship, Comm_date, Sum_Assured) VALUES" +
+                                "(@Title, @First_Name, @Surname, @Initials, @DOB, @Gender, @ID_number, @Relationship, @Comm_date , @Sum_Assured);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@Title", addRolePlayerInfo.Title);
-                        command.Parameters.AddWithValue("@First_Name", addRolePlayerInfo.First_Name);
-                        command.Parameters.AddWithValue("@Surname", addRolePlayerInfo.Surname);
-                        command.Parameters.AddWithValue("@Initials", addRolePlayerInfo.Initials);
-                        command.Parameters.AddWithValue("@dob", addRolePlayerInfo.dob);
-                        command.Parameters.AddWithValue("@Gender", addRolePlayerInfo.Gender);
-                        command.Parameters.AddWithValue("@ID_number", addRolePlayerInfo.ID_number);
-                        command.Parameters.AddWithValue("@Relationship", addRolePlayerInfo.Relationship);
-                        command.Parameters.AddWithValue("@Comm_date", addRolePlayerInfo.Comm_date);
-                        command.Parameters.AddWithValue("@CoverAmount", addRolePlayerInfo.CoverAmount);
+                        command.Parameters.AddWithValue("@Title", AddRolePlayerInfo.Title);
+                        command.Parameters.AddWithValue("@First_Name", AddRolePlayerInfo.First_Name);
+                        command.Parameters.AddWithValue("@Surname", AddRolePlayerInfo.Surname);
+                        command.Parameters.AddWithValue("@Initials", AddRolePlayerInfo.Initials);
+                        command.Parameters.AddWithValue("@DOB", AddRolePlayerInfo.DOB);
+                        command.Parameters.AddWithValue("@Gender", AddRolePlayerInfo.Gender);
+                        command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
+                        command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
+                        command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
+                        command.Parameters.AddWithValue("@Sum_Assured", AddRolePlayerInfo.Sum_Assured);
 
 
                         command.ExecuteNonQuery();
 
                     }
-
-
+                    AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = "";
+                    AddRolePlayerInfo.DOB = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.Sum_Assured = "";
+                    successMessage = "New role player Added Successfully";
+                    
                 }
 
-                addRolePlayerInfo.Title = ""; addRolePlayerInfo.First_Name = ""; addRolePlayerInfo.Surname = ""; addRolePlayerInfo.Initials = ""; addRolePlayerInfo.dob = ""; 
-                addRolePlayerInfo.Gender = ""; addRolePlayerInfo.ID_number = ""; addRolePlayerInfo.Relationship = ""; addRolePlayerInfo.Comm_date = ""; addRolePlayerInfo.CoverAmount = "";
-                successMessage = "New Life Assured Added Successfully";
-
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 errorMessage = ex.Message;
                 return;
             }
 
-            
-           // Response.Redirect("/Additional Life Assured/Index");
         }
     }
 }

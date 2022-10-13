@@ -36,8 +36,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
 
                                 ReinstateInfo.id = "" + reader.GetInt32(0);
                                 ReinstateInfo.PolicyNo = reader.GetString(1);
-                                ReinstateInfo.Date = reader.GetString(2);
-                                ReinstateInfo.Reason = reader.GetString(3);
+                                ReinstateInfo.ReinstatementReason = reader.GetString(2);
+                                ReinstateInfo.ReinstatementDate = reader.GetString(3);
 
 
 
@@ -61,11 +61,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
         {
             ReinstateInfo.id = Request.Form["id"];
             ReinstateInfo.PolicyNo = Request.Form["PolicyNo"];
-            ReinstateInfo.Date = Request.Form["Date"];
-            ReinstateInfo.Reason = Request.Form["Reason"];
+            ReinstateInfo.ReinstatementReason = Request.Form["ReinstatementReason"];
+            ReinstateInfo.ReinstatementDate = Request.Form["ReinstatementDate"];
           
 
-            if (ReinstateInfo.PolicyNo.Length == 0 || ReinstateInfo.Date.Length == 0 || ReinstateInfo.Reason.Length == 0)
+            if (ReinstateInfo.PolicyNo.Length == 0 || ReinstateInfo.ReinstatementReason.Length == 0 || ReinstateInfo.ReinstatementDate.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -79,23 +79,23 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Reinstate
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "UPDATE ReinstateInfo " +
-                                 "SET PolicyNo=@PolicyNo,Date=@Date, Reason=@Reason " +
+                    String sql = "UPDATE Reinstate " +
+                                 "SET PolicyNo=@PolicyNo,ReinstatementReason=@ReinstatementReason, ReinstatementDate=@ReinstatementDate " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", ReinstateInfo.id);
                         command.Parameters.AddWithValue("@PolicyNo", ReinstateInfo.PolicyNo);
-                        command.Parameters.AddWithValue("@Date", ReinstateInfo.Date);
-                        command.Parameters.AddWithValue("@Reason", ReinstateInfo.Reason);
+                        command.Parameters.AddWithValue("@ReinstatementReason", ReinstateInfo.ReinstatementReason);
+                        command.Parameters.AddWithValue("@ReinstatementDate", ReinstateInfo.ReinstatementDate);
                        
                   
 
                         command.ExecuteNonQuery();
 
                     }
-                    ReinstateInfo.PolicyNo = ""; ReinstateInfo.Date = ""; ReinstateInfo.Reason = "";
+                    ReinstateInfo.PolicyNo = ""; ReinstateInfo.ReinstatementReason = ""; ReinstateInfo.ReinstatementDate = "";
 
                 }
 

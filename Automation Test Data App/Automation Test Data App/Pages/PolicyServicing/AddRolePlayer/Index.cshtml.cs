@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
-namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
+namespace Automation_Test_Data_App.Pages.AddRolePlayer
 {
     public class IndexModel : PageModel
     {
@@ -10,43 +10,45 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
         public void OnGet()
         {
             try
-            {
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+            { 
+              String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                ;
+                using (SqlConnection connection = new SqlConnection (connectionString))
                 {
 
                     connection.Open();
                     String sql = "SELECT * FROM AddRolePlayer";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                            while (reader.Read())
-                            {
+                        using(SqlDataReader reader = command.ExecuteReader()) 
+                        while(reader.Read())
+                         {
 
-                                AddRolePlayerInfo addRoleplayerInfo = new AddRolePlayerInfo();
-                                addRoleplayerInfo.id = "" + reader.GetInt32(0);
-                                addRoleplayerInfo.Title = reader.GetString(1);
-                                addRoleplayerInfo.First_Name = reader.GetString(2);
-                                addRoleplayerInfo.Surname = reader.GetString(3);
-                                addRoleplayerInfo.Initials = reader.GetString(4);
-                                addRoleplayerInfo.dob = reader.GetString(5);
-                                addRoleplayerInfo.Gender = reader.GetString(6);
-                                addRoleplayerInfo.ID_number = reader.GetString(7);
-                                addRoleplayerInfo.Relationship = reader.GetString(8);
-                                addRoleplayerInfo.Comm_date = reader.GetString(9);
-                                addRoleplayerInfo.CoverAmount = reader.GetString(10);
+                                AddRolePlayerInfo AddRolePlayerInfo = new AddRolePlayerInfo();
+                                AddRolePlayerInfo.id =""+ reader.GetInt32(0);
+                                AddRolePlayerInfo.Title = reader.GetString(1);
+                                AddRolePlayerInfo.First_Name = reader.GetString(2);
+                                AddRolePlayerInfo.Surname = reader.GetString(3);
+                                AddRolePlayerInfo.Initials = reader.GetString(4);
+                                AddRolePlayerInfo.DOB = reader.GetString(5);
+                                AddRolePlayerInfo.Gender = reader.GetString(6);
+                                AddRolePlayerInfo.ID_number = reader.GetString(7);
+                                AddRolePlayerInfo.Relationship = reader.GetString(8);
+                                AddRolePlayerInfo.Comm_date = reader.GetString(9);
+                                AddRolePlayerInfo.Sum_Assured = reader.GetString(10);
 
 
-                                ListAddRolePlayer.Add(addRoleplayerInfo);
-                            }
+
+                                ListAddRolePlayer.Add(AddRolePlayerInfo);
+                         }
 
 
                     }
 
                 }
-
+            
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Console.WriteLine("Exception:" + ex.ToString());
 
@@ -65,14 +67,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
         public String First_Name;
         public String Surname;
         public String Initials;
-        public String dob;
+        public String DOB;
         public String Gender;
         public String ID_number;
         public String Relationship;
         public String Comm_date;
-        public String CoverAmount;
+        public String Sum_Assured;
 
 
     }
-
 }

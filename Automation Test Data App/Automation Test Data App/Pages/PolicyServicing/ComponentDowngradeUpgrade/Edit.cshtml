@@ -50,7 +50,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Cover_Amount</label>
 		<div class="col-sm-6">
-		<select id='id' class="form-control" name="Cover_Amount" value="@Model.DowngradeInfo.Cover_Amount">
+		<select id='Cover_Amount' class="form-control" name="Cover_Amount" value="@Model.DowngradeInfo.Cover_Amount">
 		<option value=""></option>
 		<option value="5000">5000</option>
 		<option value="7500">7500</option>
@@ -65,7 +65,18 @@
 		</div>
 	</div>
 
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Component</label>
+		<div class="col-sm-6">
+		<select id='Component' class="form-control" name="Component" value="@Model.DowngradeInfo.Method">
+		<option value=""></option>
+		<option value="Prinicpal Life Assured "> Prinicpal Life Assured </option>
+		<option value="Wider Family Member">Wider Family Member </option>
+		</select>
+		</div>
+	</div>
 
+	
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">
