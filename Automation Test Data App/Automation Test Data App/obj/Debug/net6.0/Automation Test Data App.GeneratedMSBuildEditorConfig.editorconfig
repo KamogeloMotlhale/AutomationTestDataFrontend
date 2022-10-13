@@ -47,22 +47,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3QnVzaW5lc3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Addalife/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZGFsaWZlXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddBeneficiary/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZEJlbmVmaWNpYXJ5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -81,22 +65,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePlayer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQbGF5ZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/AddRolePostDated/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEFkZFJvbGVQb3N0RGF0ZWRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Cancelpolicy/Create.cshtml]
@@ -177,6 +145,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Reinstate/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFJlaW5zdGF0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992107/Documents/xunit/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Privacy.cshtml]

@@ -1,0 +1,201 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Addalife.CreateModel
+@{
+}
+
+@if(Model.errorMessage.Length > 0){
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+	</div>
+}
+
+	@if (Model.successMessage.Length > 0) {
+	<div class="row mb-3">
+		<div class="row mb-9">
+			<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+			</div>
+		</div>
+	</div>
+	}
+	
+<br>
+<h4>New Life Assured</h4>
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Title</label>
+		<div class="col-sm-6">
+		<select id='Title' class="form-control" name="Title"  value="@Model.AddaLifeInfo.Title">
+		<option value=""></option> 
+		  <option value="Adm">Adm</option>
+		  <option value="Adv">Adv</option>
+		  <option value="Brig">Brig</option>
+		  <option value="Capt">Capt</option>
+		  <option value="Col">Col</option>
+		  <option value="Dr">Dr</option>
+		  <option value="Exec">Exec</option>
+		  <option value="Gen">Gen</option>
+		  <option value="HON">Hon</option>
+		  <option value="Lt">Lt</option>
+		  <option value="Maj">Maj</option>
+		  <option value="Messr">Messr</option>
+		  <option value="Miss">Miss</option>
+		  <option value="Mr">Mr</option>
+		  <option value="Mrs">Mrs</option>
+		  <option value="Ms">Ms</option>
+		  <option value="Prf">Prf</option>
+		  <option value="Pstr">Pstr</option>
+		  <option value="Rev">Rev</option>
+		  <option value="Sir">Sir</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">First_name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="First_name" value="@Model.AddaLifeInfo.First_Name">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Surname</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Surname" value="@Model.AddaLifeInfo.Surname">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Initials</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Initials" value="@Model.AddaLifeInfo.Initials">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Date of Birth</label>
+		<div class="col-sm-6">
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="dob" value="@Model.AddaLifeInfo.dob">			
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Gender</label>
+		<div class="col-sm-6">
+		<select id='Gender' class="form-control" name="Gender" value="@Model.AddaLifeInfo.Gender">
+		<option value=""></option>
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">ID_number</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="ID_number" value="@Model.AddaLifeInfo.ID_number"  minlength="13" maxlength="13">	
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Relationship</label>
+		<div class="col-sm-6">
+		<select id='Relationship' class="form-control" name="Relationship" value="@Model.AddaLifeInfo.Relationship">
+		  <option value=""></option>
+		  <option value="Additional child">Additional child</option>
+		  <option value="Additional parent">Additional parent</option>
+		  <option value="Additional Partner">Additional Partner</option>
+		  <option value="Adult Child">Adult Child</option>
+		  <option value="Aunt/uncle">Aunt/uncle</option>
+		  <option value="Broker">Broker</option>
+		  <option value="Brother">Brother</option>
+		  <option value="Brother-in-law">Brother-in-law</option>
+		  <option value="Child">Child</option>
+		  <option value="Cousin">Cousin</option>
+		  <option value="Daughter">Daughter</option>
+		  <option value=".488">Daughter-in-law</option>
+		  <option value="Dependant">Dependant</option>
+		  <option value="Disabled Child">Disabled Child</option>
+		  <option value="DomWork">DomWork</option>
+		  <option value="Employee">Employee</option>
+		  <option value="Employer">Employer</option>
+		  <option value="Estate">Estate</option>
+		  <option value="Ex-spouse">Ex-spouse</option>
+		  <option value="Extended Family">Extended Family</option>
+		  <option value="Family Trust">Family Trust</option>
+		  <option value="Father in law">Father in law</option>
+		  <option value="Fiance">Fiance</option>
+		  <option value="First cousin">First cousin</option>
+		  <option value=">First cousin's child">First cousin's child</option>
+		  <option value="First cousins child">First cousins child</option>
+		  <option value="Foster Child">Foster Child</option>
+		  <option value=".Friend">Friend</option>
+		  <option value="God daugther">God daugther</option>
+		  <option value="Grandchild">Grandchild</option>
+		  <option value="Grandparent">Grandparent</option>
+		  <option value="Great grand parents-in-law">Great grand parents-in-law</option>
+		  <option value=">Great grandchild<">Great grandchild</option>
+		  <option value="Great Grandparent">Great Grandparent</option>
+		  <option value="Guardian">Guardian</option>
+		  <option value="Housekeeper">Housekeeper</option>
+		  <option value="Intermediary">Intermediary</option>
+		  <option value="Mother in law">Mother in law</option>
+		  <option value="Niece/Nephew">Niece/Nephew</option>
+		  <option value="Other">Other</option>
+		  <option value="Parent">Parent</option>
+		  <option value="Parents-in-law">Parents-in-law</option>
+		  <option value="Partner">Partner</option>
+		  <option value="Sister">Sister</option>
+		  <option value="Sister-in-law">Sister-in-law</option>
+		  <option value="Sister/Brother">Sister/Brother</option>
+		  <option value="Son">Son</option>
+		  <option value="Son-in-law">Son-in-law</option>
+		  <option value="Spouse">Spouse</option>
+		  <option value="Step father">Step father</option>
+		  <option value="Step mother">Step mother</option>
+		  <option value="Step-parents">Step-parents</option>
+		  <option value="Stillborn Child">Stillborn Child</option>
+		  <option value="Student Child">Student Child</option>
+		  <option value="Wider Family Member">Wider Family Member</option>
+		  </select>
+		</div>
+	</div>
+
+	<div class="row mb-3"> 
+		<label class="col-sm-3 col-form-label">Commencement_date</label>
+		<div class="col-sm-6">
+		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Comm_date" value="@Model.AddaLifeInfo.Comm_date">			
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Cover_Amount</label>
+		<div class="col-sm-6">
+		<select id='CoverAmount' class="form-control" name="CoverAmount" value="@Model.AddaLifeInfo.CoverAmount">
+		<option value=""></option>
+		<option value="5000">5000</option>
+		<option value="7500">7500</option>
+		<option value="10000">10000</option>
+		<option value="15000">15000</option>
+		<option value="20000">20000</option>
+		<option value="30000">30000</option>
+		<option value="40000">40000</option>
+		<option value="50000">50000</option>
+		<option value="60000">60000</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/Addalife" role="button">Cancel</a>
+		</div>
+	</div>
+
+</form>		
