@@ -5324,11 +5324,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\G992107\\Documents\\Github\\ilrsafricanautofrontend\\Automation Test Data App\\Automation Test Data App.csproj",
+      "projectUniqueName": "C:\\Users\\G992107\\Documents\\Github\\FE\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
       "projectName": "Automation Test Data App",
-      "projectPath": "C:\\Users\\G992107\\Documents\\Github\\ilrsafricanautofrontend\\Automation Test Data App\\Automation Test Data App.csproj",
+      "projectPath": "C:\\Users\\G992107\\Documents\\Github\\FE\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
       "packagesPath": "C:\\Users\\G992107\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\G992107\\Documents\\Github\\ilrsafricanautofrontend\\Automation Test Data App\\obj\\",
+      "outputPath": "C:\\Users\\G992107\\Documents\\Github\\FE\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

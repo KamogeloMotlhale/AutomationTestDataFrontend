@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lQUT6Q52i4yK9NqiezT2g3sjOeZPSEnw4BkHSJUOouGLNU1CgR+T+Qwcw5Pjbo7cRClBMbqGOgHkS3zPHKW6rA==",
+  "dgSpecHash": "Tui2QNSr7yEBcikSsXENrGPN5QLdtyQm/IZg504LUGkeCyPXIHf6Bu4m6FOCfuw+ByHeX21Gp3Em2RZ0AN6vgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\G992107\\Documents\\Github\\ilrsafricanautofrontend\\Automation Test Data App\\Automation Test Data App.csproj",
+  "projectFilePath": "C:\\Users\\G992107\\Documents\\Github\\FE\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\G992107\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\G992107\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
