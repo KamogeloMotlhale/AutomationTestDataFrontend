@@ -35,17 +35,11 @@
 		</div>
 	</div>
 
+	
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Termination Date</label>
+		<label class="col-sm-3 col-form-label">Termination Reason</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="TerminationDate" value="@Model.CancelpolicyInfo.TerminationDate">	
-		</div>
-	</div>
-
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Reason</label>
-		<div class="col-sm-6">
-		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.CancelpolicyInfo.Reason">
+		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.CancelpolicyInfo.TerminationReason">
 		<option value=""></option>
 <		<option value="Cancelled by external service">Cancelled by external service</option>
 		<option value="Cannot Afford">Cannot Afford</option><option value="Cannot Afford (Follow up)">Cannot Afford (Follow up)</option>

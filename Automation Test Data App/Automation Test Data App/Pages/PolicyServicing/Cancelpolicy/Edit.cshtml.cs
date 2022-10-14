@@ -36,8 +36,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
                                 CancelpolicyInfo.PolicyNo = reader.GetString(1);
-                                CancelpolicyInfo.TerminationDate = reader.GetString(2);
-                                CancelpolicyInfo.Reason = reader.GetString(3);
+                                CancelpolicyInfo.TerminationReason = reader.GetString(2);
+                                
 
 
 
@@ -61,11 +61,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         {
             CancelpolicyInfo.id = Request.Form["id"];
             CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
-            CancelpolicyInfo.TerminationDate = Request.Form["TerminationDate"];
-            CancelpolicyInfo.Reason = Request.Form["Reason"];
+            CancelpolicyInfo.TerminationReason = Request.Form["TerminationReason"];
           
 
-            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationDate.Length == 0 ||  CancelpolicyInfo.Reason.Length == 0)
+            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationReason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -87,15 +86,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                     {
                         command.Parameters.AddWithValue("@id", CancelpolicyInfo.id);
                         command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
-                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationDate);
-                        command.Parameters.AddWithValue("@Reason", CancelpolicyInfo.Reason);
+                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationReason);
                        
                   
 
                         command.ExecuteNonQuery();
 
                     }
-                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationDate = ""; CancelpolicyInfo.Reason = "";
+                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationReason = ""; 
 
                 }
 

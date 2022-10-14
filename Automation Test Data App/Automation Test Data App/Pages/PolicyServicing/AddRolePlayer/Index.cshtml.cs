@@ -23,30 +23,23 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                         using(SqlDataReader reader = command.ExecuteReader()) 
                         while(reader.Read())
                          {
-
                                 AddRolePlayerInfo AddRolePlayerInfo = new AddRolePlayerInfo();
-                                AddRolePlayerInfo.id =""+ reader.GetInt32(0);
-                                AddRolePlayerInfo.Title = reader.GetString(1);
-                                AddRolePlayerInfo.First_Name = reader.GetString(2);
-                                AddRolePlayerInfo.Surname = reader.GetString(3);
-                                AddRolePlayerInfo.Initials = reader.GetString(4);
-                                AddRolePlayerInfo.DOB = reader.GetString(5);
-                                AddRolePlayerInfo.Gender = reader.GetString(6);
-                                AddRolePlayerInfo.ID_number = reader.GetString(7);
-                                AddRolePlayerInfo.Relationship = reader.GetString(8);
-                                AddRolePlayerInfo.Comm_date = reader.GetString(9);
-                                AddRolePlayerInfo.Sum_Assured = reader.GetString(10);
-
-
-
+                                AddRolePlayerInfo.id = String.Empty + reader["Scenario_ID"].ToString();
+                                AddRolePlayerInfo.Title = String.Empty + reader["Title"].ToString();
+                                AddRolePlayerInfo.First_Name = String.Empty + reader["First_Name"].ToString();
+                                AddRolePlayerInfo.Surname = String.Empty + reader["Surname"].ToString();
+                                AddRolePlayerInfo.Initials = String.Empty + reader["Inititials"].ToString();
+                                AddRolePlayerInfo.DOB = String.Empty + reader["DOB"].ToString();
+                                AddRolePlayerInfo.Gender = String.Empty + reader["Gender"].ToString();
+                                AddRolePlayerInfo.ID_number = String.Empty + reader["ID_number"].ToString();
+                                AddRolePlayerInfo.Relationship = String.Empty + reader["Relationship"].ToString();
+                                AddRolePlayerInfo.Comm_date = String.Empty + reader["Comm_date"].ToString();
+                                AddRolePlayerInfo.Sum_Assured = String.Empty + reader["Sum_Assured"].ToString();
+                                AddRolePlayerInfo.Role_Type = String.Empty + reader["RolePlayerType"].ToString();
                                 ListAddRolePlayer.Add(AddRolePlayerInfo);
                          }
-
-
                     }
-
                 }
-            
             }
             catch(Exception ex)
             {
@@ -73,6 +66,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
         public String Relationship;
         public String Comm_date;
         public String Sum_Assured;
+        public String Role_Type;
 
 
     }
