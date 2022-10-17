@@ -24,11 +24,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                          {
 
                                 ChangeCollectionMethodInfo ChangeCollectionMethodInfo = new ChangeCollectionMethodInfo();
-                                ChangeCollectionMethodInfo.id =""+ reader.GetInt32(0);
-                                ChangeCollectionMethodInfo.employee_number1 = reader.GetString(1);
-                                ChangeCollectionMethodInfo.employee_number2 = reader.GetString(2);
-
-
+                                ChangeCollectionMethodInfo.id = String.Empty + reader["Scenario_ID"].ToString(); 
+                                ChangeCollectionMethodInfo.employee_number1 = String.Empty + reader["employee_number1"].ToString();
+                                ChangeCollectionMethodInfo.employee_number2 = String.Empty + reader["employee_number2"].ToString();
+                                ChangeCollectionMethodInfo.collectionmethod = String.Empty + reader["collectionmethod"].ToString();
                                 ListChangeCollectionMethod.Add(ChangeCollectionMethodInfo);
                          }
 
@@ -55,7 +54,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
         public String id;
         public String employee_number1;
         public String employee_number2;
-  
+        public String collectionmethod;
+
 
     }
 }

@@ -22,10 +22,13 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
             ChangeLifeDataInfo.EducationLevel = Request.Form["EducationLevel"];
             ChangeLifeDataInfo.Department = Request.Form["Department"];
             ChangeLifeDataInfo.Profession = Request.Form["Profession"];
-            
+            ChangeLifeDataInfo.Roleplayer = Request.Form["Roleplayer"];
+            ChangeLifeDataInfo.RolePlayer_idNum = Request.Form["RolePlayer_idNum"];
 
-            if(ChangeLifeDataInfo.Title.Length == 0|| ChangeLifeDataInfo.Surname.Length == 0 || ChangeLifeDataInfo.MaritalStatus.Length == 0 ||
-               ChangeLifeDataInfo.EducationLevel.Length == 0 || ChangeLifeDataInfo.Department.Length == 0 || ChangeLifeDataInfo.Profession.Length == 0)
+
+            if (ChangeLifeDataInfo.Title.Length == 0|| ChangeLifeDataInfo.Surname.Length == 0 || ChangeLifeDataInfo.MaritalStatus.Length == 0 ||
+               ChangeLifeDataInfo.EducationLevel.Length == 0 || ChangeLifeDataInfo.Department.Length == 0
+                || ChangeLifeDataInfo.Roleplayer.Length == 0 || ChangeLifeDataInfo.RolePlayer_idNum.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -41,8 +44,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                 {
                     connection.Open();
                     String sql = "INSERT INTO ChangeLifeData " +
-                                "(Title, Surname, MaritalStatus, EducationLevel, Department, Profession) VALUES" +
-                                "(@Title, @Surname, @MaritalStatus, @EducationLevel, @Department, @Profession);";
+                                "(Title, Surname, MaritalStatus, EducationLevel, Department, Profession , Roleplayer, RolePlayer_idNum) VALUES" +
+                                "(@Title, @Surname, @MaritalStatus, @EducationLevel, @Department, @Profession, @Roleplayer, @RolePlayer_idNum);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -52,12 +55,16 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                         command.Parameters.AddWithValue("@EducationLevel", ChangeLifeDataInfo.EducationLevel);
                         command.Parameters.AddWithValue("@Department", ChangeLifeDataInfo.Department);
                         command.Parameters.AddWithValue("@Profession", ChangeLifeDataInfo.Profession);
-                      
+                        command.Parameters.AddWithValue("@Roleplayer", ChangeLifeDataInfo.Roleplayer);
+                        command.Parameters.AddWithValue("@RolePlayer_idNum", ChangeLifeDataInfo.RolePlayer_idNum);
+
 
                         command.ExecuteNonQuery();
 
                     }
-                    ChangeLifeDataInfo.Title = ""; ChangeLifeDataInfo.Surname = ""; ChangeLifeDataInfo.MaritalStatus = ""; ChangeLifeDataInfo.EducationLevel = ""; ChangeLifeDataInfo.Department = ""; ChangeLifeDataInfo.Profession = ""; 
+                    ChangeLifeDataInfo.Title = ""; ChangeLifeDataInfo.Surname = ""; ChangeLifeDataInfo.MaritalStatus = ""; 
+                    ChangeLifeDataInfo.EducationLevel = ""; ChangeLifeDataInfo.Department = ""; ChangeLifeDataInfo.Profession = "";
+                    ChangeLifeDataInfo.Department = ""; ChangeLifeDataInfo.RolePlayer_idNum = "";
                     successMessage = "New Life Assured Added Successfully";
                     
                 }

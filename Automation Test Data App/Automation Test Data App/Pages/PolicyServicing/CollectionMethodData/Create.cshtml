@@ -38,6 +38,18 @@
 			<input type="text" class="form-control" name="employee_number 2" value="@Model.ChangeCollectionMethodInfo.employee_number2"  minlength="10" maxlength="10">	
 		</div>
 	</div>
+		<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Collection method type</label>
+		<div class="col-sm-6">
+		<select id='collectionmethod' class="form-control" name="collectionmethod" value="@Model.ChangeCollectionMethodInfo.collectionmethod">
+		<option value=""></option>
+		<option value="Mister">Mr</option>
+		<option value="Mrs">Mrs</option>
+		<option value="Miss">Miss</option>
+		</select>
+		</div>
+	</div>
+
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">

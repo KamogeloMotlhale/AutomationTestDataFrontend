@@ -25,13 +25,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                          {
 
                                 ChangeLifeDataInfo ChangeLifeDataInfo = new ChangeLifeDataInfo();
-                                ChangeLifeDataInfo.id =""+ reader.GetInt32(0);
-                                ChangeLifeDataInfo.Title = reader.GetString(1);
-                                ChangeLifeDataInfo.Surname = reader.GetString(2);
-                                ChangeLifeDataInfo.MaritalStatus = reader.GetString(3);
-                                ChangeLifeDataInfo.EducationLevel = reader.GetString(4);
-                                ChangeLifeDataInfo.Department = reader.GetString(5);
-                                ChangeLifeDataInfo.Profession = reader.GetString(6);
+                                ChangeLifeDataInfo.id = String.Empty + reader["Scenario_ID"].ToString(); ChangeLifeDataInfo.Title = reader.GetString(1);
+                                ChangeLifeDataInfo.Surname = String.Empty + reader["Surname"].ToString();
+                                ChangeLifeDataInfo.MaritalStatus = String.Empty + reader["MaritalStatus"].ToString();
+                                ChangeLifeDataInfo.EducationLevel = String.Empty + reader["EducationLevel"].ToString();
+                                ChangeLifeDataInfo.Department = String.Empty + reader["Department"].ToString();
+                                ChangeLifeDataInfo.Profession = String.Empty + reader["Profession"].ToString();
+                                ChangeLifeDataInfo.Roleplayer = String.Empty + reader["Roleplayer"].ToString();
+                                ChangeLifeDataInfo.RolePlayer_idNum = String.Empty + reader["RolePlayer_idNum"].ToString();
 
                                 ListChangeLifeData.Add(ChangeLifeDataInfo);
                          }
@@ -63,7 +64,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
         public String EducationLevel;
         public String Department;
         public String Profession;
-        
+        public String Roleplayer;
+        public String RolePlayer_idNum;
+
+
 
     }
 }
