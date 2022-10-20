@@ -25,7 +25,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
                          {
 
                                 ChangeLifeDataInfo ChangeLifeDataInfo = new ChangeLifeDataInfo();
-                                ChangeLifeDataInfo.id = String.Empty + reader["Scenario_ID"].ToString(); ChangeLifeDataInfo.Title = reader.GetString(1);
+                                ChangeLifeDataInfo.id = String.Empty + reader["Scenario_ID"].ToString();
+                                ChangeLifeDataInfo.Title = String.Empty + reader["Title"].ToString();
                                 ChangeLifeDataInfo.Surname = String.Empty + reader["Surname"].ToString();
                                 ChangeLifeDataInfo.MaritalStatus = String.Empty + reader["MaritalStatus"].ToString();
                                 ChangeLifeDataInfo.EducationLevel = String.Empty + reader["EducationLevel"].ToString();
@@ -66,6 +67,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ChangeLifeData
         public String Profession;
         public String Roleplayer;
         public String RolePlayer_idNum;
+        public String Sc;
 
 
 

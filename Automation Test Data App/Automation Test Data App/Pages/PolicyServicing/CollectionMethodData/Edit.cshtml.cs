@@ -44,7 +44,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
 
                                 ChangeCollectionMethodInfo.id = String.Empty + reader["Scenario_ID"].ToString();
                                 ChangeCollectionMethodInfo.employee_number1 = String.Empty + reader["employee_number1"].ToString();
-                                ChangeCollectionMethodInfo.employee_number2 = String.Empty + reader["employee_number2"].ToString();
                                 ChangeCollectionMethodInfo.collectionmethod = String.Empty + reader["collectionmethod"].ToString();
 
                             }
@@ -68,10 +67,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
         {
             ChangeCollectionMethodInfo.id = Request.Form["id"];
             ChangeCollectionMethodInfo.employee_number1 = Request.Form["employee_number1"];
-            ChangeCollectionMethodInfo.employee_number2 = Request.Form["employee_number2"];
             ChangeCollectionMethodInfo.collectionmethod = Request.Form["collectionmethod"];
 
-            if (ChangeCollectionMethodInfo.employee_number1.Length == 0 || ChangeCollectionMethodInfo.employee_number2.Length == 0 || ChangeCollectionMethodInfo.collectionmethod.Length == 0)
+            if (ChangeCollectionMethodInfo.employee_number1.Length == 0 ||  ChangeCollectionMethodInfo.collectionmethod.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -86,12 +84,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                 {
                     connection.Open();
                     String sql = "UPDATE CollectionMethodData " +
-                                 "SET employee_number1=@employee_number1, employee_number2=@employee_number2, collectionmethod=@collectionmethod " +
+                                 "SET employee_number1=@employee_number1,  collectionmethod=@collectionmethod " +
                                  "WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@employee_number2", ChangeCollectionMethodInfo.employee_number2);
                         command.Parameters.AddWithValue("@employee_number1", ChangeCollectionMethodInfo.employee_number1);
                         command.Parameters.AddWithValue("@collectionmethod", ChangeCollectionMethodInfo.collectionmethod);
 
@@ -102,7 +99,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                         command.ExecuteNonQuery();
 
                     }
-                    ChangeCollectionMethodInfo.employee_number2 = ""; ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.collectionmethod = "";
+                     ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.collectionmethod = "";
                     successMessage = "New Life Assured Updated Successfully";
 
                 }

@@ -69,7 +69,7 @@
 		<label class="col-sm-3 col-form-label">Education Level</label>
 		<div class="col-sm-6">
 		<select id="EducationLevel" class="form-control" name="EducationLevel" value="@Model.ChangeLifeDataInfo.EducationLevel">	
-		<option value="Mister">Mr</option>
+		<option value=""></option>
 		<option value="NMT">No Matric</option>
 		<option value="MTR">Matric</option>
 		<option value="DPL">Diploma (less than 3 years)</option>
@@ -125,7 +125,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">RolePlayer ID</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="RolePlayer_idNum" value="@Model.ChangeLifeDataInfo.RolePlayer_idNum">	
+			<input type="text" class="form-control" name="RolePlayer_idNum" value="@Model.ChangeLifeDataInfo.RolePlayer_idNum" minlength="13" maxlength="13">	
 		</div>
 	</div>
 

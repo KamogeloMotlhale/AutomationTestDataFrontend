@@ -17,10 +17,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
         public void OnPost()
         {
             ChangeCollectionMethodInfo.employee_number1 = Request.Form["employee_number1"];
-            ChangeCollectionMethodInfo.employee_number2 = Request.Form["employee_number2"];
             ChangeCollectionMethodInfo.collectionmethod = Request.Form["collectionmethod"];
 
-            if (ChangeCollectionMethodInfo.employee_number1.Length == 0 || ChangeCollectionMethodInfo.employee_number2.Length == 0)
+            if (ChangeCollectionMethodInfo.employee_number1.Length == 0 || ChangeCollectionMethodInfo.collectionmethod.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,13 +35,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                 {
                     connection.Open();
                     String sql = "INSERT INTO CollectionMethodData " +
-                                "(employee_number1, employee_number2, collectionmethod) VALUES" +
-                                "(@employee_number1, @employee_number2, @collectionmethod);";
+                                "(employee_number1,  collectionmethod) VALUES" +
+                                "(@employee_number1,  @collectionmethod);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@employee_number1", ChangeCollectionMethodInfo.employee_number1);
-                        command.Parameters.AddWithValue("@employee_number2", ChangeCollectionMethodInfo.employee_number2);
                         command.Parameters.AddWithValue("@collectionmethod", ChangeCollectionMethodInfo.collectionmethod);
 
 
@@ -53,7 +51,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
                     }
 
                 }
-                ChangeCollectionMethodInfo.employee_number1 = ""; ChangeCollectionMethodInfo.employee_number2 = ""; ChangeCollectionMethodInfo.collectionmethod = "";
+                ChangeCollectionMethodInfo.employee_number1 = "";  ChangeCollectionMethodInfo.collectionmethod = "";
                 successMessage = "New Change Collection Method Data  Added Successfully";
 
             }
