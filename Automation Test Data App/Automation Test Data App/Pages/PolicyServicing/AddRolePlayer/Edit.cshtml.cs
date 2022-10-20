@@ -42,11 +42,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                             if (reader.Read())
                             {
 
-                                AddRolePlayerInfo.id = "" + reader.GetInt32(0);
-                                AddRolePlayerInfo.Title = reader.GetString(1);
-                                AddRolePlayerInfo.First_Name = reader.GetString(2);
-                                AddRolePlayerInfo.Surname = reader.GetString(3);
-                                AddRolePlayerInfo.Initials = reader.GetString(4);
+                                AddRolePlayerInfo.Scenario_ID = reader["Scenario_ID"].ToString();
+                                AddRolePlayerInfo.Title = reader["Title"].ToString();
+                                AddRolePlayerInfo.First_Name = reader["First_Name"].ToString();
+                                AddRolePlayerInfo.Surname = reader["Surname"].ToString();
+                                AddRolePlayerInfo.Initials = reader["Initials"].ToString();
                                 AddRolePlayerInfo.DOB = reader.GetString(5);
                                 AddRolePlayerInfo.Gender = reader.GetString(6);
                                 AddRolePlayerInfo.ID_number = reader.GetString(7);
