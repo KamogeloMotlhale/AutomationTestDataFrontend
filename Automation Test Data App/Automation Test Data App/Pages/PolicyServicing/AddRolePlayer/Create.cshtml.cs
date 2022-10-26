@@ -36,7 +36,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
             AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
             AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
             AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
-
+         
 
             if (AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
