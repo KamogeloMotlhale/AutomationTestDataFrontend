@@ -36,14 +36,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                             {
 
                                 DowngradeInfo.id = "" + reader.GetInt32(0);
-                                DowngradeInfo.Date = reader.GetString(1);
                                 DowngradeInfo.Method = reader.GetString(2);
                                 DowngradeInfo.Cover_Amount = reader.GetString(3);
                                 DowngradeInfo.Component = reader.GetString(4);
-
-
-
-
                             }
                         }
 
@@ -63,13 +58,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
         public void OnPost()
         {
             DowngradeInfo.id = Request.Form["id"];
-            DowngradeInfo.Date = Request.Form["Date"];
             DowngradeInfo.Method = Request.Form["Method"];
             DowngradeInfo.Cover_Amount = Request.Form["Cover_Amount"];
             DowngradeInfo.Cover_Amount = Request.Form["Component"];
 
 
-            if (DowngradeInfo.Date.Length == 0 || DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0 || DowngradeInfo.Component.Length == 0)
+            if ( DowngradeInfo.Method.Length == 0 || DowngradeInfo.Cover_Amount.Length == 0 || DowngradeInfo.Component.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -90,7 +84,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@id", DowngradeInfo.id);
-                        command.Parameters.AddWithValue("@Date", DowngradeInfo.Date);
                         command.Parameters.AddWithValue("@Method", DowngradeInfo.Method);
                         command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
 
@@ -99,7 +92,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                         command.ExecuteNonQuery();
 
                     }
-                    DowngradeInfo.Date = ""; DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = "";
+                 DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = "";
 
                 }
 

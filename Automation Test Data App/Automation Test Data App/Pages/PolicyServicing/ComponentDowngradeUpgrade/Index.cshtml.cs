@@ -30,10 +30,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                             DowngradeInfo.Cover_Amount = reader["Sum_assured"].ToString();
                             DowngradeInfo.Component = reader["Component"].ToString();
                             DowngradeInfo.comID = reader["component_IDNo"].ToString();
-
-
-
-                                ListDowngradeComponent.Add(DowngradeInfo);
+                            ListDowngradeComponent.Add(DowngradeInfo);
                         }
 
 
@@ -47,10 +44,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             Console.WriteLine("Exception:" + ex.ToString());
 
         }
-
-
-
-
     }
 }
 public class DowngradeInfo
@@ -60,7 +53,6 @@ public class DowngradeInfo
         public String Method;
         public String Cover_Amount;
         public String Component;
-
-
+    
     }
 }
