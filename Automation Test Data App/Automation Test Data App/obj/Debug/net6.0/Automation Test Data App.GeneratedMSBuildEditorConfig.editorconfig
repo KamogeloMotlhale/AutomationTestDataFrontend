@@ -139,8 +139,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/EditScenario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEVkaXRTY2VuYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/EditTestData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXEVkaXRUZXN0RGF0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/Index.cshtml]
@@ -181,6 +189,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_ComponentUpdateDowngrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Db21wb25lbnRVcGRhdGVEb3duZ3JhZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Shared/_ValidationScriptsPartial.cshtml]

@@ -26,21 +26,17 @@
 
 <form method="POST">
 
-	<input type="hidden" name="id" value="@Model.DowngradeInfo.id">
-
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Date</label>
+		<label class="col-sm-3 col-form-label">Scenario ID</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date">	
+			<input class="form-control" disabled name="scenarioid" value="@Model.DowngradeInfo.id">
 		</div>
 	</div>
-
-
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Component</label>
+		<label class="col-sm-3 col-form-label">Method</label>
 		<div class="col-sm-6">
-		<select id='Component' class="form-control" name="Component" value="@Model.DowngradeInfo.Method">
-		<option value=""></option>
+		<select id='Component' class="form-control" name="method" value="@Model.DowngradeInfo.Method">
+
 		<option value="Downgrade">Downgrade</option>
 		<option value="Upgrade">Upgrade</option>
 		</select>
@@ -50,9 +46,10 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Cover_Amount</label>
 		<div class="col-sm-6">
-		<select id='Cover_Amount' class="form-control" name="Cover_Amount" value="@Model.DowngradeInfo.Cover_Amount">
+		<select id='Cover_Amount' class="form-control" name="sumAssured" value="@Model.DowngradeInfo.Cover_Amount">
 		<option value=""></option>
-		<option value="5000">5000</option>
+	
+		<option selected value="5000">5000</option>
 		<option value="7500">7500</option>
 		<option value="10000">10000</option>
 		<option value="15000">15000</option>
@@ -68,22 +65,31 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Component</label>
 		<div class="col-sm-6">
-		<select id='Component' class="form-control" name="Component" value="@Model.DowngradeInfo.Method">
+		<select id='Component' class="form-control" name="component" value="@Model.DowngradeInfo.Method">
 		<option value=""></option>
-		<option value="Prinicpal Life Assured "> Prinicpal Life Assured </option>
+		<option selected value="Prinicpal Life Assured "> Prinicpal Life Assured </option>
 		<option value="Wider Family Member">Wider Family Member </option>
 		</select>
 		</div>
 	</div>
-
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Component ID</label>
+		<div class="col-sm-6">
+			<input class="form-control" name="compId" value="@Model.DowngradeInfo.comID">
+		</div>
+	</div>
 	
 
 	<div class="row mb-3">
-		<div class="offset-sm-3 col-sm-3 d-grid">
-			<button type="submit" class="btn btn-primary">Submit</button>
+		<div class="offset-sm-3 col-sm-2 d-grid">
+			<button type="submit" class="btn btn-primary">Update</button>
 		</div>
-		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/PolicyServicing/ComponentDowngradeUpgrade" role="button">Cancel</a>
+		<div class="col-sm-2 d-grid">
+			
+			<a class="btn btn-danger" href="/PolicyServicing/ComponentDowngradeUpgrade/Delete?scenarioid=@Model.DowngradeInfo.id" title="Delete"  onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+		</div>
+		<div class="col-sm-2 d-grid">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/EditScenario?scenarioid=@Model.DowngradeInfo.id" role="button">Cancel</a>
 		</div>
 	</div>
 

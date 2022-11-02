@@ -22,23 +22,24 @@
 }
 
 <br>
-<h2>Edit scenrio details and test data for @Model.pScenario.functionName</h2>
-
+<h2>Edit scenrio details and test data for @Model.pScenarioInfo.functionName</h2>
+<br />
+<h4>Scenario details</h4>
 <form method="POST">
 
-	<input type="hidden" name="id" value="@Model.pScenario.id">
+	<input type="hidden" name="id" value="@Model.pScenarioInfo.id">
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">PolicyNo</label>
 		<div class="col-sm-6">
-		<input type="text" value="@Model.pScenario.policyNo"  class="form-control" name="policyNo">	
+		<input type="text" value="@Model.pScenarioInfo.policyNo"  class="form-control" name="policyNo">	
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Expected Results</label>
 		<div class="col-sm-6">
-		<select disabled=@{Model.pScenario.testDate?} id='Component' class="form-control" name="expResutlts" value="@Model.pScenario.expectedResults">
+		<select disabled id='Component' class="form-control" name="expResutlts" value="@Model.pScenarioInfo.expectedResults">
 		<option value=""></option>
 		<option selected value="Pass">Pass</option>
 		<option value="Fail">Fail</option>
@@ -49,12 +50,12 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Function</label>
 		<div class="col-sm-6">
-		<select id='Method' class="form-control" name="function" value="@Model.pScenario.functionID">
+		<select id='Method' class="form-control" name="function" value="@Model.pScenarioInfo.functionID">
 		<option value=""></option>
 		
 		@foreach (var item in Model.funcList)
 		{
-			@if (@item.id == Model.pScenario.functionID)
+			@if (@item.id == Model.pScenarioInfo.functionID)
 			{
 				<option selected value=@item.id>@item.name</option>
 				
@@ -71,7 +72,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Test Results</label>
 		<div class="col-sm-6">
-		<input type="text" disabled value="@Model.pScenario.testResutls"  class="form-control" name="policyNo">	
+		<input type="text" disabled value="@Model.pScenarioInfo.testResutls"  class="form-control" name="policyNo">	
 		</div>
 	</div>
 
@@ -85,7 +86,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Test date</label>
 		<div class="col-sm-6">
-		<input type="text" disabled value="@Model.pScenario.testDate"  class="form-control" name="testDate">	
+		<input type="text" disabled value="@Model.pScenarioInfo.testDate"  class="form-control" name="testDate">	
 		</div>
 	</div>
 
@@ -93,25 +94,35 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Product name</label>
 		<div class="col-sm-6">
-		<input type="text" disabled value="@Model.pScenario.productName"  class="form-control" name="testDate">	
+		<input type="text" disabled value="@Model.pScenarioInfo.productName"  class="form-control" name="testDate">	
 		</div>
 	</div>
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Date  Created</label>
 		<div class="col-sm-6">
-		<input type="text" disabled value="@Model.pScenario.dateCreated"  class="form-control" name="testDate">	
+		<input type="text" disabled value="@Model.pScenarioInfo.dateCreated"  class="form-control" name="testDate">	
 		</div>
 	</div>
 
 
 
-	<div class="row mb-3">
-		<div class="offset-sm-3 col-sm-3 d-grid">
-			<button type="submit" class="btn btn-primary">Submit</button>
+	<div class="d-flex mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid m-2">
+			<button type="submit" class="btn btn-primary">Update scenario data</button>
 		</div>
-		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/PolicyServicing/ComponentDowngradeUpgrade" role="button">Cancel</a>
+		<div class="offset-sm-3 col-sm-3 d-grid m-2">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/EditTestData?scenarioid=@Model.pScenarioInfo.id&function=@Model.pScenarioInfo.functionName" role="button">Edit test data</a>
+		</div>
+		<div class="col-sm-3 d-grid m-2">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/" role="button">Cancel</a>
 		</div>
 	</div>
 
 </form>		
+
+
+
+
+@*<h4>Scenario test Data</h4>
+
+@await Html.PartialAsync("_ComponentUpdateDowngrade", Model)*@

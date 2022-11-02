@@ -61,7 +61,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
 
 
                 }
-           DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = ""; DowngradeInfo.Component = "";
+           DowngradeInfo.Method = ""; DowngradeInfo.Cover_Amount = ""; DowngradeInfo.Component = ""; 
                 successMessage = "New Scenario Added Successfully";
                 return;
 

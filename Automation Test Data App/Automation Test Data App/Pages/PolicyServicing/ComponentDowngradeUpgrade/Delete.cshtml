@@ -6,14 +6,14 @@
     try
     {
 
-        String id = Request.Query["id"];
+        String id = Request.Query["scenarioid"];
 
         string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
 
-            String sql = "DELETE FROM  ComponentDowngradeUpgrade WHERE id=@id";
+            String sql = "DELETE FROM  ComponentDowngradeUpgrade WHERE ScenarioID=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);
@@ -22,12 +22,15 @@
 
             }
         }
+        Response.Redirect($"/PolicyServicing/Edit?scenarioid={id}");
     }
     catch (Exception ex)
     {
 
     }
-    Response.Redirect("/PolicyServicing/ComponentDowngradeUpgrade");
+        Response.Redirect($"/PolicyServicing/");
+
+    
 
 
 }

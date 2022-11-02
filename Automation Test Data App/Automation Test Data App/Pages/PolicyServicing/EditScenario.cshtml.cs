@@ -7,7 +7,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
     public class EditScenarioModel : PageModel
     {
 
-        public PScenarioInfo pScenario = new PScenarioInfo();
+        public PScenarioInfo pScenarioInfo = new PScenarioInfo();
         public String errorMessage = "";
         public String successMessage = "";
         public List<Function> funcList = new List<Function>();
@@ -70,13 +70,17 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
 
                             if (reader.Read())
                             {
-                                pScenario.policyNo = reader["PolicyNo"].ToString();
-                                pScenario.expectedResults = reader["ExpectedResults"].ToString();
-                                pScenario.testResutls = reader["Test_Results"].ToString();
-                                pScenario.comments = reader["Comments"].ToString();
-                                pScenario.testDate = reader["Test_Date"].ToString();
-                                pScenario.productName = reader["productName"].ToString();
-                                pScenario.dateCreated = reader["Created_at"].ToString();
+                                pScenarioInfo.dateCreated = reader["Created_at"].ToString();
+                                pScenarioInfo.id = reader["ID"].ToString();
+                                pScenarioInfo.policyNo = reader["PolicyNo"].ToString();
+                                pScenarioInfo.expectedResults = reader["ExpectedResults"].ToString();
+                                pScenarioInfo.testDate = reader["Test_Date"].ToString();
+                                pScenarioInfo.testResutls = reader["Test_Results"].ToString();
+                                pScenarioInfo.comments = reader["Comments"].ToString();
+                                pScenarioInfo.functionID = reader["functionID"].ToString();
+                                pScenarioInfo.productName = reader["productName"].ToString();
+                                pScenarioInfo.getFuncName();
+
                             }
                         }
                     }
