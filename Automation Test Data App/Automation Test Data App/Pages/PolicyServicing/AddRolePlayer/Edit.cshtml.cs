@@ -74,7 +74,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
 
         public void OnPost()
         {
-            AddRolePlayerInfo.id = Request.Form["id"];
+            
             AddRolePlayerInfo.Title = Request.Form["Title"];
             AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
             AddRolePlayerInfo.Surname = Request.Form["Surname"];
@@ -119,7 +119,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
                         command.Parameters.AddWithValue("@Comm_date", AddRolePlayerInfo.Comm_date);
                         command.Parameters.AddWithValue("@Sum_Assured", AddRolePlayerInfo.Sum_Assured);
-                        command.Parameters.AddWithValue("@id", AddRolePlayerInfo.id);
+                        command.Parameters.AddWithValue("@id", AddRolePlayerInfo.ID_number);
 
 
 
