@@ -5318,23 +5318,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\G992127\\.nuget\\packages\\": {},
+    "C:\\Users\\e697642\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
+      "projectUniqueName": "C:\\Users\\e697642\\Documents\\GitHub\\new\\new\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
       "projectName": "Automation Test Data App",
-      "projectPath": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
-      "packagesPath": "C:\\Users\\G992127\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\",
+      "projectPath": "C:\\Users\\e697642\\Documents\\GitHub\\new\\new\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\Automation Test Data App.csproj",
+      "packagesPath": "C:\\Users\\e697642\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\e697642\\Documents\\GitHub\\new\\new\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\G992127\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\e697642\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5392,7 +5392,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

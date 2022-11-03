@@ -30,13 +30,14 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
             AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
             AddRolePlayerInfo.Surname = Request.Form["Surname"];
             AddRolePlayerInfo.Initials = Request.Form["Initials"];
+
             AddRolePlayerInfo.DOB = Request.Form["DOB"];
             AddRolePlayerInfo.Gender = Request.Form["Gender"];
             AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
             AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
             AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
             AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
-
+         
 
             if (AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
