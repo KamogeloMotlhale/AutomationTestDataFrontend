@@ -23,7 +23,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             }
             else
             {
-
                 try
                 {
                     
@@ -43,6 +42,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                                     funcList.Add(func);
                                 }
                         }
+                        connection.Close();
                     }
                 }
                 catch (Exception ex)
@@ -68,22 +68,27 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 
-                            if (reader.Read())
+                            if (reader.Read() && (reader["UserID"].ToString()).Equals(userId))
                             {
-                                pScenarioInfo.dateCreated = reader["Created_at"].ToString();
-                                pScenarioInfo.id = reader["ID"].ToString();
-                                pScenarioInfo.policyNo = reader["PolicyNo"].ToString();
-                                pScenarioInfo.expectedResults = reader["ExpectedResults"].ToString();
-                                pScenarioInfo.testDate = reader["Test_Date"].ToString();
-                                pScenarioInfo.testResutls = reader["Test_Results"].ToString();
-                                pScenarioInfo.comments = reader["Comments"].ToString();
-                                pScenarioInfo.functionID = reader["functionID"].ToString();
-                                pScenarioInfo.productName = reader["productName"].ToString();
-                                pScenarioInfo.getFuncName();
+                               
+                                    pScenarioInfo.dateCreated = reader["Created_at"].ToString();
+                                    pScenarioInfo.id = reader["ID"].ToString();
+                                    pScenarioInfo.policyNo = reader["PolicyNo"].ToString();
+                                    pScenarioInfo.expectedResults = reader["ExpectedResults"].ToString();
+                                    pScenarioInfo.testDate = reader["Test_Date"].ToString();
+                                    pScenarioInfo.testResutls = reader["Test_Results"].ToString();
+                                    pScenarioInfo.comments = reader["Comments"].ToString();
+                                    pScenarioInfo.functionID = reader["functionID"].ToString();
+                                    pScenarioInfo.productName = reader["productName"].ToString();
+                                    pScenarioInfo.getFuncName();
+                                
+                        
 
                             }
                         }
                     }
+                    connection.Close();
+
 
                 }
 

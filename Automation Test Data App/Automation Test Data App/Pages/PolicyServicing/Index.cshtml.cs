@@ -26,7 +26,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        String sql = $"SELECT * FROM PS_Scenarios";
+                        String sql = $"SELECT * FROM PS_Scenarios WHERE UserID = '{userId}' AND Test_Date IS NULL; ";
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())

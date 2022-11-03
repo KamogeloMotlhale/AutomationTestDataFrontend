@@ -15,6 +15,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                 case "IncreaseSumAssured":
                     Response.Redirect($"/PolicyServicing/ComponentDowngradeUpgrade/create?scenarioid={scenarioID}");
                     break;
+                case "DecreaseSumAssured":
+                    Response.Redirect($"/PolicyServicing/ComponentDowngradeUpgrade/create?scenarioid={scenarioID}");
+                    break;
 
                 default:
                     Response.Redirect("/PolicyServicing");
