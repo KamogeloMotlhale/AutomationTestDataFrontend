@@ -12,7 +12,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
 
             switch (function)
             {
-                case "IncreaseSumAssured":
+                case "AddRolePlayer":
                     Response.Redirect($"/PolicyServicing/ComponentDowngradeUpgrade/create?scenarioid={scenarioID}");
                     break;
 

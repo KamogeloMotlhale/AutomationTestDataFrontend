@@ -47,7 +47,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                                 AddRolePlayerInfo.First_Name = reader["First_Name"].ToString();
                                 AddRolePlayerInfo.Surname = reader["Surname"].ToString();
                                 AddRolePlayerInfo.Initials = reader["Initials"].ToString();
-                                AddRolePlayerInfo.Role_Type = reader["RolePlayerType"].ToString();
+                                AddRolePlayerInfo.RolePlayerType = reader["RolePlayerType"].ToString();
                                 AddRolePlayerInfo.DOB = reader["DOB"].ToString();
                                 AddRolePlayerInfo.Gender = reader["Gender"].ToString();
                                 AddRolePlayerInfo.ID_number = reader["ID_number"].ToString();
@@ -80,7 +80,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
             AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
             AddRolePlayerInfo.Surname = Request.Form["Surname"];
             AddRolePlayerInfo.Initials = Request.Form["Initials"];
-            AddRolePlayerInfo.Role_Type = Request.Form["RolePlayerType"];
+            AddRolePlayerInfo.RolePlayerType = Request.Form["RolePlayerType"];
             AddRolePlayerInfo.DOB = Request.Form["DOB"];
             AddRolePlayerInfo.Gender = Request.Form["Gender"];
             AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
@@ -89,7 +89,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
             AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
 
 
-            if (AddRolePlayerInfo.Role_Type.Length == 0||AddRolePlayerInfo.Title.Length == 0 || AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
+            if (AddRolePlayerInfo.RolePlayerType.Length == 0||AddRolePlayerInfo.Title.Length == 0 || AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
                AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.Sum_Assured.Length == 0 )
             {
@@ -116,7 +116,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.AddRolePlayer
                         command.Parameters.AddWithValue("@Surname", AddRolePlayerInfo.Surname);
                         command.Parameters.AddWithValue("@Initials", AddRolePlayerInfo.Initials);
                         command.Parameters.AddWithValue("@DOB", AddRolePlayerInfo.DOB);
-                        command.Parameters.AddWithValue("@RolePlayerType", AddRolePlayerInfo.Role_Type);
+                        command.Parameters.AddWithValue("@RolePlayerType", AddRolePlayerInfo.RolePlayerType);
                         command.Parameters.AddWithValue("@Gender", AddRolePlayerInfo.Gender);
                         command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
