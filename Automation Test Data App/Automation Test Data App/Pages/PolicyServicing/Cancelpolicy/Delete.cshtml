@@ -6,7 +6,7 @@
     try
     {
 
-        String id = Request.Query["id"];
+        String id = Request.Query["scenarioid"];
 
         string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
 
@@ -14,7 +14,7 @@
         {
             connection.Open();
 
-            String sql = "DELETE FROM  Cancelpolicy WHERE id=@id";
+            String sql = "DELETE FROM  CancelPolicy WHERE Scenario_ID=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);
@@ -28,7 +28,7 @@
     {
 
     }
-    Response.Redirect("/PolicyServicing/Cancelpolicy");
+    Response.Redirect("/PolicyServicing");
 
 
 }

@@ -1,9 +1,11 @@
+using Automation_Test_Data_App.Pages.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
 namespace Automation_Test_Data_App.Pages.PolicyServicing
 {
+    
     public class IndexModel : PageModel
     {
         public List<PScenarioInfo> ListPsScenarios = new List<PScenarioInfo>();
@@ -22,14 +24,10 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             {
                 try
                 {
-                    String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        String sql = $"SELECT * FROM PS_Scenarios WHERE UserID = '{userId}' AND Test_Date IS NULL; ";
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
+
+                    SqlDataReader reader = DbConnection.readDataFromDB($"SELECT * FROM PS_Scenarios WHERE UserID = '{userId}'");
+
+                           
                                 while (reader.Read())
                                 {
                                     PScenarioInfo pScenarioInfo = new PScenarioInfo();
@@ -44,8 +42,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                                     pScenarioInfo.getFuncName();
                                     ListPsScenarios.Add(pScenarioInfo);
                                 }
-                        }
-                    }
+                    DbConnection.closeDbConnection();
                 }
                 catch (Exception ex)
                 {

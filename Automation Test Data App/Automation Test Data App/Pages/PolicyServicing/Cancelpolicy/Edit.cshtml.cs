@@ -10,20 +10,22 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
     public CancelpolicyInfo CancelpolicyInfo = new CancelpolicyInfo();
     public String errorMessage = "";
     public String successMessage = "";
+    public String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
 
         public void OnGet()
         {
-            String id = Request.Query["id"];
+            String id = Request.Query["scenarioid"];
+
 
             try
             {
 
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM Cancelpolicy WHERE id=@id";
+                    String sql = "SELECT * FROM Cancelpolicy WHERE Scenario_ID=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -34,13 +36,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                             if (reader.Read())
                             {
 
-                                CancelpolicyInfo.id = "" + reader.GetInt32(0);
-                                CancelpolicyInfo.PolicyNo = reader.GetString(1);
-                                CancelpolicyInfo.TerminationReason = reader.GetString(2);
-                                
+                                CancelpolicyInfo.id = reader["Scenario_ID"].ToString();
+                                CancelpolicyInfo.TerminationReason = reader["TerminationReason"].ToString();
 
+                            }
+                            else
+                            {
 
-
+                                errorMessage = "No test data for this sceanrio, please add test data before editing";
                             }
                         }
 
@@ -60,11 +63,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnPost()
         {
             CancelpolicyInfo.id = Request.Form["id"];
-            CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
             CancelpolicyInfo.TerminationReason = Request.Form["TerminationReason"];
-          
 
-            if (CancelpolicyInfo.PolicyNo.Length == 0 || CancelpolicyInfo.TerminationReason.Length == 0)
+            if (CancelpolicyInfo.TerminationReason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -73,27 +74,23 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
             //save new Life assured to DB
             try
             {
-
-                String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     String sql = "UPDATE Cancelpolicy " +
-                                 "SET PolicyNo=@PolicyNo, TerminationDate=@TerminationDate,  Reason=@Reason " +
-                                 "WHERE id=@id";
+                                 "SET TerminationReason=@TerminationReason " +
+                                 "WHERE Scenario_ID=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                   
                         command.Parameters.AddWithValue("@id", CancelpolicyInfo.id);
-                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
-                        command.Parameters.AddWithValue("@TerminationDate", CancelpolicyInfo.TerminationReason);
-                       
-                  
-
+                        command.Parameters.AddWithValue("@TerminationReason", CancelpolicyInfo.TerminationReason);
                         command.ExecuteNonQuery();
 
                     }
-                    CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationReason = ""; 
+                     CancelpolicyInfo.TerminationReason = "";
+                    successMessage = "Test data successfully updated";
 
                 }
 

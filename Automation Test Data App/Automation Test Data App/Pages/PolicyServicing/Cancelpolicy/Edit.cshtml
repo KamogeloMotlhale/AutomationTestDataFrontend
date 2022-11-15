@@ -22,16 +22,16 @@
 }
 
 <br>
-<h2>Cancel Policy Component</h2>
+<h2>Update Cancel Policy Component</h2>
 
 <form method="POST">
 
 	<input type="hidden" name="id" value="@Model.CancelpolicyInfo.id">
 
 		<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Policy No</label>
+		<label class="col-sm-3 col-form-label">Scenario ID</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="PolicyNo"   value="@Model.CancelpolicyInfo.PolicyNo"  minlength="10" maxlength="10">	
+			<input readonly type="text" class="form-control" name="PolicyNo"   value="@Model.CancelpolicyInfo.id"  minlength="10" maxlength="10">	
 		</div>
 	</div>
 
@@ -39,7 +39,7 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Termination Reason</label>
 		<div class="col-sm-6">
-		<select id='Reason' class="form-control" name="frmCancelReason" value="@Model.CancelpolicyInfo.TerminationReason">
+		<select id='Reason' class="form-control" name="TerminationReason" value="@Model.CancelpolicyInfo.TerminationReason">
 		<option value=""></option>
 <		<option value="Cancelled by external service">Cancelled by external service</option>
 		<option value="Cannot Afford">Cannot Afford</option><option value="Cannot Afford (Follow up)">Cannot Afford (Follow up)</option>
@@ -74,11 +74,15 @@
 
 
 	<div class="row mb-3">
-		<div class="offset-sm-3 col-sm-3 d-grid">
-			<button type="submit" class="btn btn-primary">Submit</button>
+		<div class="offset-sm-3 col-sm-2 d-grid">
+			<button type="submit" class="btn btn-primary">Update</button>
 		</div>
-		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		<div class="col-sm-2 d-grid">
+			
+			<a class="btn btn-danger" href="/PolicyServicing/CancelPolicy/Delete?scenarioid=@Model.CancelpolicyInfo.id" title="Delete"  onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+		</div>
+		<div class="col-sm-2 d-grid">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/" role="button">Cancel</a>
 		</div>
 	</div>
 

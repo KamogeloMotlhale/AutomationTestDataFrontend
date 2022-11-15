@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\NewBusiness\NewFolder\" />
-    <Folder Include="Pages\PolicyServicing\ChangeLifeData\" />
+    <Folder Include="Pages\PolicyServicing\ChangeRolePlayerDetails\" />
     <Folder Include="Pages\PolicyServicing\Cancelpolicy\" />
   </ItemGroup>
 

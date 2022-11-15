@@ -11,12 +11,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
         public String errorMessage = "";
         public String successMessage = "";
         public List<Function> funcList = new List<Function>();
-
+        public String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
         public void OnGet()
         {
             String id = Request.Query["scenarioid"];
             string userId = Request.Cookies["UserID"];
-            String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
             if (userId == null)
             {
                 Response.Redirect("/");
@@ -50,13 +49,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                     Console.WriteLine("Exception:" + ex.ToString());
 
                 }
-
-
             }
             try
             {
-
-
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -81,15 +76,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                                     pScenarioInfo.functionID = reader["functionID"].ToString();
                                     pScenarioInfo.productName = reader["productName"].ToString();
                                     pScenarioInfo.getFuncName();
-                                
                         
-
                             }
                         }
                     }
                     connection.Close();
-
-
                 }
 
             }
@@ -97,13 +88,63 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             {
                 errorMessage = ex.Message;
             }
-
         }
-
-
         public void OnPost()
         {
+            String id = Request.Query["scenarioid"];
+            string userId = Request.Cookies["UserID"];
+            
+            if (userId == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                pScenarioInfo.policyNo = Request.Form["policyNo"];
+                pScenarioInfo.functionID = Request.Form["function"];
+                pScenarioInfo.expectedResults = Request.Form["expResutlts"];
+               
 
+
+                if (pScenarioInfo.policyNo.Length == 0
+                    || pScenarioInfo.expectedResults.Length == 0
+                    || pScenarioInfo.functionID.Length == 0)
+                {
+                    errorMessage = "All the fields are required";
+                    return;
+
+                }
+                //save to DB
+                try
+                {
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        String sql = "UPDATE PS_Scenarios " +
+                                     "SET   PolicyNo=@policyNo,ExpectedResults=@expResults, FunctionID=@funcID" + 
+                                     " WHERE ID=@id";
+
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+
+                            command.Parameters.AddWithValue("@policyNo", pScenarioInfo.policyNo);
+                            command.Parameters.AddWithValue("@expResults", pScenarioInfo.expectedResults);
+                            command.Parameters.AddWithValue("@funcID", pScenarioInfo.functionID);
+                            command.Parameters.AddWithValue("@id", id);
+                           
+                            command.ExecuteNonQuery();
+                        }
+                        pScenarioInfo.policyNo = ""; pScenarioInfo.testResutls = "";pScenarioInfo.functionID = "";
+                        successMessage = "Test data Succesfully Updated";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    errorMessage = ex.Message;
+                    return;
+                }
+            }
         }
     }
 }

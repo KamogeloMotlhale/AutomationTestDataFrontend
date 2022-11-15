@@ -170,7 +170,7 @@
 		<label class="col-sm-3 col-form-label">Sum Assured</label>
 		<div class="col-sm-6">
 		<select id='Sum_Assured' class="form-control" name="Sum_Assured" value="@Model.AddRolePlayerInfo.Sum_Assured">
-		<option value=""></option>
+		<option value="">N/A</option>
 		<option value="5000">5000</option>
 		<option value="7500">7500</option>
 		<option value="10000">10000</option>
@@ -186,9 +186,16 @@
 
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Initials</label>
+		<label class="col-sm-3 col-form-label">Role player type</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Initials" value="@Model.AddRolePlayerInfo.Initials">	
+		<select id='Sum_Assured' class="form-control" name="rolePlayerType" value="@Model.AddRolePlayerInfo.Role_Type">
+		<option value=""></option>
+		<option value="Beneficiary">Beneficiary</option>
+		<option value="Broker">Broker</option>
+		<option value="Claimant">Claimant</option>
+		<option value="informant">informant</option>
+		<option value="Life Assured">Life Assured</option>
+		</select>
 		</div>
 	</div>
 

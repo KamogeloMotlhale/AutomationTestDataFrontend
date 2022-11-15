@@ -11,15 +11,18 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             var scenarioID = Request.Query["scenarioid"].ToString();
             var function = Request.Query["function"].ToString();
 
-            switch (function)
+            if (function.Equals("IncreaseSumAssured") || function.Equals("DecreaseSumAssured"))
             {
-                case "IncreaseSumAssured":
-                    Response.Redirect($"/PolicyServicing/ComponentDowngradeUpgrade/Edit?scenarioid={scenarioID}");
-                    break;
+                function = "ComponentDowngradeUpgrade";
+            }
+            try
+            {
+                Response.Redirect($"/PolicyServicing/{function}/Edit?scenarioid={scenarioID}");
+            }
+            catch (Exception)
+            {
 
-                default:
-                    Response.Redirect("/PolicyServicing");
-                    break;
+                Response.Redirect("/PolicyServicing");
             }
 
         }
