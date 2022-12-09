@@ -16,7 +16,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.CollectionMethodData
         }
 
         public void OnPost()
-        {
+         {
             ChangeCollectionMethodInfo.id = Request.Query["scenarioid"];
             ChangeCollectionMethodInfo.employee_number1 = Request.Form["employee_number1"];
             ChangeCollectionMethodInfo.collectionmethod = Request.Form["collectionmethod"];
