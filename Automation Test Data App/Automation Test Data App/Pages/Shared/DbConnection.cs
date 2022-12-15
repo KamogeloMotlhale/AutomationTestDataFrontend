@@ -27,6 +27,19 @@ namespace Automation_Test_Data_App.Pages.Shared
             cmd.ExecuteNonQuery();
         }
 
+        public static string getFunctionID(String funcName)
+        {
+            String id = String.Empty;
+            SqlDataReader reader = DbConnection.readDataFromDB($"SELECT * FROM Functions WHERE function_name = '{funcName}'");
+            while (reader.Read())
+            {
+              id = reader["ID"].ToString();
+            }
+           closeDbConnection();
+            return id;
+        }
+
+
         public static void closeDbConnection()
         {
             connection.Close();
