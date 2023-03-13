@@ -8,7 +8,7 @@
 		<strong>@Model.errorMessage</strong>
 		<button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
 	</div>
-}
+}------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	@if (Model.successMessage.Length > 0) {
 	<div class="row mb-3">
@@ -23,6 +23,13 @@
 	
 <br>
 <h4> Add New RolePlayer</h4>
+
+<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Scenario_ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Initials" value="@Model.AddRolePlayerInfo.Scenario_ID">	
+		</div>
+	</div>
 
 <form method="POST">
 	<div class="row mb-3">
@@ -53,6 +60,26 @@
 		</select>
 		</div>
 	</div>
+
+		<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Title</label>
+		<div class="col-sm-6">
+		<select id='id' class="form-control" name="Title"  value="@Model.AddRolePlayerInfo.RolePlayerType">
+		  <option value="Life Assured">Life Assured</option>
+		  <option value="Beneficiary">Beneficiary</option>
+		  <option value="Broker">Broker</option>
+		  <option value="informant">informant</option>
+		 
+
+		</select>
+		</div>
+	</div>
+
+
+
+
+
+
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">First_name</label>
@@ -183,6 +210,8 @@
 		</select>
 		</div>
 	</div>
+
+
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-grid">

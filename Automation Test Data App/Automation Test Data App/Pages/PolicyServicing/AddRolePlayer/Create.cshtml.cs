@@ -30,15 +30,16 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
             AddRolePlayerInfo.First_Name = Request.Form["First_Name"];
             AddRolePlayerInfo.Surname = Request.Form["Surname"];
             AddRolePlayerInfo.Initials = Request.Form["Initials"];
+            AddRolePlayerInfo.RolePlayerType = Request.Form["RolePlayerType"];
             AddRolePlayerInfo.DOB = Request.Form["DOB"];
             AddRolePlayerInfo.Gender = Request.Form["Gender"];
             AddRolePlayerInfo.ID_number = Request.Form["ID_number"];
             AddRolePlayerInfo.Relationship = Request.Form["Relationship"];
             AddRolePlayerInfo.Comm_date = Request.Form["Comm_date"];
             AddRolePlayerInfo.Sum_Assured = Request.Form["Sum_Assured"];
+         
 
-
-            if (AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
+            if (AddRolePlayerInfo.RolePlayerType.Length ==0||   AddRolePlayerInfo.Title.Length == 0|| AddRolePlayerInfo.First_Name.Length == 0 || AddRolePlayerInfo.Surname.Length == 0 ||
                AddRolePlayerInfo.Initials.Length == 0 || AddRolePlayerInfo.DOB.Length == 0 || AddRolePlayerInfo.Gender.Length == 0 ||
                AddRolePlayerInfo.ID_number.Length == 0 || AddRolePlayerInfo.Relationship.Length == 0 || AddRolePlayerInfo.Comm_date.Length == 0 || AddRolePlayerInfo.Sum_Assured.Length == 0)
             {
@@ -56,8 +57,8 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                 {
                     connection.Open();
                     String sql = "INSERT INTO AddRolePlayer " +
-                                "(Title, First_Name, Surname, Initials, DOB, Gender, ID_number, Relationship, Comm_date, Sum_Assured) VALUES" +
-                                "(@Title, @First_Name, @Surname, @Initials, @DOB, @Gender, @ID_number, @Relationship, @Comm_date , @Sum_Assured);";
+                                "(Title,RolePlayerType, First_Name, Surname, Initials, DOB, Gender, ID_number, Relationship, Comm_date, Sum_Assured) VALUES" +
+                                "(@Title,@RolePlayerType, @First_Name, @Surname, @Initials, @DOB, @Gender, @ID_number, @Relationship, @Comm_date , @Sum_Assured);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -66,6 +67,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                         command.Parameters.AddWithValue("@Surname", AddRolePlayerInfo.Surname);
                         command.Parameters.AddWithValue("@Initials", AddRolePlayerInfo.Initials);
                         command.Parameters.AddWithValue("@DOB", AddRolePlayerInfo.DOB);
+                        command.Parameters.AddWithValue("@RolePlayerType", AddRolePlayerInfo.RolePlayerType);
                         command.Parameters.AddWithValue("@Gender", AddRolePlayerInfo.Gender);
                         command.Parameters.AddWithValue("@ID_number", AddRolePlayerInfo.ID_number);
                         command.Parameters.AddWithValue("@Relationship", AddRolePlayerInfo.Relationship);
@@ -77,7 +79,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
 
                     }
                     AddRolePlayerInfo.Title = ""; AddRolePlayerInfo.First_Name = ""; AddRolePlayerInfo.Surname = ""; AddRolePlayerInfo.Initials = "";
-                    AddRolePlayerInfo.DOB = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.Sum_Assured = "";
+                    AddRolePlayerInfo.DOB = ""; AddRolePlayerInfo.RolePlayerType = ""; AddRolePlayerInfo.Gender = ""; AddRolePlayerInfo.ID_number = ""; AddRolePlayerInfo.Relationship = ""; AddRolePlayerInfo.Comm_date = ""; AddRolePlayerInfo.Sum_Assured = "";
                     successMessage = "New role player Added Successfully";
                     
                 }

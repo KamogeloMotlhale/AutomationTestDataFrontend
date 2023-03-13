@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
@@ -24,7 +24,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                         while(reader.Read())
                          {
                                 AddRolePlayerInfo AddRolePlayerInfo = new AddRolePlayerInfo();
-                                AddRolePlayerInfo.id = String.Empty + reader["Scenario_ID"].ToString();
+                                AddRolePlayerInfo.Scenario_ID = String.Empty + reader["Scenario_ID"].ToString();
                                 AddRolePlayerInfo.Title = String.Empty + reader["Title"].ToString();
                                 AddRolePlayerInfo.First_Name = String.Empty + reader["First_Name"].ToString();
                                 AddRolePlayerInfo.Surname = String.Empty + reader["Surname"].ToString();
@@ -35,7 +35,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                                 AddRolePlayerInfo.Relationship = String.Empty + reader["Relationship"].ToString();
                                 AddRolePlayerInfo.Comm_date = String.Empty + reader["Comm_date"].ToString();
                                 AddRolePlayerInfo.Sum_Assured = String.Empty + reader["Sum_Assured"].ToString();
-                                AddRolePlayerInfo.Role_Type = String.Empty + reader["RolePlayerType"].ToString();
+                                AddRolePlayerInfo.RolePlayerType = String.Empty + reader["RolePlayerType"].ToString();
                                 ListAddRolePlayer.Add(AddRolePlayerInfo);
                          }
                     }
@@ -55,7 +55,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
 
     public class AddRolePlayerInfo
     {
-        public String id;
+        public String Scenario_ID;
         public String Title;
         public String First_Name;
         public String Surname;
@@ -66,7 +66,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
         public String Relationship;
         public String Comm_date;
         public String Sum_Assured;
-        public String Role_Type;
+        public String RolePlayerType;
 
 
     }

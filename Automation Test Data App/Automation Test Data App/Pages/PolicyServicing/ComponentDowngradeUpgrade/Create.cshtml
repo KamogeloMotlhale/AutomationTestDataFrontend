@@ -20,16 +20,20 @@
 	</div>
 	}
 <br>
-<h2>Downgrade/Upgrade Component</h2>
+<h3>Add Downgrade/Upgrade Component data for Scenario ID:<Span>@Model.scenarioID</Span> </h3>
 
 
 <form method="POST">
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Date</label>
+	
+
+
+		<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Scenario ID</label>
 		<div class="col-sm-6">
-		<input type="date"  required pattern="\d{4}-\d{2}-\d{2}" class="form-control" name="Date" value="@Model.DowngradeInfo.Date">	
+			<input type="text" class="form-control" disabled name="scenarioId" value="@Model.scenarioID">	
 		</div>
 	</div>
+
 
 
 	<div class="row mb-3">
@@ -42,6 +46,8 @@
 		</select>
 		</div>
 	</div>
+
+
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Cover_Amount</label>
@@ -71,6 +77,14 @@
 		</select>
 		</div>
 	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Component IdNo.</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control"  name="compIDNO" value="@Model.DowngradeInfo.comID">	
+		</div>
+	</div>
+
 
 	
 

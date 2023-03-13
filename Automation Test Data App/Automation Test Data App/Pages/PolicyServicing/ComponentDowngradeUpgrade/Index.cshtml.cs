@@ -25,15 +25,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                         {
 
                             DowngradeInfo DowngradeInfo = new DowngradeInfo();
-                            DowngradeInfo.id = "" + reader.GetInt32(0);
-                            DowngradeInfo.Date = reader.GetString(1);
-                            DowngradeInfo.Method = reader.GetString(2);
-                            DowngradeInfo.Cover_Amount = reader.GetString(3);
-                            DowngradeInfo.Component = reader.GetString(4);
-
-
-
-                                ListDowngradeComponent.Add(DowngradeInfo);
+                            DowngradeInfo.id = reader["ScenarioID"].ToString();
+                            DowngradeInfo.Method = reader["Method"].ToString();
+                            DowngradeInfo.Cover_Amount = reader["Sum_assured"].ToString();
+                            DowngradeInfo.Component = reader["Component"].ToString();
+                            DowngradeInfo.comID = reader["component_IDNo"].ToString();
+                            ListDowngradeComponent.Add(DowngradeInfo);
                         }
 
 
@@ -47,20 +44,15 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
             Console.WriteLine("Exception:" + ex.ToString());
 
         }
-
-
-
-
     }
 }
 public class DowngradeInfo
     {
         public String id;
-        public String Date;
+        public String comID;
         public String Method;
         public String Cover_Amount;
         public String Component;
-
-
+    
     }
 }
