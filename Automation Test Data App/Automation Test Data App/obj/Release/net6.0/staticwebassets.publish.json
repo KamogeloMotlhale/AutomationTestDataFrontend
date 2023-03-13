@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G0/oDxo0B8lRPyVaXlne+szlRcy/ll6I13n7xbji4ko=",
+  "Hash": "Dd+dKQdg4faFbhboZ0Pn/6pDLEkGeSD6PQelMCLGdH0=",
   "Source": "Automation Test Data App",
   "BasePath": "_content/Automation Test Data App",
   "Mode": "Default",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\Automation Test Data App.styles.css",
+      "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\bundle\\Automation Test Data App.styles.css",
       "SourceId": "Automation Test Data App",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Automation Test Data App",
       "RelativePath": "Automation Test Data App.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\Automation Test Data App.styles.css"
+      "OriginalItemSpec": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\bundle\\Automation Test Data App.styles.css"
     },
     {
-      "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\Automation Test Data App.bundle.scp.css",
+      "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Automation Test Data App.bundle.scp.css",
       "SourceId": "Automation Test Data App",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Automation Test Data App",
       "RelativePath": "Automation Test Data App.bundle.scp.css",
       "AssetKind": "All",
@@ -48,7 +48,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\Automation Test Data App.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Automation Test Data App.bundle.scp.css"
     },
     {
       "Identity": "C:\\Users\\G992127\\Documents\\GitHub\\AutomationTestDataFrontend\\Automation Test Data App\\Automation Test Data App\\wwwroot\\css\\site.css",

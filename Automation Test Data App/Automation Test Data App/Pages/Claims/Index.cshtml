@@ -1,0 +1,90 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Claims.IndexModel
+@{
+}
+<br>
+<h2>Claims</h2>
+<div class="card w-100 mb-4 text-center">
+  <div class="card-body">
+    <h5 class="card-title">Upload  Claims Data</h5>
+    <form enctype="multipart/form-data" class="mt-5" method="post">
+    <div class="form-group">
+        <label class="file">
+            <input type="file" asp-for="fileUpload.FormFile" aria-label="File browser example">
+            <span class="file-custom"></span>
+        </label>
+        <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+    </div>
+</form>
+  </div>
+</div>
+
+
+
+
+<a class='btn btn-primary btn-sm mt-4' href='Create'>Add Scenario</a>
+
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+
+      <th scope="col">PolicyNo</th>
+      <th scope="col">Expected Results</th>
+      <th scope="col">Test results</th>
+      <th scope="col">Test Date</th>
+	  <th scope="col">Actions</th>
+      
+
+    </tr>
+  </thead>
+  <tbody>
+	  @foreach (var item in Model.ListPsScenarios)
+		{
+    <tr>
+      <th scope="row">@item.id</th>
+
+      <td>@item.policyNo</td>
+
+     
+      @if (@item.expectedResults == "Pass")
+      {
+                    <td class="text-success" >@item.expectedResults</td>
+      }
+      else
+      {
+                 <td class="text-danger" >@item.expectedResults</td>
+      }
+     
+
+      @if (@item.testResutls == "Passed")
+      {
+                    <td class="text-success" >@item.testResutls</td>
+      }
+      else
+      {
+                 <td class="text-danger" >@item.testResutls</td>
+      }
+      <td>@item.testDate</td>
+      <td>
+                  @*
+                        <a class="btn btn-primary btn-sm" href="/PolicyServicing/AddTestData?scenarioid=@item.id&function=@item.functionName">
+                            <i class="bi bi-plus"></i>
+                            Test data
+                        </a>
+               
+					<a class="btn btn-info btn-sm" href="/PolicyServicing/EditScenario?scenarioid=@item.id"> 
+                        <i class="bi bi-eye"></i>
+                    </a>*@
+					<a class="btn btn-danger btn-sm" href="/Claims/Delete?id=@item.id" title="Delete" class="delete" onclick="return confirm('Are you sure you want to delete this item')">
+                        <i class="bi bi-trash3-fill"></i>
+                    </a>
+	  </td>
+    </tr>
+		}
+  </tbody>
+</table>
+
+
+

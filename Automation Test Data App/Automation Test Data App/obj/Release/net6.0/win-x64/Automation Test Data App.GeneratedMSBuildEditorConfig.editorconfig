@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/DataMapping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGF0YU1hcHBpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -167,20 +171,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFJlaW5zdGF0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxDcmVhdGUuY3NodG1s
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminateRolePlayer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbmF0ZVJvbGVQbGF5ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxEZWxldGUuY3NodG1s
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminateRolePlayer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbmF0ZVJvbGVQbGF5ZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxFZGl0LmNzaHRtbA==
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminateRolePlayer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbmF0ZVJvbGVQbGF5ZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminteRolePlayer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbnRlUm9sZVBsYXllclxJbmRleC5jc2h0bWw=
+[C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/PolicyServicing/TerminateRolePlayer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saWN5U2VydmljaW5nXFRlcm1pbmF0ZVJvbGVQbGF5ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/G992127/Documents/GitHub/AutomationTestDataFrontend/Automation Test Data App/Automation Test Data App/Pages/Privacy.cshtml]

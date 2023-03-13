@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
+using Automation_Test_Data_App.Pages.Shared;
 
 namespace Automation_Test_Data_App.Pages
 {
@@ -49,6 +50,7 @@ namespace Automation_Test_Data_App.Pages
             string email = Request.Form["email"];
             string password = Request.Form["password"];
 
+            
             if (email.Length == 0 || password.Length == 0)
             {
                 errorMessage = "All the fields are required";
@@ -83,7 +85,7 @@ namespace Automation_Test_Data_App.Pages
                             using (SqlDataReader reader = command.ExecuteReader())
                             while (reader.Read())
                             {
-                                    if (reader["PasswordHash"].ToString().Equals(password))
+                                    if (Password.DecodeFrom64((reader["PasswordHash"].ToString())) .Equals(password))
                                     {
                                         dbUsId = reader["Id"].ToString();
                                         SetUserID(dbUsId);

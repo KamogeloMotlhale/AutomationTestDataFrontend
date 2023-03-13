@@ -1,0 +1,22 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.Claims.DeleteModel
+@using Automation_Test_Data_App.Pages.Shared
+
+@{
+    try
+    {
+        String id = Request.Query["id"];
+        DbConnection.removeCreateUpdateDataOnDB($"DELETE FROM  TestScenarios WHERE ID={id}");
+        DbConnection.closeDbConnection();
+        
+    }
+    catch (Exception ex)
+    {
+
+    }
+        Response.Redirect($"/Claims/");
+
+    
+
+
+}

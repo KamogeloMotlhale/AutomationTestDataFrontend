@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\NewBusiness\NewFolder\**" />
     <Compile Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <Compile Remove="Pages\PolicyServicing\ChangeBeneData\**" />
+    <Content Remove="Pages\NewBusiness\NewFolder\**" />
     <Content Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <Content Remove="Pages\PolicyServicing\ChangeBeneData\**" />
+    <EmbeddedResource Remove="Pages\NewBusiness\NewFolder\**" />
     <EmbeddedResource Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <EmbeddedResource Remove="Pages\PolicyServicing\ChangeBeneData\**" />
+    <None Remove="Pages\NewBusiness\NewFolder\**" />
     <None Remove="Pages\PolicyServicing\AddRole_NextMonth\**" />
     <None Remove="Pages\PolicyServicing\ChangeBeneData\**" />
   </ItemGroup>
@@ -25,9 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\NewBusiness\NewFolder\" />
     <Folder Include="Pages\PolicyServicing\ChangeRolePlayerDetails\" />
     <Folder Include="Pages\PolicyServicing\Cancelpolicy\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

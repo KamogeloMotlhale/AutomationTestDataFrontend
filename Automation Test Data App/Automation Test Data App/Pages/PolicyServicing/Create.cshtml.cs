@@ -78,9 +78,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                 {
 
 
-                    DbConnection.removeCreateUpdateDataOnDB("INSERT INTO PS_Scenarios" +
-                                    "(PolicyNo,ExpectedResults,FunctionID,UserID) VALUES " +
-                                    $"('{PScenarioInfo.policyNo}', '{PScenarioInfo.expectedResults}',{PScenarioInfo.functionID},'{userId}');");
+                    DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
+                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID) VALUES " +
+                                    $"('{PScenarioInfo.policyNo}', '{PScenarioInfo.expectedResults}',{PScenarioInfo.functionID},'{userId}',1);");
                     DbConnection.closeDbConnection();
                     PScenarioInfo.policyNo = ""; PScenarioInfo.expectedResults = ""; PScenarioInfo.functionID = "";
                     successMessage = "New Scenario Added Successfully";

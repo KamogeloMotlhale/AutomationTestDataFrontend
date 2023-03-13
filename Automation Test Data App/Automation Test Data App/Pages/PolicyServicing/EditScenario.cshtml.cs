@@ -55,7 +55,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = $"SELECT * FROM PS_Scenarios WHERE ID={id}";
+                    String sql = $"SELECT * FROM TestScenarios WHERE ID={id}";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -121,7 +121,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        String sql = "UPDATE PS_Scenarios " +
+                        String sql = "UPDATE TestScenarios " +
                                      "SET   PolicyNo=@policyNo,ExpectedResults=@expResults, FunctionID=@funcID" + 
                                      " WHERE ID=@id";
 

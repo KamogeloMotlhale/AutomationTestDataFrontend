@@ -7,7 +7,9 @@
     try
     {
         String id = Request.Query["id"];
-        DbConnection.removeCreateUpdateDataOnDB($"DELETE FROM  PS_Scenarios WHERE ID={id}");
+        DbConnection.removeCreateUpdateDataOnDB($"DELETE FROM  TestScenarios WHERE ID={id}");
+        DbConnection.closeDbConnection();
+        
     }
     catch (Exception ex)
     {

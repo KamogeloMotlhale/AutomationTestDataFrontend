@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+.brand{
+    color: #006bb8;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+.primary {
+    color: #006bb8;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #006bb8;
+    border-color: #006bb8;
+}

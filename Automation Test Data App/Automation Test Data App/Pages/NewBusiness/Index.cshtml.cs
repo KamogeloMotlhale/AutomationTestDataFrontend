@@ -23,7 +23,12 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
         }
         public IActionResult OnPostUpload(FileUpload fileUpload)
         {
+            //Get Uploading User
+            string userId = Request.Cookies["UserID"];
+
+
             //Creating upload folder  
+            fullPath += $"/{userId}";
             if (!Directory.Exists(fullPath))
             {
                 Directory.CreateDirectory(fullPath);
@@ -37,22 +42,21 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
             // Process uploaded files  
             // Don't rely on or trust the FileName property without validation.
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + filePath + "';Extended Properties=\"Excel 12.0;HDR=YES;\"";
-
-            String dbconnectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
             string testDataConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + filePath + "';Extended Properties=\"Excel 12.0;HDR=NO;\"";
             OleDbConnection conn = new OleDbConnection(connectionString);
             OleDbConnection testDataConn = new OleDbConnection(testDataConnectionString);
             // SqlConnection DBconnection = new SqlConnection(connectionString);
-            string userId = Request.Cookies["UserID"];
-            
-   
+          
             List<string> dataTables = new List<string>();
             dataTables.Add("AddRolePlayer");
+            dataTables.Add("ChangeLifeData");
+            dataTables.Add("ComponentDowngradeUpgrade");
+            dataTables.Add("TerminateRole");
+            dataTables.Add("CollectionMethodData");
 
-            try
-                {
-                    // Open connection
-                    conn.Open();
+            try{
+                // Open connection
+                conn.Open();
                     string cmdQuery = $"SELECT * FROM [PS_Scenarios$]";
                     OleDbCommand cmd = new OleDbCommand(cmdQuery, conn);
                     // Create new OleDbDataAdapter
@@ -85,11 +89,12 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
                     }
                     DbConnection.closeDbConnection();
 
+                    bool hasScenarioId = false;
+                    var currTable = String.Empty;
                     //Get  test data from corresponding data table
-                    foreach (var table in dataTables)
-                    {
+                    
                         testDataConn.Open();
-                        cmdQuery = $"SELECT * FROM [{table}$]";
+                        cmdQuery = $"SELECT * FROM [{function}$]";
                         cmd = new OleDbCommand(cmdQuery, testDataConn);
                         oleda = new OleDbDataAdapter();
                         oleda.SelectCommand = cmd;
@@ -100,15 +105,15 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
                         int counter = 0;
                         String fields = "";
                         String testData = $"{dbScenarioID},";
-                        bool hasScenarioId =  false;
+                        
                         foreach (var testDataRow in testds.Tables[0].DefaultView)
                         {
                             var colNum = ((System.Data.DataRowView)testDataRow).Row.ItemArray.Length;
                                 for (int i = 0; i < colNum; i++)
                                 {
                                     if (counter == 0)
-                                    {
-                                            fields += $" {((System.Data.DataRowView)testDataRow).Row.ItemArray[i].ToString()}";
+                                    {       var field = ((System.Data.DataRowView)testDataRow).Row.ItemArray[i].ToString();
+                                            fields += $" {field}";
                                             if(i < colNum-1)
                                             {
                                                 fields += ",";
@@ -116,6 +121,7 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
                                     }
                                     else
                                     {
+                                        //Check if I
                                         if (((System.Data.DataRowView)testDataRow).Row.ItemArray[0].ToString().Equals(scenario_id))
                                         {
                                             hasScenarioId = true;
@@ -132,37 +138,38 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
                                                 testData += ",";
                                             }
                                          }
-                                    }
+                                        else
+                                        {
+                                            hasScenarioId = false;
+
+                                        }
+                                }
                                 }
                             counter++;
-                        }
+                            if (hasScenarioId)
+                            {
+                                //Set test data if there is any
+                                var sqlQuery = $"INSERT INTO {function} ({fields}) VALUES({testData})";
+                                DbConnection.removeCreateUpdateDataOnDB(sqlQuery);
+                                DbConnection.closeDbConnection();
+                            }
+                    
                         testDataConn.Close();
-
-
-                        if (hasScenarioId)
-                        {
-                            dataTables.Remove(table);
-                        }
-                        //Set test data if there is any
-                        var sqlQuery = $"INSERT INTO {table} ({fields}) VALUES({testData})";
-                        DbConnection.removeCreateUpdateDataOnDB(sqlQuery);
-                        DbConnection.closeDbConnection();
-
-
+                        
                     }
 
-
                 }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    conn.Close();
-                    conn.Dispose();
-                }
+            }
+            catch (Exception ex)
+            {
+                    
+            }
+            finally
+            {
+                
+                conn.Close();
+                conn.Dispose();
+            }
 
             // Delete file
        
@@ -179,11 +186,5 @@ namespace Automation_Test_Data_App.Pages.NewBusiness
             return Page();
         }
     }
-    public class FileUpload
-    {
-        [Required]
-        [Display(Name = "File")]
-        public IFormFile FormFile { get; set; }
-        public string SuccessMessage { get; set; }
-    }
+
 }

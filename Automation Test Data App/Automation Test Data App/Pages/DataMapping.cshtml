@@ -1,0 +1,18 @@
+﻿@page
+@model Automation_Test_Data_App.Pages.DataMappingModel
+@{
+}
+ @{
+        if (ViewData["SuccessMessage"] != null)
+        {
+          <span class="badge badge-success"> @ViewData["SuccessMessage"]</span> }
+ }
+<form enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label class="file">
+            <input type="file" asp-for="fileUpload.FormFile" aria-label="File browser example">
+            <span class="file-custom"></span>
+        </label>
+        <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+    </div>
+</form>

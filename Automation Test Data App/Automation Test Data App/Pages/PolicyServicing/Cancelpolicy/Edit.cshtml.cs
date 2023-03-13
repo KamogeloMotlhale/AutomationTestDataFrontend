@@ -15,12 +15,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public void OnGet()
         {
             String id = Request.Query["scenarioid"];
-
-
             try
             {
-
-                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
@@ -93,16 +89,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                     successMessage = "Test data successfully updated";
 
                 }
-
             }
             catch (Exception ex)
             {
                 errorMessage = ex.Message;
                 return;
             }
-
-
-
         }
 
 
