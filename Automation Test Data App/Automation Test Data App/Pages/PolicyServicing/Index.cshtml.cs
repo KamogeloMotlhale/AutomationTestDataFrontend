@@ -99,7 +99,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             {
                 // Open connection
                 conn.Open();
-                string cmdQuery = $"SELECT * FROM [PS_Scenarios$]";
+                string cmdQuery = $"SELECT * FROM [Scenarios$]";
                 OleDbCommand cmd = new OleDbCommand(cmdQuery, conn);
                 // Create new OleDbDataAdapter
                 OleDbDataAdapter oleda = new OleDbDataAdapter();
@@ -120,8 +120,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
 
 
                     DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
-                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID) VALUES " +
-                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',1);");
+                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID, Scenario_Details) VALUES " +
+                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',1, {scenariosDeatils});");
                     DbConnection.closeDbConnection();
                     //Get the DB ID of the recently added scenario
                     var dbScenarioID = String.Empty;
@@ -262,7 +262,9 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
         public String functionName;
         public String userID;
         public String productName;
+        public String scenario_details;
         public String dateCreated;
+
 
         public void getFuncName()
         {

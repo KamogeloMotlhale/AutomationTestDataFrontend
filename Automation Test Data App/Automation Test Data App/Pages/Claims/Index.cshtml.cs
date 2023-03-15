@@ -23,9 +23,7 @@ namespace Automation_Test_Data_App.Pages.Claims
         public void OnGet()
         {
 
-            String dt = (DateTime.Now.StartOfWeek(DayOfWeek.Monday)).ToString("dd/MM/yyyy");
-
-
+            
             string userId = Request.Cookies["UserID"];
             if (userId == null)
             {
@@ -49,6 +47,7 @@ namespace Automation_Test_Data_App.Pages.Claims
                         pScenarioInfo.testResutls = reader["Test_Results"].ToString();
                         pScenarioInfo.comments = reader["Comments"].ToString();
                         pScenarioInfo.functionID = reader["functionID"].ToString();
+                        pScenarioInfo.scenario_details = reader["functionID"].ToString();
                         ListPsScenarios.Add(pScenarioInfo);
                     }
                     DbConnection.closeDbConnection();
@@ -113,8 +112,8 @@ namespace Automation_Test_Data_App.Pages.Claims
 
 
                     DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
-                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID) VALUES " +
-                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',2);");
+                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID, Scenario_Details ) VALUES " +
+                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',2,{scenariosDeatils});");
                     DbConnection.closeDbConnection();
                     //Get the DB ID of the recently added scenario
                     var dbScenarioID = String.Empty;
