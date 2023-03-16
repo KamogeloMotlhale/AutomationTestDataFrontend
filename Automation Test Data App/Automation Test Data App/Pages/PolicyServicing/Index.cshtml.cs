@@ -9,6 +9,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using Automation_Test_Data_App.Pages.Admin.Users;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System;
 
 namespace Automation_Test_Data_App.Pages.PolicyServicing
 {
@@ -25,12 +29,72 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
         public FileUpload fileUpload { get; set; }
 
         public List<PScenarioInfo> ListPsScenarios = new List<PScenarioInfo>();
+        static void execCommand(OleDbConnection conn, string sqlText)
+        {
+            using (OleDbCommand command = new OleDbCommand())
+            {
+
+                command.Connection = conn;
+                command.CommandText = sqlText;
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public void DBToExcel()
+        {
+            string userId = Request.Cookies["UserID"];
+            string excelFilePath = $@"{Directory.GetCurrentDirectory()}\Report.xlsx";
+
+            if (Directory.Exists(excelFilePath))
+            {
+                Directory.Delete(excelFilePath);
+            }
+            string provider =
+                 // "Microsoft.Jet.OLEDB.4.0"
+                 "Microsoft.ACE.OLEDB.12.0";
+
+            Console.WriteLine($"Using provider {provider}");
+
+            string connectionString = $"Provider={provider};Data Source={excelFilePath};Extended Properties='Excel 12.0 Xml;HDR=Yes';";
+            OleDbConnection connection = new OleDbConnection(connectionString);
+            connection.Open();
+            execCommand(connection, "create table Claims_Report (PolicyNo varchar, ScenarioDetails varchar, ExpectedResults varchar,Test_Date varchar,Comments varchar,  Function varchar)");
+
+
+            try
+            {
+
+                SqlDataReader reader = DbConnection.readDataFromDB($"SELECT * FROM TestScenarios WHERE UserID = '{userId}' AND ProjectID = 1 ORDER BY Created_at DESC;");
+
+
+                while (reader.Read())
+                {
+                    PScenarioInfo pScenarioInfo = new PScenarioInfo();
+                    pScenarioInfo.id = reader["ID"].ToString();
+                    pScenarioInfo.policyNo = reader["PolicyNo"].ToString();
+                    pScenarioInfo.expectedResults = reader["ExpectedResults"].ToString();
+                    pScenarioInfo.testDate = reader["Test_Date"].ToString();
+                    pScenarioInfo.testResutls = reader["Test_Results"].ToString();
+                    pScenarioInfo.comments = reader["Comments"].ToString();
+                    pScenarioInfo.functionID = reader["functionID"].ToString();
+                    pScenarioInfo.productName = reader["productName"].ToString();
+                    pScenarioInfo.getFuncName();
+                    ListPsScenarios.Add(pScenarioInfo);
+
+
+                }
+                DbConnection.closeDbConnection();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception:" + ex.ToString());
+
+            }
+            connection.Close();
+        }
         public void OnGet()
         {
-
             String dt = (DateTime.Now.StartOfWeek(DayOfWeek.Monday)).ToString("dd/MM/yyyy");
-
-            
             string userId = Request.Cookies["UserID"];
             if (userId == null)
             {
@@ -40,10 +104,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
             {
                 try
                 {
-
                     SqlDataReader reader = DbConnection.readDataFromDB($"SELECT * FROM TestScenarios WHERE UserID = '{userId}' AND ProjectID = 1 ORDER BY Created_at DESC;");
-
-                           
                                 while (reader.Read())
                                 {
                                     PScenarioInfo pScenarioInfo = new PScenarioInfo();
@@ -73,8 +134,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
         {
             //Get Uploading User
             string userId = Request.Cookies["UserID"];
-
-
             //Creating upload folder  
             fullPath += $"/{userId}";
             if (!Directory.Exists(fullPath))
@@ -118,10 +177,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                     //Save scenario to DB
                     var funID = DbConnection.getFunctionID(function);
 
+                  
 
                     DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
                                     "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID, Scenario_Details) VALUES " +
-                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',1, {scenariosDeatils});");
+                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',1, '{scenariosDeatils}');");
                     DbConnection.closeDbConnection();
                     //Get the DB ID of the recently added scenario
                     var dbScenarioID = String.Empty;

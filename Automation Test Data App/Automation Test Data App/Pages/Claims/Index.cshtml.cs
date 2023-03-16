@@ -113,7 +113,7 @@ namespace Automation_Test_Data_App.Pages.Claims
 
                     DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
                                     "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID, Scenario_Details ) VALUES " +
-                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',2,{scenariosDeatils});");
+                                    $"('{policy_no}', '{expectedResults}',{funID},'{userId}',2,'{scenariosDeatils}');");
                     DbConnection.closeDbConnection();
                     //Get the DB ID of the recently added scenario
                     var dbScenarioID = String.Empty;
