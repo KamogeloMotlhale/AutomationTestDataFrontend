@@ -35,7 +35,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
                                 AddRolePlayerInfo.Relationship = String.Empty + reader["Relationship"].ToString();
                                 AddRolePlayerInfo.Comm_date = String.Empty + reader["Comm_date"].ToString();
                                 AddRolePlayerInfo.Sum_Assured = String.Empty + reader["Sum_Assured"].ToString();
-                                AddRolePlayerInfo.Role_Type = String.Empty + reader["RolePlayerType"].ToString();
+                                AddRolePlayerInfo.RolePlayerType = String.Empty + reader["RolePlayerType"].ToString();
                                 ListAddRolePlayer.Add(AddRolePlayerInfo);
                          }
                     }
@@ -66,7 +66,7 @@ namespace Automation_Test_Data_App.Pages.AddRolePlayer
         public String Relationship;
         public String Comm_date;
         public String Sum_Assured;
-        public String Role_Type;
+        public String RolePlayerType;
 
 
     }

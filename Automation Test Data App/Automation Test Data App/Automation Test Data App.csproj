@@ -34,4 +34,15 @@
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Pages\PolicyServicing\AddRolePlayer\Create.cshtml" />
+    <None Include="Pages\PolicyServicing\AddRolePlayer\Delete.cshtml" />
+    <None Include="Pages\PolicyServicing\AddRolePlayer\Edit.cshtml" />
+    <None Include="Pages\PolicyServicing\AddRolePlayer\Index.cshtml" />
+    <None Include="Pages\PolicyServicing\TerminateRolePlayer\Create.cshtml" />
+    <None Include="Pages\PolicyServicing\TerminateRolePlayer\Delete.cshtml" />
+    <None Include="Pages\PolicyServicing\TerminateRolePlayer\Edit.cshtml" />
+    <None Include="Pages\PolicyServicing\TerminateRolePlayer\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
