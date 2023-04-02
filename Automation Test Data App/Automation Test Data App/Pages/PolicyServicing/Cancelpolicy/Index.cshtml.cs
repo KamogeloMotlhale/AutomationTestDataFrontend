@@ -26,11 +26,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 
                                 CancelpolicyInfo CancelpolicyInfo = new CancelpolicyInfo();
                                 CancelpolicyInfo.id = "" + reader.GetInt32(0);
-                                CancelpolicyInfo.PolicyNo = reader.GetString(1);
                                 CancelpolicyInfo.TerminationReason = reader.GetString(2);
-
-
-
                                 ListCancelpolicy.Add(CancelpolicyInfo);
                         }
 
@@ -54,7 +50,6 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
 public class CancelpolicyInfo
     {
         public String id;
-        public String PolicyNo;
         public String TerminationReason;
   
 

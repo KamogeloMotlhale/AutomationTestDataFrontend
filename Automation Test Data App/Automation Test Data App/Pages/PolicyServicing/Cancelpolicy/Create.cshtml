@@ -26,10 +26,11 @@
 <form method="POST">
 	
 
+                       
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Policy Number</label>
+		<label class="col-sm-3 col-form-label">Scenario ID</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="PolicyNo" value="@Model.CancelpolicyInfo.PolicyNo" minlength="10" maxlength="10">	
+			<input readonly type="text" class="form-control" name="scenarioID" value="@Model.CancelpolicyInfo.id">	
 		</div>
 	</div>
 

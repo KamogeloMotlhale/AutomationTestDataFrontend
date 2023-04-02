@@ -12,17 +12,19 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.TerminateRolePlayer
 
         public void OnGet()
         {
+            
         }
 
         public void OnPost()
         {
             Terminateinfo.id = Request.Form["ID"];
+            Terminateinfo.Scenario_ID = Request.Query["scenarioid"].ToString();
             Terminateinfo.RoleType = Request.Form["RoleType"];
-            Terminateinfo.Scenario_ID = Request.Form["Scenario_ID"];
+            
             
 
 
-            if (Terminateinfo.id.Length == 0|| Terminateinfo.RoleType.Length == 0 || Terminateinfo.Scenario_ID.Length == 0 )
+            if (Terminateinfo.id.Length == 0|| Terminateinfo.RoleType.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -38,14 +40,14 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.TerminateRolePlayer
                 {
                     connection.Open();
                     String sql = "INSERT INTO TerminateRole " +
-                                "(ID, Scenario_ID, RoleType) VALUES" +
+                                "(ID_No, Scenario_ID, Relationship) VALUES" +
                                 "(@ID, @Scenario_ID, @RoleType);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@Date", Terminateinfo.id);
-                        command.Parameters.AddWithValue("@Method", Terminateinfo.Scenario_ID);
-                        command.Parameters.AddWithValue("@Cover_Amount", Terminateinfo.RoleType);
+                        command.Parameters.AddWithValue("@ID", Terminateinfo.id);
+                        command.Parameters.AddWithValue("@Scenario_ID", Terminateinfo.Scenario_ID);
+                        command.Parameters.AddWithValue("@RoleType", Terminateinfo.RoleType);
                        
                         ;
 
@@ -56,7 +58,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.TerminateRolePlayer
 
                 }
                 Terminateinfo.id = ""; Terminateinfo.RoleType = ""; Terminateinfo.Scenario_ID = ""; 
-                successMessage = "New Downgrade Component Added Successfully";
+                successMessage = "Test data added successfully";
                 return;
 
                 

@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.Text;
+using Automation_Test_Data_App.Pages.Shared;
+
 
 namespace Automation_Test_Data_App.Pages.Admin.Users
 {
@@ -56,18 +58,11 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
             string password = Request.Form["password"];
             string pwconfirm = Request.Form["pwconfirm"];
             string role = Request.Form["role"];
+            string userID = Request.Form["userID"];
+            
 
-            //Create unique ID
-            StringBuilder builder = new StringBuilder();
-            Enumerable
-               .Range(65, 26)
-                .Select(e => ((char)e).ToString())
-                .Concat(Enumerable.Range(97, 26).Select(e => ((char)e).ToString()))
-                .Concat(Enumerable.Range(0, 10).Select(e => e.ToString()))
-                .OrderBy(e => Guid.NewGuid())
-                .Take(11)
-                .ToList().ForEach(e => builder.Append(e));
-            string id = builder.ToString();
+
+
 
             if (email.Length == 0 || password.Length == 0 || pwconfirm.Length == 0)
             {
@@ -84,7 +79,8 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
             try
             {
 
-               
+                //Hash Password
+                password = Password.EncodePasswordToBase64(password);
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -94,7 +90,7 @@ namespace Automation_Test_Data_App.Pages.Admin.Users
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@id", userID);
                         command.Parameters.AddWithValue("@Email", email);
                         command.Parameters.AddWithValue("@Password", password);
                         command.Parameters.AddWithValue("@roleId", Int32.Parse(role));

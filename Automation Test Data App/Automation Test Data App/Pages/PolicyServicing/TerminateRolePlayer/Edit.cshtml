@@ -53,18 +53,22 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Scenario_ID</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="Scenario_ID" value="@Model.Terminateinfo.Scenario_ID">	
+			<input disabled type="text" class="form-control" name="Scenario_ID" value="@Model.Terminateinfo.Scenario_ID">	
 		</div>
 	</div>
 
 	
 
 	<div class="row mb-3">
-		<div class="offset-sm-3 col-sm-3 d-grid">
+		<div class="offset-sm-3 col-sm-2 d-grid">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
-		<div class="col-sm-3 d-grid">
-			<a class="btn btn-outline-primary" href="/PolicyServicing/TerminateRolePlayer" role="button">Cancel</a>
+		<div class="col-sm-2 d-grid">
+			
+			<a class="btn btn-danger" href="/PolicyServicing/TerminateRolePlayer/Delete?scenarioid=@Model.Terminateinfo.Scenario_ID" title="Delete"  onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+		</div>
+		<div class="col-sm-2 d-grid">
+			<a class="btn btn-outline-primary" href="/PolicyServicing/" role="button">Cancel</a>
 		</div>
 	</div>
 

@@ -1,3 +1,4 @@
+using Automation_Test_Data_App.Pages.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
@@ -25,14 +26,12 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
 
                 try
                 {
-                    String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        String sql = $"SELECT * FROM Functions";
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
+
+
+                    SqlDataReader reader = DbConnection.readDataFromDB($"SELECT * FROM Functions");
+
+                 
+                      
                                 while (reader.Read())
                                 {
                                     Function func = new Function();
@@ -41,8 +40,8 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                                     func.name = reader["function_name"].ToString();
                                     funcList.Add(func);
                                 }
-                        }
-                    }
+                         DbConnection.closeDbConnection();
+
                 }
                 catch (Exception ex)
                 {
@@ -78,30 +77,11 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing
                 try
                 {
 
-                    String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        String sql = "INSERT INTO PS_Scenarios" +
-                                    "(PolicyNo,ExpectedResults,FunctionID,UserID) VALUES" +
-                                    "(@policyNo, @expResults,@funcID, @userID); ";
-
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-
-                            command.Parameters.AddWithValue("@policyNo", PScenarioInfo.policyNo);
-                            command.Parameters.AddWithValue("@expResults", PScenarioInfo.expectedResults);
-                            command.Parameters.AddWithValue("@funcID", PScenarioInfo.functionID);
-                            command.Parameters.AddWithValue("@userID", userId);
-                            ;
-
-                            command.ExecuteNonQuery();
-
-                        }
-
-
-                    }
+                    DbConnection.removeCreateUpdateDataOnDB("INSERT INTO TestScenarios" +
+                                    "(PolicyNo,ExpectedResults,FunctionID,UserID, ProjectID) VALUES " +
+                                    $"('{PScenarioInfo.policyNo}', '{PScenarioInfo.expectedResults}',{PScenarioInfo.functionID},'{userId}',1);");
+                    DbConnection.closeDbConnection();
                     PScenarioInfo.policyNo = ""; PScenarioInfo.expectedResults = ""; PScenarioInfo.functionID = "";
                     successMessage = "New Scenario Added Successfully";
                     Redirect("/PolicyServicing");

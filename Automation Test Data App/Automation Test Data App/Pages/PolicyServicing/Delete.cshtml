@@ -1,27 +1,15 @@
 ﻿@page 
 @using System.Data.SqlClient;
+@using Automation_Test_Data_App.Pages.Shared
 
 
 @{
     try
     {
-
         String id = Request.Query["id"];
-
-        string connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            connection.Open();
-
-            String sql = "DELETE FROM  PS_Scenarios WHERE ID=@id";
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            {
-                command.Parameters.AddWithValue("@id", id);
-
-                command.ExecuteNonQuery();
-
-            }
-        }
+        DbConnection.removeCreateUpdateDataOnDB($"DELETE FROM  TestScenarios WHERE ID={id}");
+        DbConnection.closeDbConnection();
+        
     }
     catch (Exception ex)
     {

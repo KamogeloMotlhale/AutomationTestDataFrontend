@@ -9,18 +9,21 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
         public CancelpolicyInfo CancelpolicyInfo = new CancelpolicyInfo(); 
         public String errorMessage = "";
         public String successMessage = "";
+        public String scenarioID = String.Empty;
 
         public void OnGet()
         {
+            scenarioID = Request.Query["scenarioid"];
+            CancelpolicyInfo.id = scenarioID;
         }
 
         public void OnPost()
         {
-            CancelpolicyInfo.PolicyNo = Request.Form["PolicyNo"];
+            scenarioID = Request.Query["scenarioid"];
             CancelpolicyInfo.TerminationReason = Request.Form["TerminationReason"];
            
 
-            if(CancelpolicyInfo.PolicyNo.Length == 0|| CancelpolicyInfo.TerminationReason.Length == 0)
+            if(CancelpolicyInfo.TerminationReason.Length == 0)
             {
                 errorMessage = "All the fields are required";
                 return;
@@ -36,37 +39,27 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.Cancelpolicy
                 {
                     connection.Open();
                     String sql = "INSERT INTO Cancelpolicy " +
-                                "(PolicyNo, TerminationReason) VALUES" +
-                                "(@PolicyNo, @TerminationReason);";
+                                "(Scenario_ID, TerminationReason) VALUES" +
+                                "(@scenarioID, @TerminationReason);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@PolicyNo", CancelpolicyInfo.PolicyNo);
+                        command.Parameters.AddWithValue("@scenarioID", scenarioID);
                         command.Parameters.AddWithValue("@TerminationReason", CancelpolicyInfo.TerminationReason);
-                        ;
-
                         command.ExecuteNonQuery();
 
                     }
-
-
                 }
-                CancelpolicyInfo.PolicyNo = ""; CancelpolicyInfo.TerminationReason = ""; 
+                 CancelpolicyInfo.TerminationReason = ""; 
                 successMessage = "New Termination policy Added Successfully";
                 return;
-
-                
-
             }
             catch(Exception ex)
             {
                 errorMessage = ex.Message;
                 return;
             }
-
             Response.Redirect("/PolicyServicing/Cancelpolicy");
-
-
         }
     }
 }

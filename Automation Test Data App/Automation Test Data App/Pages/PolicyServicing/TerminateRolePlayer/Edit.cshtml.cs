@@ -13,50 +13,36 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.TerminateRolePlayer
 
         public void OnGet()
         {
-            String id = Request.Query["id"];
+            String id = Request.Query["scenarioid"];
 
             try
             {
-
                 String connectionString = "Data Source='SRV007232, 1455';Initial Catalog=Automation;Integrated Security=True";
-
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
                     connection.Open();
-                    String sql = "SELECT * FROM TerminateRole WHERE id=@id";
+                    String sql = "SELECT * FROM TerminateRole WHERE Scenario_ID=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
                         command.Parameters.AddWithValue("@id", id);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-
                             if (reader.Read())
                             {
-
                                 Terminateinfo.id = String.Empty + reader["ID_no"].ToString();
                                 Terminateinfo.RoleType = String.Empty + reader["Relationship"].ToString();
                                 Terminateinfo.Scenario_ID = String.Empty + reader["Scenario_ID"].ToString();
-
-
-
-
-
                             }
                         }
-
-
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
                 errorMessage = ex.Message;
             }
-
         }
 
         public void OnPost()

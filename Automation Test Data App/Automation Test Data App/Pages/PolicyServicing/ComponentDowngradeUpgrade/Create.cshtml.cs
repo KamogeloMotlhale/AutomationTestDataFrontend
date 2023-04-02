@@ -53,10 +53,7 @@ namespace Automation_Test_Data_App.Pages.PolicyServicing.ComponentDowngradeUpgra
                         command.Parameters.AddWithValue("@Cover_Amount", DowngradeInfo.Cover_Amount);
                         command.Parameters.AddWithValue("@compID", DowngradeInfo.comID);
                         command.Parameters.AddWithValue("@scenarioID", DowngradeInfo.id);
-                        ;
-
                         command.ExecuteNonQuery();
-
                     }
 
 
