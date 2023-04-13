@@ -226,4 +226,21 @@ namespace Automation_Test_Data_App.Pages.Claims
             return Page();
         }
     }
+	public class ClaimsData
+	{
+		public String Scenario_ID;
+		public String Title;
+		public String First_Name;
+		public String Surname;
+		public String Initials;
+		public String DOB;
+		public String Gender;
+		public String ID_number;
+		public String Relationship;
+		public String Comm_date;
+		public String Sum_Assured;
+		public String Role_Type;
+
+
+	}
 }
